@@ -4,10 +4,10 @@ import { Link, BrowserRouter } from 'react-router-dom';
 export default class HomePage extends Component {
   render() {
     return (
-      <div>
+      <section >
         Home
         <Link to='/events'>click</Link>
-      </div>
+      </section>
     );
   }
 }
