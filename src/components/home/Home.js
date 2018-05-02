@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+
+import HomeSlider from './HomeSlider';
+import HomeEvents from './HomeEvents';
+import HomeVenues from './HomeVenues';
+import HomeLinks from './HomeLinks';
 
 export default class HomePage extends Component {
   render() {
     return (
       <section >
-        Home
-        <Link to='/events'>click</Link>
+        <HomeSlider />
+        <HomeEvents />
+        <HomeVenues />
+        <HomeLinks />
       </section>
     );
   }

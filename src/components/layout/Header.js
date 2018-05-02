@@ -31,8 +31,6 @@ const style = {
     flex: 1,
     alignItems: 'center',
     padding: '2rem 4rem',
-    borderImageTop : 'linear-gradient(to right, rgba(252,182,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%)',
-    borderImage: 'Top-webkit-linear-gradient(left, rgba(252,182,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%)',
     boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)'
   },
   logo: {

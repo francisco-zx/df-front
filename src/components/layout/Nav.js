@@ -34,7 +34,7 @@ const style = {
     textTransform: 'uppercase',
     color: 'black',
     textDecoration: 'none',
-    paddingRight: '4rem',
+    padding: '1rem',
     letterSpacing: '3px'
   }
 }
