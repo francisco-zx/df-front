@@ -195,6 +195,45 @@ export const arrowRightIcon = (
     </g>
   </svg>
 );
+export const arrowLeftIconWhite = (
+  <svg
+    width="70"
+    height="140"
+    viewBox="0 0 10 30"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="Page-1" fill="none" fillRule="evenodd">
+      <g
+        id="right-chevron-(1)"
+        transform="matrix(-1 0 0 1 25 0)"
+        fill="#fff"
+        fillRule="nonzero"
+      >
+        <polygon
+          id="Shape"
+          points="3.41693433 0 0 2.61162236 19.6610401 29.3269231 0 56.0422238 3.41693433 58.6538462 25 29.3269231"
+        />
+      </g>
+    </g>
+  </svg>
+);
+export const arrowRightIconWhite = (
+  <svg
+    width="70"
+    height="140"
+    viewBox="0 0 10 30"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="Page-1" fill="none" fillRule="evenodd">
+      <g id="right-chevron-(1)" fill="#fff" fillRule="nonzero">
+        <polygon
+          id="Shape"
+          points="3.41693433 0 0 2.61162236 19.6610401 29.3269231 0 56.0422238 3.41693433 58.6538462 25 29.3269231"
+        />
+      </g>
+    </g>
+  </svg>
+);
 export const playIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"

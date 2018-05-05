@@ -22,7 +22,7 @@ Buenos Aires, Argentina.
 
 const style = {
   sliderInfo: {
-    padding: '10rem 5rem',
+    padding: '10rem 6rem',
     zIndex: 3
   },
   sliderInfoTitle: {

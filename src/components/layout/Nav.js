@@ -9,7 +9,7 @@ export default class Nav extends Component {
   render() {
     return (
       <nav style={style.nav}>
-        <ul>
+        <ul style={style.navUl}>
           <Link to='/events' style={style.navItem}>Eventos</Link>
           <Link to='/venues' style={style.navItem}>Venues</Link>
           <Link to='/timeline' style={style.navItem}>Timeline</Link>
@@ -28,13 +28,17 @@ const style = {
     display: 'flex',
     flex: 2,
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
+    textAlign: 'center'
+  },
+  navUl: {
+    flex: 1
   },
   navItem: {
     textTransform: 'uppercase',
     color: 'black',
     textDecoration: 'none',
-    padding: '1rem',
-    letterSpacing: '3px'
+    padding: '0.5rem',
+    letterSpacing: '1px'
   }
 }

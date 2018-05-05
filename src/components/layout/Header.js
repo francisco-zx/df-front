@@ -30,7 +30,7 @@ const style = {
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    padding: '2rem 4rem',
+    padding: '2rem 6rem',
     boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)'
   },
   logo: {

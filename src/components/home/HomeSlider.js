@@ -3,8 +3,15 @@ import Slider from 'react-slick';
 
 import HomeSliderPic from '../../assets/home/home_slider.jpg';
 import HomeSliderInfo from './HomeSliderInfo';
+import BorderGradient from  '../layout/BorderGradient';
+
+import {
+  arrowLeftIconWhite,
+  arrowRightIconWhite
+} from "../../assets/IconsSvg";
 
 export default class HomePage extends Component {
+
   render() {
     const settings = {
       dots: true,
@@ -14,26 +21,43 @@ export default class HomePage extends Component {
       slidesToScroll: 1,
       dotsClass: "slick-dots",
       autoplay: true,
-      autoplaySpeed: 5000,
-      arrowNext: {HomeSliderPic}
+      autoplaySpeed: 5000
     };
 
     return (
-      <Slider {...settings} style={style.slider}>
-        <div >
-          <div style={style.sliderItem}>
-            <HomeSliderInfo />
+      <section>
+        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+          <div >
+            <div style={style.sliderItem}>
+              <HomeSliderInfo />
+            </div>
+            <div style={style.sliderOverlay}></div>
           </div>
-        </div>
-      </Slider>
-
+          <div >
+            <div style={style.sliderItem}>
+              <HomeSliderInfo />
+            </div>
+          </div>
+          <div >
+            <div style={style.sliderItem}>
+              <HomeSliderInfo />
+            </div>
+          </div>
+          <div >
+            <div style={style.sliderItem}>
+              <HomeSliderInfo />
+            </div>
+          </div>
+        </Slider>
+        <BorderGradient />
+      </section>
     );
   }
 }
 
 const style = {
   sliderItem: {
-    height: '62vh',
+    height: '72vh',
     backgroundImage: `url(${HomeSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
@@ -49,7 +73,7 @@ const style = {
     position: 'absolute',
     top: 0,
     left: 0,
-    background: 'rgba(0, 0, 0, 0.4)',
+    background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
   }
 }

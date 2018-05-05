@@ -69,12 +69,19 @@ table {
   src: local('Edmonsans'), local('Edmonsans'),
        url('./assets/fonts/Edmondsans-Bold.otf') format('opentype')
 }
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Avenir'), local('Avenir'),
+       url('./assets/fonts/Avenir.ttc') format('TrueType')
+}
 .slick-dots{
 	position: absolute;
 	width: auto;
 	right: 0;
 	bottom: 0;
-	padding: 3rem;
+	padding: 6rem;
 	text-align: right;
 }
 .slick-dots li.slick-active button:before {
@@ -90,17 +97,17 @@ table {
 
 .slick-next{
 	right: 0;
-	padding: 2rem;
+	padding: 1rem;
 	z-index: 999;
 }
 .slick-prev{
 	left: 0;
-	padding: 2rem;
+	padding: 1rem;
 	z-index: 999;
 }
 .container{
-	padding: 5rem;
+	padding: 6rem;
 }
-#slider::-webkit-scrollbar { 
+#slider::-webkit-scrollbar {
     display: none;
 }

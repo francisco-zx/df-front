@@ -13,34 +13,46 @@ export default class HomeVenues extends Component {
         <SectionTitle text='Venues'/>
         <div style={style.venuesGrid}>
           <div style={style.venuesGridItem}>
-            <img style={style.itemImg} src={VenuePlaceholder} />
-            <div style={style.venueName}>Luna Park</div>
-            <BorderGradient />
+            <div style={{padding: '0.5rem'}}>
+              <img style={style.itemImg} src={VenuePlaceholder} />
+              <div style={style.venueName}>Luna Park</div>
+              <BorderGradient height='6px'/>
+            </div>
           </div>
           <div style={style.venuesGridItem}>
-            <img style={style.itemImg} src={VenuePlaceholder} />
-            <div style={style.venueName}>DirecTV Arena</div>
-            <BorderGradient />
+            <div style={{padding: '0.5rem'}}>
+              <img style={style.itemImg} src={VenuePlaceholder} />
+              <div style={style.venueName}>DirecTV Arena</div>
+              <BorderGradient height='6px'/>
+            </div>
           </div>
           <div style={style.venuesGridItem}>
-            <img style={style.itemImg} src={VenuePlaceholder} />
-            <div style={style.venueName}>Teatro Vorterix</div>
-            <BorderGradient />
+            <div style={{padding: '0.5rem'}}>
+              <img style={style.itemImg} src={VenuePlaceholder} />
+              <div style={style.venueName}>Teatro Vorterix</div>
+              <BorderGradient height='6px'/>
+            </div>
           </div>
           <div style={style.venuesGridItem}>
-            <img style={style.itemImg} src={VenuePlaceholder} />
-            <div style={style.venueName}>Hipodromo de San Isidro</div>
-            <BorderGradient />
+            <div style={{padding: '0.5rem'}}>
+              <img style={style.itemImg} src={VenuePlaceholder} />
+              <div style={style.venueName}>Hipodromo de San Isidro</div>
+              <BorderGradient height='6px'/>
+            </div>
           </div>
           <div style={style.venuesGridItem}>
-            <img style={style.itemImg} src={VenuePlaceholder} />
-            <div style={style.venueName}>Niceto Club</div>
-            <BorderGradient />
+            <div style={{padding: '0.5rem'}}>
+              <img style={style.itemImg} src={VenuePlaceholder} />
+              <div style={style.venueName}>Niceto Club</div>
+              <BorderGradient height='6px'/>
+            </div>
           </div>
           <div style={style.venuesGridItem}>
+            <div style={{padding: '0.5rem'}}>
             <img style={style.itemImg} src={VenuePlaceholder} />
             <div style={style.venueName}>Estadio Velez</div>
-            <BorderGradient />
+            <BorderGradient height='6px'/>
+            </div>
           </div>
         </div>
       </div>
@@ -49,22 +61,29 @@ export default class HomeVenues extends Component {
 }
 const style = {
   venuesGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     display: 'flex',
-    flex: 1,
     justifyContent: 'space-between',
-    flexWrap: 'wrap'
   },
   venuesGridItem: {
-    alignItems: 'flex-start',
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    width: '33%',
     marginBottom: '2rem',
+    flexBasis: '33%'
+  },
+  itemImg: {
+    maxWidth: '100%'
   },
   venueName:{
     background: '#161616',
     textAlign: 'center',
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    padding: '1rem',
-    color: 'white'
+    color: 'white',
+    padding: '1rem'
   },
 
 }
