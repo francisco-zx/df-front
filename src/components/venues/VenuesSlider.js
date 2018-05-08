@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
-import HomeSliderPic from '../../assets/home/home_slider.jpg';
-import HomeSliderInfo from './HomeSliderInfo';
+import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
+import VenuesSliderInfo from './VenuesSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
 import {
@@ -10,7 +10,7 @@ import {
   arrowRightIconWhite
 } from "../../assets/IconsSvg";
 
-export default class HomePage extends Component {
+export default class VenueSlider extends Component {
 
   render() {
     const settings = {
@@ -36,23 +36,23 @@ export default class HomePage extends Component {
         <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
+              <VenuesSliderInfo />
             </div>
             <div style={style.sliderOverlay}></div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
+              <VenuesSliderInfo />
             </div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
+              <VenuesSliderInfo />
             </div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
+              <VenuesSliderInfo />
             </div>
           </div>
         </Slider>
@@ -65,7 +65,7 @@ export default class HomePage extends Component {
 const style = {
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${HomeSliderPic})`,
+    backgroundImage: `url(${VenuesSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center'

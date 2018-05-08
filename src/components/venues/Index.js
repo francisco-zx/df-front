@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
+import VenuesSlider from './VenuesSlider';
+import VenuesGrid from './VenuesGrid'
+
 export default class VenuesPage extends Component {
   render() {
     return (
-      <div>
-        Venues
-      </div>
+      <section id='venues' alt='venues'>
+        <VenuesSlider />
+        <VenuesGrid />
+      </section>
     );
   }
 }

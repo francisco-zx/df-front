@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import SectionTitle from '../layout/SectionTitle';
-import VenueGridItem from './VenueGridItem';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
 import BorderGradient from '../layout/BorderGradient';
 
@@ -13,7 +12,7 @@ import Niceto from '../../assets/home/niceto.jpg';
 import Velez from '../../assets/home/velez.jpg';
 
 
-export default class HomeVenues extends Component {
+export default class VenuesGrid extends Component {
   render() {
     return (
       <div className='container'>

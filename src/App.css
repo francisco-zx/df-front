@@ -76,13 +76,43 @@ table {
   src: local('Avenir'), local('Avenir'),
        url('./assets/fonts/Avenir.ttc') format('TrueType')
 }
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Avenir'), local('Avenir'),
+       url('./assets/fonts/Avenir-Black.otf') format('opentype')
+}
 .slick-dots{
 	position: absolute;
 	width: auto;
 	right: 0;
 	bottom: 0;
 	padding: 6rem;
-	text-align: right;
+	text-align: center;
+	color: white;
+	vertical-align: middle;
+	align-items: center;
+	transition: all 0.4s ease;
+	border-radius: 50%;
+	font-weight: bold;
+}
+.slick-active{
+	position: absolute;
+	border: 2px solid white;
+	transition: all 0.4s ease;
+	border-radius: 50%;
+}
+.slick-dots li{
+	padding: 0.3rem;
+	transition: all 0.4s ease;
+}
+.slick-dots a{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.2s ease;
 }
 .slick-dots li.slick-active button:before {
     opacity: .75;

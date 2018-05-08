@@ -8,7 +8,7 @@ export default class AboutText extends Component {
       <article style={style.aboutGroup}>
         <div className='container' style={style.content}>
           <h4 style={style.subTitle}>Conocé más</h4>
-          <a href='https://www.google.com.ar/search?q=df+group+argentina'>
+          <a href='https://www.google.com.ar/search?q=df+group+argentina' target='_blank'>
             <img src={LogoGroup} width='200px'/>
           </a>
         </div>
@@ -33,6 +33,7 @@ const style = {
     color: 'white',
     fontWeight: 500,
     fontSize: '0.8rem',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    fontWeight: 'bold'
   }
 }
