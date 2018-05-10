@@ -19,28 +19,28 @@ export default class HomeVenues extends Component {
       <div className='container'>
         <SectionTitle text='Venues'/>
         <div style={style.venuesGrid}>
-          <div style={style.venuesGridItem}>
+          <div style={style.venuesGridItem} >
             <div style={{padding: '0.5rem'}}>
               <img style={style.itemImg} src={LunaPark} />
               <div style={style.venueName}>Luna Park</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem}>
+          <div style={style.venuesGridItem} >
             <div style={{padding: '0.5rem'}}>
               <img style={style.itemImg} src={DirecTV} />
               <div style={style.venueName}>DirecTV Arena</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem}>
+          <div style={style.venuesGridItem} >
             <div style={{padding: '0.5rem'}}>
               <img style={style.itemImg} src={Vorterix} />
               <div style={style.venueName}>Teatro Vorterix</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem}>
+          <div style={style.venuesGridItem} >
             <div style={{padding: '0.5rem'}}>
               <img style={style.itemImg} src={Hipodromo} />
               <div style={style.venueName}>Hipodromo de San Isidro</div>

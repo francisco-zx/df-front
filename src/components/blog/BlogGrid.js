@@ -20,10 +20,11 @@ export default class BlogGrid extends Component {
         <Masonry
           breakpointCols={3}
           style={style.masonryGrid}
+          className='hover-parent'
           columnClassName="my-masonry-grid_column">
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
-                <img src={Blog1} style={style.blogItemImg} />
+                <img src={Blog1} style={style.blogItemImg}/>
                 <aside style={style.typeTag}>Novedades</aside>
                 <h3 style={style.title}>Presentamos Art Basel fumando porro con amigos</h3>
                 <div style={style.overlay}></div>
@@ -33,7 +34,7 @@ export default class BlogGrid extends Component {
               </div>
               <BorderGradient />
             </div>
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
                 <img src={Blog2} style={style.blogItemImg} />
                 <div style={style.typeTag}>Prensa</div>
@@ -45,7 +46,7 @@ export default class BlogGrid extends Component {
               </div>
               <BorderGradient />
             </div>
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
                 <img src={Blog3} style={style.blogItemImg} />
                 <div style={style.typeTag}>Video</div>
@@ -57,11 +58,11 @@ export default class BlogGrid extends Component {
               </div>
               <BorderGradient />
             </div>
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
                 <img src={Blog4} style={style.blogItemImg} />
                 <div style={style.typeTag}>Video</div>
-                <h3 style={style.title}>Presentamos Art Basel fumando porro con amigos</h3>
+                <h3 style={style.title}>Registro de la fiesta de apertura de la DF House</h3>
                 <div style={style.overlay}></div>
               </div>
               <div style={style.blogButton}>
@@ -69,11 +70,11 @@ export default class BlogGrid extends Component {
               </div>
               <BorderGradient />
             </div>
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
                 <img src={Blog5} style={style.blogItemImg} />
                 <div style={style.typeTag}>Video</div>
-                <h3 style={style.title}>Presentamos Art Basel fumando porro con amigos</h3>
+                <h3 style={style.title}>Entrevista a Diego Finkelstein en Metro</h3>
                 <div style={style.overlay}></div>
               </div>
               <div style={style.blogButton}>
@@ -81,11 +82,11 @@ export default class BlogGrid extends Component {
               </div>
               <BorderGradient />
             </div>
-            <div style={style.blogItem}>
+            <div style={style.blogItem} className='hover-shadow'>
               <div style={style.blogItemPreview}>
                 <img src={Blog6} style={style.blogItemImg} />
                 <div style={style.typeTag}>Video</div>
-                <h3 style={style.title}>Presentamos Art Basel fumando porro con amigos</h3>
+                <h3 style={style.title}>DFGroup abre su nueva oficina</h3>
                 <div style={style.overlay}></div>
               </div>
               <div style={style.blogButton}>
@@ -156,7 +157,6 @@ const style = {
     paddingRight: '-6px'
   },
   blogButton: {
-    marginTop: '-5px',
     zIndex:2,
     background: '#e9e9eb',
     padding: '1.5rem',
@@ -164,6 +164,6 @@ const style = {
     textTransform: 'uppercase',
     letterSpacing: '3px',
     color: '#161616',
-    fontWeight: 500
+    fontWeight: 'bold'
   }
 }
