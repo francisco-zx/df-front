@@ -15,9 +15,8 @@ export default class AboutHeader extends Component {
 }
 const style = {
   aboutHeader: {
-    padding: '6rem',
     position: 'relative',
-    height: '52vh',
+    height: '72vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -35,6 +34,7 @@ const style = {
     width: '100%',
     height: '100%',
     top: 0,
-    left: 0
+    left: 0,
+    verticalAlign: 'top'
   }
 }
