@@ -7,6 +7,7 @@ import Footer from '../components/layout/Footer';
 
 import HomePage from '../components/home/Home';
 import EventsPage from '../components/events/Index';
+  import SingleEvent from '../components/events/SingleEvent';
 import VenuesPage from '../components/venues/Index';
 import TimelinePage from '../components/timeline/Index';
 import BlogPage from '../components/blog/Index';
@@ -22,7 +23,8 @@ class AppRouter extends Component {
           <Header />
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/events" component={EventsPage} />
+              <Route path="/events" exact component={EventsPage} />
+                <Route path="/events/harry-styles" component={SingleEvent} />
               <Route path="/venues" component={VenuesPage} />
               <Route path="/timeline" component={TimelinePage} />
               <Route path="/blog" component={BlogPage} />

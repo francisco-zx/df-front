@@ -26,7 +26,7 @@ export default class BlogGrid extends Component {
               <div style={style.blogItemPreview}>
                 <img src={Blog1} style={style.blogItemImg}/>
                 <aside style={style.typeTag}>Novedades</aside>
-                <h3 style={style.title}>Presentamos Art Basel fumando porro con amigos</h3>
+                <h3 style={style.title}>Presentamos ArtBasel cities Buenos Aires</h3>
                 <div style={style.overlay}></div>
               </div>
               <div style={style.blogButton}>

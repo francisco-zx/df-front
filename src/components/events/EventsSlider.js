@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 import EventsSliderPic from '../../assets/events/events_slider.jpg';
 import EventsSliderInfo from './EventsSliderInfo';
@@ -35,25 +36,33 @@ export default class EventsSlider extends Component {
       <section>
         <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
-            <div style={style.sliderItem}>
-              <EventsSliderInfo />
-            </div>
-            <div style={style.sliderOverlay}></div>
+            <Link to='/events/harry-styles'>
+              <div style={style.sliderItem}>
+                <EventsSliderInfo />
+              </div>
+              <div style={style.sliderOverlay}></div>
+            </Link>
           </div>
           <div >
-            <div style={style.sliderItem}>
-              <EventsSliderInfo />
-            </div>
+            <Link to='/events/harry-styles'>
+              <div style={style.sliderItem}>
+                <EventsSliderInfo />
+              </div>
+            </Link>
           </div>
           <div >
-            <div style={style.sliderItem}>
-              <EventsSliderInfo />
-            </div>
+            <Link to='/events/harry-styles'>
+              <div style={style.sliderItem}>
+                <EventsSliderInfo />
+              </div>
+            </Link>
           </div>
           <div >
-            <div style={style.sliderItem}>
-              <EventsSliderInfo />
-            </div>
+            <Link to='/events/harry-styles'>
+              <div style={style.sliderItem}>
+                <EventsSliderInfo />
+              </div>
+            </Link>
           </div>
         </Slider>
         <BorderGradient />
