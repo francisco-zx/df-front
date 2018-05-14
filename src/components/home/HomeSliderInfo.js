@@ -15,6 +15,7 @@ Buenos Aires, Argentina.
             <button style={style.button}>VER MAS +</button>
             <button style={style.button}>COMPRAR</button>
           </div>
+
         </div>
     );
   }

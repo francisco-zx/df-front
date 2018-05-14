@@ -21,7 +21,7 @@ export default class HomePage extends Component {
       slidesToScroll: 1,
       dotsClass: "slick-dots",
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 7000,
       customPaging: (i) => {
         return(
           <a>
@@ -37,12 +37,16 @@ export default class HomePage extends Component {
           <div >
             <div style={style.sliderItem}>
               <HomeSliderInfo />
+
             </div>
             <div style={style.sliderOverlay}></div>
           </div>
           <div >
             <div style={style.sliderItem}>
               <HomeSliderInfo />
+              <video autoPlay loop muted style={style.video}>
+                <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+              </video>
             </div>
           </div>
           <div >
@@ -82,5 +86,10 @@ const style = {
     left: 0,
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
+  },
+  video: {
+    position: 'absolute',
+    width: '100vw',
+    height: 'auto'
   }
 }
