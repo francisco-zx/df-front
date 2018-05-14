@@ -11,6 +11,7 @@ import EventsPage from '../components/events/Index';
 import VenuesPage from '../components/venues/Index';
 import TimelinePage from '../components/timeline/Index';
 import BlogPage from '../components/blog/Index';
+  import SingleBlog from '../components/blog/SingleBlog';
 import AboutPage from '../components/about/Index';
 import ContactPage from '../components/contact/Index';
 
@@ -27,7 +28,8 @@ class AppRouter extends Component {
                 <Route path="/events/harry-styles" component={SingleEvent} />
               <Route path="/venues" component={VenuesPage} />
               <Route path="/timeline" component={TimelinePage} />
-              <Route path="/blog" component={BlogPage} />
+              <Route path="/blog" exact component={BlogPage} />
+                <Route path="/blog/baf-week" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
             </Switch>

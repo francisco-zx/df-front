@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom';
 
 
-export default class BlogSliderInfo extends Component {
+export default class SingleEventSliderInfo extends Component {
   render() {
     return (
         <div style={style.sliderInfo}>
-          <aside style={style.sliderInfoTag}>NOVEDAD</aside>
+          <aside style={style.sliderInfoTag}>NOVEDADES</aside>
           <h1 style={style.sliderInfoTitle}>Anunciamos BAFWEEK FW18!</h1>
           <h3 style={style.sliderInfoSubtitle}>Organizado por DF Entertainment, IRSA y La Rural.
           </h3>
-          <div style={style.buttonGroup}>
-            <Link to='/blog/baf-week'>
-              <button style={style.button}>VER MAS +</button>
-            </Link>
-          </div>
         </div>
     );
   }

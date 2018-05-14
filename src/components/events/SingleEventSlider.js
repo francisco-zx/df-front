@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 import SingleEventSliderPic from '../../assets/events/single_event_slider.jpg';
 import SingleEventSliderInfo from './SingleEventSliderInfo';
@@ -65,7 +66,9 @@ export default class SingleEventSlider extends Component {
           <i className='fa fa-twitter' style={style.shareIcon}></i>
         </div>
         <div style={style.goBack}>
-          <button style={style.backButton}><i className='fa fa-angle-left'></i> VOLVER</button>
+          <Link to='/events'>
+            <button style={style.backButton}><i className='fa fa-angle-left'></i> VOLVER</button>
+          </Link>
         </div>
         <BorderGradient />
 

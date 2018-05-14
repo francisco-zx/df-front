@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import RelatedEventsSliderItem from './RelatedEventsSliderItem';
+import SectionTitle from '../layout/SectionTitle';
 import {
   arrowLeftIcon,
   arrowRightIcon
@@ -35,6 +36,7 @@ export default class RelatedEventsSlider extends Component {
   render() {
     return (
       <section className='container'>
+        <SectionTitle text='Otros Eventos' />
         <div style={style.eventSliderContainer}>
           <span
             style={style.arrowLeft}
