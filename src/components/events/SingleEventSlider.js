@@ -22,6 +22,7 @@ export default class SingleEventSlider extends Component {
       slidesToScroll: 1,
       dotsClass: "slick-dots",
       autoplay: true,
+      fade: 'true',
       autoplaySpeed: 5000,
       customPaging: (i) => {
         return(
@@ -38,6 +39,9 @@ export default class SingleEventSlider extends Component {
           <div >
             <div style={style.sliderItem}>
               <SingleEventSliderInfo />
+              <video autoPlay loop muted style={style.video}>
+                <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+              </video>
             </div>
             <div style={style.sliderOverlay}></div>
           </div>
@@ -150,5 +154,10 @@ const style = {
     background: 'transparent',
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
+  },
+  video: {
+    position: 'absolute',
+    width: '100vw',
+    height: 'auto'
   }
 }
