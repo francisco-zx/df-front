@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 
 
-export default class VenueSliderInfo extends Component {
+export default class SingleVenueSliderInfo extends Component {
   render() {
     return (
         <div style={style.sliderInfo}>
           <h1 style={style.sliderInfoTitle}>Teatro Vorterix</h1>
-          <h3 style={style.sliderInfoSubtitle}>Colegiales, Buenos Aires.
+          <h3 style={style.sliderInfoSubtitle}>Colegiales, Buenos Aires
           </h3>
         </div>
     );

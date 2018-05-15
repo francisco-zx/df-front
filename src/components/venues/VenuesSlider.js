@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import VenuesSliderInfo from './VenuesSliderInfo';
@@ -19,6 +20,7 @@ export default class VenueSlider extends Component {
       speed: 700,
       slidesToShow: 1,
       slidesToScroll: 1,
+      fade: true,
       dotsClass: "slick-dots",
       autoplay: true,
       autoplaySpeed: 5000,
@@ -35,9 +37,11 @@ export default class VenueSlider extends Component {
       <section>
         <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
+            <Link to='/venue/teatro-vorterix'>
             <div style={style.sliderItem}>
               <VenuesSliderInfo />
             </div>
+            </Link>
             <div style={style.sliderOverlay}></div>
           </div>
           <div >
