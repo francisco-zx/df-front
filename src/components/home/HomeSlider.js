@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
-import HomeSliderPic from '../../assets/home/home_slider.jpg';
+import HomeSliderPic from '../../assets/events/events_slider.jpg';
+import HomeSliderVideoPoster from '../../assets/home/video-poster.jpg';
 import HomeSliderInfo from './HomeSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -19,6 +20,7 @@ export default class HomePage extends Component {
       speed: 700,
       slidesToShow: 1,
       slidesToScroll: 1,
+      fade: true,
       dotsClass: "slick-dots",
       autoplay: true,
       autoplaySpeed: 7000,
@@ -36,27 +38,16 @@ export default class HomePage extends Component {
         <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
-
+              <HomeSliderInfo title='Lollapalooza 2018' date='16, 17 y 18 de Marzo' location='Hipódromo de San Isidro Buenos Aires, Argentina.'/>
+              <video autoPlay loop muted style={style.video} poster={HomeSliderVideoPoster}>
+                <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+              </video>
             </div>
             <div style={style.sliderOverlay}></div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <HomeSliderInfo />
-              <video autoPlay loop muted style={style.video}>
-                <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
-              </video>
-            </div>
-          </div>
-          <div >
-            <div style={style.sliderItem}>
-              <HomeSliderInfo />
-            </div>
-          </div>
-          <div >
-            <div style={style.sliderItem}>
-              <HomeSliderInfo />
+              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
             </div>
           </div>
         </Slider>

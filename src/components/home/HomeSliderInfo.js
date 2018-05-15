@@ -7,9 +7,8 @@ export default class HomeSliderInfo extends Component {
     return (
         <div style={style.sliderInfo}>
           <aside style={style.sliderInfoTag}>EVENTO</aside>
-          <h1 style={style.sliderInfoTitle}>Lollapalooza 2018</h1>
-          <h3 style={style.sliderInfoSubtitle}>16, 17 y 18 de Marzo / Hipódromo de San Isidro
-Buenos Aires, Argentina.
+          <h1 style={style.sliderInfoTitle}>{this.props.title}</h1>
+          <h3 style={style.sliderInfoSubtitle}>{`${this.props.date} | ${this.props.location}`}
           </h3>
           <div style={style.buttonGroup}>
             <button style={style.button}>VER MAS +</button>
@@ -31,7 +30,6 @@ const style = {
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
-    maxWidth: '40%'
   },
   sliderInfoTag: {
     color: 'white',
