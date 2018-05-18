@@ -11,6 +11,7 @@ import EventsPage from '../components/events/Index';
 import VenuesPage from '../components/venues/Index';
   import SingleVenue from '../components/venues/SingleVenue';
 import TimelinePage from '../components/timeline/Index';
+  import SingleTimelinePage from '../components/timeline/SingleTimeline';
 import BlogPage from '../components/blog/Index';
   import SingleBlog from '../components/blog/SingleBlog';
 import AboutPage from '../components/about/Index';
@@ -29,7 +30,8 @@ class AppRouter extends Component {
                 <Route path="/events/harry-styles" component={SingleEvent} />
               <Route path="/venues" exact component={VenuesPage} />
                 <Route path="/venue/teatro-vorterix" component={SingleVenue} />
-              <Route path="/timeline" component={TimelinePage} />
+              <Route path="/timeline" exact component={TimelinePage} />
+                <Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
               <Route path="/blog" exact component={BlogPage} />
                 <Route path="/blog/baf-week" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />

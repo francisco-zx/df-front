@@ -38,26 +38,21 @@ export default class SingleEventSlider extends Component {
         <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div style={style.sliderItem}>
-              <SingleEventSliderInfo />
+              <SingleEventSliderInfo name='coldplay'/>
               <video autoPlay loop muted style={style.video}>
                 <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
               </video>
-            </div>
+            </div>            
             <div style={style.sliderOverlay}></div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <SingleEventSliderInfo />
+              <SingleEventSliderInfo name='Dua Lipa'/>
             </div>
           </div>
           <div >
             <div style={style.sliderItem}>
-              <SingleEventSliderInfo />
-            </div>
-          </div>
-          <div >
-            <div style={style.sliderItem}>
-              <SingleEventSliderInfo />
+              <SingleEventSliderInfo name='Ariana Grande' />
             </div>
           </div>
         </Slider>
@@ -75,7 +70,6 @@ export default class SingleEventSlider extends Component {
           </Link>
         </div>
         <BorderGradient />
-
       </section>
     );
   }

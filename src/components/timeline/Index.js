@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 
-export default class TimelinePage extends Component {
+import TimelineSlider from './TimeLineSlider';
+
+export default class TimeLinePage extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      selectedTimeline: 1
+    }
+  }
   render() {
     return (
       <div>
-        Timeline
+        <TimelineSlider />
+
       </div>
     );
   }
