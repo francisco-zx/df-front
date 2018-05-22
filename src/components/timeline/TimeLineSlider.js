@@ -221,9 +221,9 @@ export default class TimelineSlider extends Component {
               </div>
             </div>
             <div>
-              <div style={style.navSliderItem} className='clickable'>
+              <div style={style.navSliderItemFilter} className='clickable'>
                 <img src={TimelinePicker} style={style.pickerImg} width='100%'/>
-                <img src={pickerArtist} style={style.pickerArtist} width='84%'/>
+                <img src={pickerArtist} style={style.pickerArtistFilter} width='84%'/>
                 <h3 style={style.timelineTitle}>Bowie by Mick Rock</h3>
                 <h4 style={style.timelineSubTitle}>Estadio Unico de La Plata</h4>
                 <h4 style={style.timelineSubTitle}>14 y 15 de Nov</h4>
@@ -302,6 +302,13 @@ const style = {
     position: 'relative',
     width: '7rem'
   },
+  navSliderItemFilter: {
+    margin: '0 120px ',
+    textAlign: 'center',
+    position: 'relative',
+    width: '7rem',
+    filter: 'greyscale()'
+  },
   pickerImg: {
 
   },
@@ -311,6 +318,14 @@ const style = {
     top: 0,
     padding: '6px',
     borderRadius: '50%'
+  },
+  pickerArtistFilter: {
+    position:'absolute',
+    left: 0,
+    top: 0,
+    padding: '6px',
+    borderRadius: '50%',
+    filter: 'greyscale()'
   },
   overlay: {
     position: 'absolute',
