@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 import EventsSliderItem from './EventsSliderItem';
 import {
@@ -34,82 +35,79 @@ export default class HomeEventsSlider extends Component {
 
   render() {
     return (
-      <div style={style.eventSliderContainer}>
+      <div className={css(style.eventSliderContainer)}>
         <span
-          style={style.arrowLeft}
+          className={css(style.arrowLeft)}
           onClick={this.leftButton}
           >
           {arrowLeftIcon}
         </span>
-        <div style={style.eventSlider} id='slider'>
+        <div className={css(style.eventSlider)} id='slider'>
             <EventsSliderItem
               title='Lollapalooza Argentina 2018'
               location='Hipodromo de San Isidro'
               date='16, 17 y 18 de Marzo'
               ticketsURL='asdasd'
               />
-              <EventsSliderItem
-                title='Lollapalooza Argentina 2018'
-                location='Hipodromo de San Isidro'
-                date='16, 17 y 18 de Marzo'
-                ticketsURL='asdasd'
-                />
-                <EventsSliderItem
-                  title='Lollapalooza Argentina 2018'
-                  location='Hipodromo de San Isidro'
-                  date='16, 17 y 18 de Marzo'
-                  ticketsURL='asdasd'
-                  />
-                  <EventsSliderItem
-                    title='Lollapalooza Argentina 2018'
-                    location='Hipodromo de San Isidro'
-                    date='16, 17 y 18 de Marzo'
-                    ticketsURL='asdasd'
-                    />
-                    <EventsSliderItem
-                      title='Lollapalooza Argentina 2018'
-                      location='Hipodromo de San Isidro'
-                      date='16, 17 y 18 de Marzo'
-                      ticketsURL='asdasd'
-                      />
-                      <EventsSliderItem
-                        title='Lollapalooza Argentina 2018'
-                        location='Hipodromo de San Isidro'
-                        date='16, 17 y 18 de Marzo'
-                        ticketsURL='asdasd'
-                        />
-
-                        <EventsSliderItem
-                          title='Lollapalooza Argentina 2018'
-                          location='Hipodromo de San Isidro'
-                          date='16, 17 y 18 de Marzo'
-                          ticketsURL='asdasd'
-                          />
-
-                          <EventsSliderItem
-                            title='Lollapalooza Argentina 2018'
-                            location='Hipodromo de San Isidro'
-                            date='16, 17 y 18 de Marzo'
-                            ticketsURL='asdasd'
-                            />
-                            <EventsSliderItem
-                              title='Lollapalooza Argentina 2018'
-                              location='Hipodromo de San Isidro'
-                              date='16, 17 y 18 de Marzo'
-                              ticketsURL='asdasd'
-                              />
-                              <EventsSliderItem
-                                title='Lollapalooza Argentina 2018'
-                                location='Hipodromo de San Isidro'
-                                date='16, 17 y 18 de Marzo'
-                                ticketsURL='asdasd'
-                                />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
+            <EventsSliderItem
+              title='Lollapalooza Argentina 2018'
+              location='Hipodromo de San Isidro'
+              date='16, 17 y 18 de Marzo'
+              ticketsURL='asdasd'
+              />
 
         </div>
         <span
-          styleName='arrow right'
           onClick={this.rightButton}
-          style={style.arrowRight}
+          className={css(style.arrowRight)}
           >
           {arrowRightIcon}
         </span>
@@ -118,7 +116,7 @@ export default class HomeEventsSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   eventSliderContainer: {
     position: 'relative'
   },
@@ -143,7 +141,10 @@ const style = {
     transform: 'translateY(-50%)',
     background: '-moz-linear-gradient(left, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
-    background: 'linear-gradient(to right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)'
+    background: 'linear-gradient(to right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
   },
   arrowRight: {
     height: '100%',
@@ -157,6 +158,9 @@ const style = {
     transform: 'translateY(-50%)',
     background: '-moz-linear-gradient(right, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
-    background: 'linear-gradient(to left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)'
+    background: 'linear-gradient(to left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
   }
-}
+})

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { StyleSheet, css } from 'aphrodite';
 
 import HomeSliderPic from '../../assets/events/events_slider.jpg';
 import HomeSliderVideoPoster from '../../assets/home/video-poster.jpg';
@@ -35,18 +36,18 @@ export default class HomePage extends Component {
 
     return (
       <section>
-        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <HomeSliderInfo title='Lollapalooza 2018' date='16, 17 y 18 de Marzo' location='Hipódromo de San Isidro Buenos Aires, Argentina.'/>
-              <video autoPlay loop muted style={style.video} poster={HomeSliderVideoPoster}>
+              <video autoPlay loop muted className={css(style.video)} poster={HomeSliderVideoPoster}>
                 <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
               </video>
             </div>
-            <div style={style.sliderOverlay}></div>
+            <div className={css(style.sliderOverlay)}></div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
             </div>
           </div>
@@ -57,7 +58,7 @@ export default class HomePage extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${HomeSliderPic})`,
@@ -81,6 +82,10 @@ const style = {
   video: {
     position: 'absolute',
     width: '100vw',
-    height: 'auto'
+    height: 'auto',
+    "@media(max-width: 1080px)": {
+      height: '100%',
+      width: 'auto'
+    }
   }
-}
+})

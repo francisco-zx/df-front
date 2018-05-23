@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenueGridItem from './VenueGridItem';
@@ -18,46 +19,46 @@ export default class HomeVenues extends Component {
     return (
       <div className='container'>
         <SectionTitle text='Venues'/>
-        <div style={style.venuesGrid}>
-          <div style={style.venuesGridItem} >
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-              <img style={style.itemImg} src={LunaPark} />
-              <div style={style.venueName}>Luna Park</div>
+        <div className={css(style.venuesGrid)}>
+          <div className={css(style.venuesGridItem)} >
+            <div className={css(style.padding)}>
+              <img className={css(style.itemImg)} src={LunaPark} />
+              <div className={css(style.venueName)}>Luna Park</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-              <img style={style.itemImg} src={DirecTV} />
-              <div style={style.venueName}>DirecTV Arena</div>
+          <div className={css(style.venuesGridItem)} >
+            <div className={css(style.padding)}>
+              <img className={css(style.itemImg)} src={DirecTV} />
+              <div className={css(style.venueName)}>DirecTV Arena</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-              <img style={style.itemImg} src={Vorterix} />
-              <div style={style.venueName}>Teatro Vorterix</div>
+          <div className={css(style.venuesGridItem)} >
+            <div className={css(style.padding)}>
+              <img className={css(style.itemImg)} src={Vorterix} />
+              <div className={css(style.venueName)}>Teatro Vorterix</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-              <img style={style.itemImg} src={Hipodromo} />
-              <div style={style.venueName}>Hipodromo de San Isidro</div>
+          <div className={css(style.venuesGridItem)} >
+            <div className={css(style.padding)}>
+              <img className={css(style.itemImg)} src={Hipodromo} />
+              <div className={css(style.venueName)}>Hipodromo de San Isidro</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem}>
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-              <img style={style.itemImg} src={Niceto} />
-              <div style={style.venueName}>Niceto Club</div>
+          <div className={css(style.venuesGridItem)}>
+            <div className={css(style.padding)}>
+              <img className={css(style.itemImg)} src={Niceto} />
+              <div className={css(style.venueName)}>Niceto Club</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem}>
-            <div style={{padding: '0.5rem'}} className='hover-shadow'>
-            <img style={style.itemImg} src={Velez} />
-            <div style={style.venueName}>Estadio Velez</div>
+          <div className={css(style.venuesGridItem)}>
+            <div className={css(style.padding)}>
+            <img className={css(style.itemImg)} src={Velez} />
+            <div className={css(style.venueName)}>Estadio Velez</div>
             <BorderGradient height='6px'/>
             </div>
           </div>
@@ -66,7 +67,7 @@ export default class HomeVenues extends Component {
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   venuesGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -80,7 +81,22 @@ const style = {
     width: '33%',
     marginBottom: '2rem',
     flexBasis: '33%',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    transition: 'all 0.4s ease-in-out',
+    '@media (max-width: 1024px)': {
+      flexBasis: '50%',
+      width:'50%'
+    },
+    '@media (max-width: 480px)': {
+        flexBasis: '100%',
+        width:'100%'
+    }
+  },
+  padding: {
+    padding: '0.5rem',
+    "@media(max-width: 480px)": {
+      padding: 0
+    }
   },
   itemImg: {
     width: '100%',
@@ -94,4 +110,4 @@ const style = {
     padding: '1rem'
   },
 
-}
+})

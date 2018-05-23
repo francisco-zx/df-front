@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
+import {  StyleSheet, css } from 'aphrodite';
 
 export default class EventsSliderItem extends Component {
   render() {
     return (
-      <div style={style.eventSliderItem}>
-        <h1 style={style.date}>{this.props.date}</h1>
-        <h1 style={style.title}>{this.props.title}</h1>
-        <p style={style.location}>{this.props.location}</p>
-        <div style={style.buttonGroup}>
-          <button style={style.button}>VER MAS +</button>
-          <button style={style.button}>COMPRAR</button>
+      <div className={css(style.eventSliderItem)}>
+        <h1 className={css(style.date)}>{this.props.date}</h1>
+        <h1 className={css(style.title)}>{this.props.title}</h1>
+        <p className={css(style.location)}>{this.props.location}</p>
+        <div className={css(style.buttonGroup)}>
+          <button className={css(style.button)}>VER MAS +</button>
+          <button className={css(style.button)}>COMPRAR</button>
         </div>
       </div>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   eventSliderItem: {
     padding: '1rem 2rem',
     borderRight: '2px solid #161616',
     display: 'inline-block',
     textAlign: 'center',
     maxWidth: '17rem',
-    whiteSpace: 'normal'
+    whiteSpace: 'normal',
+    "@media(max-width: 480px)": {
+      padding: '2rem 5rem'
+    }
   },
   date: {
     fontSize: '1.5rem',
@@ -50,4 +54,4 @@ const style = {
     marginRight: '1rem',
     marginTop: '1rem'
   }
-}
+})

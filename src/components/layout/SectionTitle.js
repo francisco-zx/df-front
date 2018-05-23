@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 export default class SectionTitle extends Component {
   render() {
@@ -22,6 +23,12 @@ const style = {
     display: 'inline-block',
     paddingBottom: '4px',
     borderBottom: '1px solid black',
-    marginBottom: '3rem'
+    marginBottom: '3rem',
+    "@media(max-width: 1024px)": {
+      marginTop: '2rem',
+    },
+    "@media(max-width: 900px)": {
+      marginTop: '3rem',
+    }
   }
 }
