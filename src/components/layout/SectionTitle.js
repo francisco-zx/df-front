@@ -4,14 +4,14 @@ import { StyleSheet, css } from 'aphrodite';
 export default class SectionTitle extends Component {
   render() {
     return (
-      <div style={style.sectionTitleContainer}>
-      <h1 style={style.sectionTitle}>{this.props.text}</h1>
+      <div className={css(style.sectionTitleContainer)}>
+      <h1 className={css(style.sectionTitle)}>{this.props.text}</h1>
       </div>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sectionTitleContainer: {
     display: 'flex',
     justifyContent: 'center'
@@ -31,4 +31,4 @@ const style = {
       marginTop: '3rem',
     }
   }
-}
+})
