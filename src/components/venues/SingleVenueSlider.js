@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from 'aphrodite';
 
 import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import SingleVenueSliderInfo from './SingleVenueSliderInfo';
@@ -34,16 +35,16 @@ export default class SingleVenueSlider extends Component {
     };
 
     return (
-      <section style={style.section}>
+      <section className={css(style.section)}>
         <div >
-          <div style={style.sliderItem}>
+          <div className={css(style.sliderItem)}>
             <SingleVenueSliderInfo />
           </div>
-          <div style={style.sliderOverlay}></div>
+          <div className={css(style.sliderOverlay)}></div>
         </div>
-        <div style={style.goBack}>
+        <div className={css(style.goBack)}>
           <Link to='/venues'>
-            <button style={style.backButton}><i className='fa fa-angle-left'></i> VOLVER</button>
+            <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />
@@ -53,7 +54,7 @@ export default class SingleVenueSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   section: {
     position: 'relative'
   },
@@ -98,7 +99,10 @@ const style = {
     left: 0,
     margin: '2rem 6rem',
     color: 'white',
-    zIndex: 999
+    zIndex: 999,
+    "@media(max-width: 1024px)": {
+      margin: '2rem'
+    }
   },
   backButton: {
     color: 'white',
@@ -108,5 +112,7 @@ const style = {
     background: 'transparent',
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
+
+
   }
-}
+})

@@ -25,10 +25,26 @@ export default class Footer extends Component {
           <div className={css(style.bottomRight)}>
             <h3 className={css(style.bottomTitle)}>Follow Us</h3>
             <ul className={css(style.iconGroup)}>
-              <li className={css(style.icon)}><i className='fa fa-facebook'></i></li>
-              <li className={css(style.icon)}><i className='fa fa-instagram'></i></li>
-              <li className={css(style.icon)}><i className='fa fa-twitter'></i></li>
-              <li className={css(style.icon)}><i className='fa fa-youtube'></i></li>
+              <li className={css(style.icon)}>
+                <a href='https://www.facebook.com/dfallaccess/' target='_blank' className={css(style.iconLink)}>
+                  <i className='fa fa-facebook'></i>
+                </a>
+              </li>
+              <li className={css(style.icon)}>
+                <a href='https://www.instagram.com/dfallaccess/?hl=es-la' target='_blank' className={css(style.iconLink)}>
+                  <i className='fa fa-instagram'></i>
+                </a>
+              </li>
+              <li className={css(style.icon)}>
+                <a href='https://twitter.com/dfallaccess' target='_blank' className={css(style.iconLink)}>
+                  <i className='fa fa-twitter'></i>
+                </a>
+              </li>
+              <li className={css(style.icon)}>
+                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink)}>
+                  <i className='fa fa-youtube'></i>
+                </a>
+              </li>
             </ul>
           </div>
         </article>
@@ -128,6 +144,9 @@ const style = StyleSheet.create({
   icon: {
     paddingLeft: '1rem',
     fontSize: '1.3rem'
+  },
+  iconLink: {
+    color: 'white'
   },
   footerEnd: {
     display:'flex',
