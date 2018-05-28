@@ -1,34 +1,44 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
 
 
 export default class EventsSliderInfo extends Component {
   render() {
     return (
-        <div style={style.sliderInfo}>
-          <h1 style={style.sliderInfoTitle}>Phil Collins</h1>
-          <h3 style={style.sliderInfoSubtitle}>19 de Marzo, Estadio Instituto
+        <div className={css(style.sliderInfo)}>
+          <h1 className={css(style.sliderInfoTitle)}>Phil Collins</h1>
+          <h3 className={css(style.sliderInfoSubtitle)}>19 de Marzo, Estadio Instituto
           </h3>
-          <h3 style={style.sliderInfoSubtitle}>Córdoba, Argentina
+          <h3 className={css(style.sliderInfoSubtitle)}>Córdoba, Argentina
           </h3>
-          <div style={style.buttonGroup}>
-            <button style={style.button}>VER MAS +</button>
+          <div className={css(style.buttonGroup)}>
+            <button className={css(style.button)}>VER MAS +</button>
           </div>
         </div>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-    zIndex: 3
+    zIndex: 3,
+    "@media(max-width: 1024px)": {
+      padding: '3rem'
+    }
   },
   sliderInfoTitle: {
     color: 'white',
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    "@media(max-width: 1024px)": {
+      fontSize: '2.5rem'
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '1.8rem'
+    }
   },
   sliderInfoTag: {
     color: 'white',
@@ -44,6 +54,15 @@ const style = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
+    maxWidth:'70%',
+    "@media(max-width: 1024px)": {
+      fontSize: '2rem',
+      maxWidth:'90%',
+    },
+    "@media(max-width: 900px)": {
+      fontSize: '1.3rem',
+      maxWidth:'none%',
+    }
   },
   button: {
     color: 'white',
@@ -56,4 +75,4 @@ const style = {
     marginRight: '1rem',
     marginTop: '1rem'
   }
-}
+})

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
@@ -35,32 +36,32 @@ export default class EventsSlider extends Component {
 
     return (
       <section>
-        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <Link to='/events/harry-styles'>
-              <div style={style.sliderItem}>
+              <div className={css(style.sliderItem)}>
                 <EventsSliderInfo />
               </div>
-              <div style={style.sliderOverlay}></div>
+              <div className={css(style.sliderOverlay)}></div>
             </Link>
           </div>
           <div >
             <Link to='/events/harry-styles'>
-              <div style={style.sliderItem}>
-                <EventsSliderInfo />
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='/events/harry-styles'>
-              <div style={style.sliderItem}>
+              <div className={css(style.sliderItem)}>
                 <EventsSliderInfo />
               </div>
             </Link>
           </div>
           <div >
             <Link to='/events/harry-styles'>
-              <div style={style.sliderItem}>
+              <div className={css(style.sliderItem)}>
+                <EventsSliderInfo />
+              </div>
+            </Link>
+          </div>
+          <div >
+            <Link to='/events/harry-styles'>
+              <div className={css(style.sliderItem)}>
                 <EventsSliderInfo />
               </div>
             </Link>
@@ -72,7 +73,7 @@ export default class EventsSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${EventsSliderPic})`,
@@ -93,4 +94,4 @@ const style = {
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
   }
-}
+})

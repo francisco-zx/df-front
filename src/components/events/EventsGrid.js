@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
@@ -21,67 +22,67 @@ export default class EventsGrid extends Component {
     return (
       <div className='container'>
         <SectionTitle text='Eventos'/>
-        <div style={style.venuesGrid}>
-          <div style={style.venuesGridItem} >
+        <div className={css(style.venuesGrid)}>
+          <div className={css(style.venuesGridItem)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid1} />
-              <div style={style.venueName}>Volbeat</div>
+              <img className={css(style.itemImg)} src={Grid1} />
+              <div className={css(style.venueName)}>Volbeat</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
+          <div className={css(style.venuesGridItem)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid2} />
-              <div style={style.venueName}>Metronomy</div>
+              <img className={css(style.itemImg)} src={Grid2} />
+              <div className={css(style.venueName)}>Metronomy</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
+          <div className={css(style.venuesGridItem, style.hide)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid3} />
-              <div style={style.venueName}>Phil Collins</div>
+              <img className={css(style.itemImg)} src={Grid3} />
+              <div className={css(style.venueName)}>Phil Collins</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItemFull} >
+          <div className={css(style.venuesGridItemFull)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid4} />
-              <div style={style.venueName}>Lollapalooza Argentina 2018</div>
+              <img className={css(style.itemImg)} src={Grid4} />
+              <div className={css(style.venueName)}>Lollapalooza Argentina 2018</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItemFull}>
+          <div className={css(style.venuesGridItemFull)}>
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid5} />
-              <div style={style.venueName}>Foo Fighters</div>
+              <img className={css(style.itemImg)} src={Grid5} />
+              <div className={css(style.venueName)}>Foo Fighters</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItemFull}>
+          <div className={css(style.venuesGridItemFull)}>
             <div style={{padding: '0.5rem'}}>
-            <img style={style.itemImg} src={Grid6} />
-            <div style={style.venueName}>Phil Collins</div>
+            <img className={css(style.venuesGridItemFull)} src={Grid6} />
+            <div className={css(style.venueName)}>Phil Collins</div>
             <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
+          <div className={css(style.venuesGridItem, style.hide)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid7} />
-              <div style={style.venueName}>LCD Soundsystem</div>
+              <img className={css(style.itemImg)} src={Grid7} />
+              <div className={css(style.venueName)}>LCD Soundsystem</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
+          <div className={css(style.venuesGridItem, style.hide)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid8} />
-              <div style={style.venueName}>Liam Gallagher</div>
+              <img className={css(style.itemImg)} src={Grid8} />
+              <div className={css(style.venueName)}>Liam Gallagher</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div style={style.venuesGridItem} >
+          <div className={css(style.venuesGridItem, style.hide)} >
             <div style={{padding: '0.5rem'}}>
-              <img style={style.itemImg} src={Grid9} />
-              <div style={style.venueName}>Harry Styles</div>
+              <img className={css(style.itemImg)} src={Grid9} />
+              <div className={css(style.venueName)}>Harry Styles</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
@@ -90,7 +91,7 @@ export default class EventsGrid extends Component {
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   venuesGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -111,7 +112,6 @@ const style = {
     flex: 1,
     width: '100%',
     flexDirection: 'column',
-    marginBottom: '2rem',
     overflow: 'hidden',
     flexBasis: '100%',
   },
@@ -126,5 +126,9 @@ const style = {
     color: 'white',
     padding: '1rem'
   },
-
-}
+  hide: {
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
+  }
+})

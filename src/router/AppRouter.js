@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 //Layout
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import TopBar from '../components/layout/TopBar';
 
 import HomePage from '../components/home/Home';
 import EventsPage from '../components/events/Index';
@@ -23,6 +24,7 @@ class AppRouter extends Component {
     return (
       <BrowserRouter>
         <div>
+          <TopBar />
           <Header />
             <Switch>
               <Route path="/" exact component={HomePage} />

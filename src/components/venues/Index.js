@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import VenuesSlider from './VenuesSlider';
-import VenuesGrid from './VenuesGrid'
+import VenuesGrid from '../home/HomeVenues'
 
 export default class VenuesPage extends Component {
   render() {
