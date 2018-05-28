@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from 'aphrodite';
 
 import SingleEventSliderPic from '../../assets/events/single_event_slider.jpg';
 import SingleEventSliderInfo from './SingleEventSliderInfo';
@@ -34,39 +35,39 @@ export default class SingleEventSlider extends Component {
     };
 
     return (
-      <section style={style.section}>
-        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+      <section className={css(style.section)}>
+        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <SingleEventSliderInfo name='coldplay'/>
-              <video autoPlay loop muted style={style.video}>
+              <video autoPlay loop muted className={css(style.video)}>
                 <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
               </video>
-            </div>            
-            <div style={style.sliderOverlay}></div>
+            </div>
+            <div className={css(style.sliderOverlay)}></div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <SingleEventSliderInfo name='Dua Lipa'/>
             </div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <SingleEventSliderInfo name='Ariana Grande' />
             </div>
           </div>
         </Slider>
-        <div style={style.buttonGroup}>
-          <button style={style.button} className='hover-shadow'>COMPRAR  TICKETS</button>
+        <div className={css(style.buttonGroup)}>
+          <button className={css(style.button)}>COMPRAR  TICKETS</button>
         </div>
-        <div style={style.shareEvent}>
+        <div className={css(style.shareEvent)}>
           Compartir:
-          <i className='fa fa-facebook' style={style.shareIcon}></i>
-          <i className='fa fa-twitter' style={style.shareIcon}></i>
+          <i className='fa fa-facebook' className={css(style.shareIcon)}></i>
+          <i className='fa fa-twitter' className={css(style.shareIcon)}></i>
         </div>
-        <div style={style.goBack}>
+        <div className={css(style.goBack)}>
           <Link to='/events'>
-            <button style={style.backButton}><i className='fa fa-angle-left'></i> VOLVER</button>
+            <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />
@@ -75,7 +76,7 @@ export default class SingleEventSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   section: {
     position: 'relative'
   },
@@ -117,7 +118,16 @@ const style = {
     borderRadius: '50px',
     marginRight: '1rem',
     marginTop: '1rem',
-    letterSpacing: '2px'
+    transition: 'all 0.5s ease',
+    letterSpacing: '2px',
+    "@media(max-width: 1024px)": {
+      margin: '2rem',
+    },
+    "@media(max-width: 480px)": {
+      left: '50%',
+      transform: 'translate(-50%, 50%)',
+      margin: 0
+    }
   },
   shareEvent: {
     position: 'absolute',
@@ -139,6 +149,9 @@ const style = {
     left: 0,
     margin: '2rem 6rem',
     color: 'white',
+    "@media(max-width:1024px)": {
+      margin: '2rem'
+    }
   },
   backButton: {
     color: 'white',
@@ -152,6 +165,10 @@ const style = {
   video: {
     position: 'absolute',
     width: '100vw',
-    height: 'auto'
+    height: 'auto',
+    "@media(max-width: 1080px)": {
+      height: '100%',
+      width: 'auto'
+    }
   }
-}
+})
