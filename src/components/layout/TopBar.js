@@ -16,6 +16,7 @@ export default class TopBar extends Component {
       autoplay: true,
       autoplaySpeed:5,
       speed: 20000,
+      pauseOnHover: true,
       cssEase: 'linear'
     };
 
