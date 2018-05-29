@@ -10,13 +10,13 @@ export default class Nav extends Component {
   render() {
     return (
       <nav className={css(style.nav)}>
-        <ul className={css(style.navUl) + ' animated fadeIn'}>
-          <Link to='/events' className={css(style.navItem)}>Eventos</Link>
-          <Link to='/venues' className={css(style.navItem)}>Venues</Link>
-          <Link to='/timeline' className={css(style.navItem)}>Timeline</Link>
-          <Link to='/blog' className={css(style.navItem)}>Blog</Link>
-          <Link to='/about' className={css(style.navItem)}>Quienes Somos</Link>
-          <Link to='/contact' className={css(style.navItem)}>Contacto</Link>
+        <ul className={css(style.navUl)}>
+          <Link to='/events' className={css(style.navItem) + ' animated fadeIn'}>Eventos</Link>
+          <Link to='/venues' className={css(style.navItem) + ' animated fadeIn'}>Venues</Link>
+          <Link to='/timeline' className={css(style.navItem) + ' animated fadeIn'}>Timeline</Link>
+          <Link to='/blog' className={css(style.navItem) + ' animated fadeIn'}>Blog</Link>
+          <Link to='/about' className={css(style.navItem) + ' animated fadeIn'}>Quienes Somos</Link>
+          <Link to='/contact' className={css(style.navItem) + ' animated fadeIn'}>Contacto</Link>
         </ul>
         <SearchInput />
       </nav>

@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from  'aphrodite';
 import CountTo from 'react-count-to';
 
 export default class AboutText extends Component {
   render() {
     return (
-      <article style={style.aboutGradient}>
+      <article className={css(style.aboutGradient)}>
         <div className='container'>
-          <h1 style={style.title}><span style={style.bold}>+<CountTo to={100} speed={2000}/></span> Shows</h1>
-          <h1 style={style.title}><span style={style.bold}>+<CountTo to={200} speed={2000}/></span> Artistas</h1>
-          <h1 style={style.lastTitle}><span style={style.bold}>+<CountTo to={200} speed={2000}/>K</span> Fans</h1>
+          <h1 className={css(style.title) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={100} speed={2000}/></span> Shows</h1>
+          <h1 className={css(style.title) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={200} speed={2000}/></span> Artistas</h1>
+          <h1 className={css(style.lastTitle) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={200} speed={2000}/>K</span> Fans</h1>
         </div>
       </article>
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   aboutGradient: {
     display: 'flex',
     justifyContent: 'center',
@@ -43,4 +44,4 @@ const style = {
   bold: {
     fontWeight: 600
   }
-}
+})

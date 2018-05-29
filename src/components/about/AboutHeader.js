@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
+
 import Logo from '../../logo_white.svg';
 import HeroBg from '../../assets/about/herobg.jpg'
 
@@ -6,14 +8,14 @@ import HeroBg from '../../assets/about/herobg.jpg'
 export default class AboutHeader extends Component {
   render() {
     return (
-      <article style={style.aboutHeader}>
-        <img src={Logo} style={style.logo} alt='Logo DF Entertainment' width='40%'/>
-        <div style={style.overlay}></div>
+      <article className={css(style.aboutHeader)}>
+        <img src={Logo} className={css(style.logo) + ' animated fadeIn'} alt='Logo DF Entertainment' width='40%'/>
+        <div className={css(style.overlay)}></div>
       </article>
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   aboutHeader: {
     position: 'relative',
     height: '72vh',
@@ -26,7 +28,8 @@ const style = {
   },
   logo: {
     display: 'flex',
-    zIndex: 666
+    zIndex: 666,
+    animationDelay: '0.3s'
   },
   overlay: {
     background: 'rgba(0,0,0,0.4)',
@@ -37,4 +40,4 @@ const style = {
     left: 0,
     verticalAlign: 'top'
   }
-}
+})

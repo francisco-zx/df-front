@@ -26,22 +26,22 @@ export default class Footer extends Component {
             <h3 className={css(style.bottomTitle) + ' animated fadeIn'}>Follow Us</h3>
             <ul className={css(style.iconGroup) + ' animated fadeIn'}>
               <li className={css(style.icon)}>
-                <a href='https://www.facebook.com/dfallaccess/' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
+                <a href='https://www.facebook.com/dfallaccess/' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.2s'}}>
                   <i className='fa fa-facebook'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://www.instagram.com/dfallaccess/?hl=es-la' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
+                <a href='https://www.instagram.com/dfallaccess/?hl=es-la' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.4s'}}>
                   <i className='fa fa-instagram'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://twitter.com/dfallaccess' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
+                <a href='https://twitter.com/dfallaccess' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.6s'}}>
                   <i className='fa fa-twitter'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
+                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.8s'}}>
                   <i className='fa fa-youtube'></i>
                 </a>
               </li>
