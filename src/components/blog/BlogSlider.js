@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { StyleSheet, css } from 'aphrodite';
 
 import BlogSliderPic from '../../assets/blog/blog_slider.png';
 import BlogSliderInfo from './BlogSliderInfo';
@@ -33,25 +34,25 @@ export default class BlogSlider extends Component {
 
     return (
       <section>
-        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
             </div>
-            <div style={style.sliderOverlay}></div>
+            <div className={css(style.sliderOverlay)}></div>
           </div>
           <div >
-            <div style={style.sliderItem}>
-              <BlogSliderInfo />
-            </div>
-          </div>
-          <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
             </div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
+              <BlogSliderInfo />
+            </div>
+          </div>
+          <div >
+            <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
             </div>
           </div>
@@ -62,7 +63,7 @@ export default class BlogSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${BlogSliderPic})`,
@@ -83,4 +84,4 @@ const style = {
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
   }
-}
+})

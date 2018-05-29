@@ -1,36 +1,34 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from 'aphrodite';
 
 
 export default class BlogSliderInfo extends Component {
   render() {
     return (
-        <div style={style.sliderInfo}>
-          <aside style={style.sliderInfoTag}>NOVEDAD</aside>
-          <h1 style={style.sliderInfoTitle}>Anunciamos BAFWEEK FW18!</h1>
-          <h3 style={style.sliderInfoSubtitle}>Organizado por DF Entertainment, IRSA y La Rural.
+        <Link to='/blog/baf-week' className={css(style.sliderInfo)}>
+          <aside className={css(style.sliderInfoTag) + ' animated fadeIn'}>NOVEDAD</aside>
+          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>Anunciamos BAFWEEK FW18!</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Organizado por DF Entertainment, IRSA y La Rural.
           </h3>
-          <div style={style.buttonGroup}>
-            <Link to='/blog/baf-week'>
-              <button style={style.button}>VER MAS +</button>
-            </Link>
-          </div>
-        </div>
+        </Link>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-    zIndex: 3
+      zIndex: 666
   },
   sliderInfoTitle: {
     color: 'white',
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    animationDelay: '0.2s',
+
   },
   sliderInfoTag: {
     color: 'white',
@@ -46,6 +44,7 @@ const style = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
+    animationDelay: '0.4s'
   },
   button: {
     color: 'white',
@@ -56,6 +55,7 @@ const style = {
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    animationDelay: '0.6s'
   }
-}
+})

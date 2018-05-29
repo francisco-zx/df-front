@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from 'aphrodite';
 
 import BlogSliderPic from '../../assets/blog/blog_slider.png';
 import SingleBlogSliderInfo from './SingleBlogSliderInfo';
@@ -33,16 +34,16 @@ export default class SingleEventSlider extends Component {
     };
 
     return (
-      <section style={style.section}>
+      <section className={css(style.section)}>
         <div >
-          <div style={style.sliderItem}>
+          <div className={css(style.sliderItem)}>
             <SingleBlogSliderInfo />
           </div>
-          <div style={style.sliderOverlay}></div>
+          <div className={css(style.sliderOverlay)}></div>
         </div>
-        <div style={style.goBack}>
+        <div className={css(style.goBack) + ' animated fadeIn'}>
           <Link to='/blog'>
-            <button style={style.backButton}><i className='fa fa-angle-left'></i> VOLVER</button>
+            <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />
@@ -52,7 +53,7 @@ export default class SingleEventSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   section: {
     position: 'relative'
   },
@@ -108,4 +109,4 @@ const style = {
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
   }
-}
+})

@@ -294,6 +294,11 @@ const style = {
     background: '#161616',
     marginBottom: '2rem',
     color: 'white',
+    marginTop: '-200px',
+    background: '-moz-linear-gradient(top, rgba(22,22,22,0) 0%, rgba(22,22,22,1) 100%)',
+    background: '-webkit-linear-gradient(top, rgba(22,22,22,0) 0%,rgba(22,22,22,1) 100%)',
+    background: 'linear-gradient(to bottom, rgba(22,22,22,0) 0%,rgba(22,22,22,1) 100%)',
+    filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#00161616", endColorstr="#161616",GradientType=0 )',
 
   },
   navSliderItem: {
