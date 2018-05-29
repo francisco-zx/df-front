@@ -36,7 +36,7 @@ export default class SingleTimelineSlider extends Component {
       autoplaySpeed: 5000,
       customPaging: (i) => {
         return(
-          <a>
+          <a className='animated fadeIn' style={{animationDelay: `${i * 0.1}s`}}>
           {i +1}
           </a>
         );

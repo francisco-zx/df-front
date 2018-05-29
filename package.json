@@ -6,6 +6,7 @@
     "aphrodite": "^2.2.1",
     "axios": "^0.18.0",
     "react": "^16.3.2",
+    "react-count-to": "^0.10.0",
     "react-dom": "^16.3.2",
     "react-masonry-css": "^1.0.11",
     "react-router": "^4.2.0",

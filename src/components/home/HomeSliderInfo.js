@@ -6,14 +6,14 @@ import Slider from 'react-slick';
 export default class HomeSliderInfo extends Component {
   render() {
     return (
-        <div className={css(style.sliderInfo)}>
-          <aside className={css(style.sliderInfoTag)}>EVENTO</aside>
-          <h1 className={css(style.sliderInfoTitle)}>{this.props.title}</h1>
-          <h3 className={css(style.sliderInfoSubtitle)}>{`${this.props.date} | ${this.props.location}`}
+        <div className={css(style.sliderInfo) + " animated fadeIn"}>
+          <aside className={css(style.sliderInfoTag) + " animated fadeIn"}>EVENTO</aside>
+          <h1 className={css(style.sliderInfoTitle) + " animated fadeIn"}>{this.props.title}</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{`${this.props.date} | ${this.props.location}`}
           </h3>
-          <div className={css(style.buttonGroup)}>
-            <button className={css(style.button)}>VER MAS +</button>
-            <button className={css(style.button)}>COMPRAR</button>
+          <div className={css(style.buttonGroup) + " animated fadeIn"}>
+            <button className={css(style.button) + " animated fadeIn"}>VER MAS +</button>
+            <button className={css(style.button) + " animated fadeIn"}>COMPRAR</button>
           </div>
 
         </div>
@@ -34,6 +34,7 @@ const style = StyleSheet.create({
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    animationDelay: '0.2s',
     "@media(max-width: 1024px)": {
       fontSize: '2.5rem'
     },
@@ -56,6 +57,7 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     lineHeight: 1.5,
     maxWidth:'70%',
+    animationDelay: '0.4s',
     "@media(max-width: 1024px)": {
       fontSize: '2rem',
       maxWidth:'90%',
@@ -74,6 +76,7 @@ const style = StyleSheet.create({
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    animationDelay: '0.5s',
   }
 })

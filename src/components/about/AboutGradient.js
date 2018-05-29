@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import CountTo from 'react-count-to';
 
 export default class AboutText extends Component {
   render() {
     return (
       <article style={style.aboutGradient}>
         <div className='container'>
-          <h1 style={style.title}><span style={style.bold}>+100</span> Shows</h1>
-          <h1 style={style.title}><span style={style.bold}>+20</span> Artistas</h1>
-          <h1 style={style.lastTitle}><span style={style.bold}>+200K</span> Fans</h1>
+          <h1 style={style.title}><span style={style.bold}>+<CountTo to={100} speed={2000}/></span> Shows</h1>
+          <h1 style={style.title}><span style={style.bold}>+<CountTo to={200} speed={2000}/></span> Artistas</h1>
+          <h1 style={style.lastTitle}><span style={style.bold}>+<CountTo to={200} speed={2000}/>K</span> Fans</h1>
         </div>
       </article>
     );
