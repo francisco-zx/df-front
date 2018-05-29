@@ -20,7 +20,10 @@ export default class BlogSliderInfo extends Component {
 const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-      zIndex: 666
+    zIndex: 3,
+    "@media(max-width: 1024px)": {
+      padding: '3rem'
+    }
   },
   sliderInfoTitle: {
     color: 'white',
@@ -28,7 +31,12 @@ const style = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     animationDelay: '0.2s',
-
+    "@media(max-width: 1024px)": {
+      fontSize: '2.5rem'
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '1.8rem'
+    }
   },
   sliderInfoTag: {
     color: 'white',
@@ -44,7 +52,15 @@ const style = StyleSheet.create({
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
-    animationDelay: '0.4s'
+    animationDelay: '0.4s',
+    "@media(max-width: 1024px)": {
+      fontSize: '2rem',
+      maxWidth:'90%',
+    },
+    "@media(max-width: 900px)": {
+      fontSize: '1.3rem',
+      maxWidth:'none%',
+    }
   },
   button: {
     color: 'white',

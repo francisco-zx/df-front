@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Masonry from 'react-masonry-css'
+import Masonry from 'react-masonry-css';
+import { StyleSheet, css } from 'aphrodite';
 
 import SectionTitle from '../layout/SectionTitle';
 import BorderGradient from '../layout/BorderGradient';
@@ -13,94 +14,99 @@ import Blog5 from '../../assets/blog/blog5.jpg';
 import Blog6 from '../../assets/blog/blog6.jpg';
 
 export default class BlogGrid extends Component {
+
   render() {
+    const settings = {
+      default: 3,
+      1024: 2,
+      480: 1
+    };
     return (
       <article className='container'>
         <SectionTitle text='Blog'/>
         <Masonry
-          breakpointCols={3}
-          style={style.masonryGrid}
-          className='hover-parent'
+          breakpointCols={settings}
+          className={css(style.masonryGrid) + ' hover-parent'}
           columnClassName="my-masonry-grid_column">
             <Link to='/blog/baf-week'>
-              <div style={style.blogItem} className='hover-shadow'>
-                <div style={style.blogItemPreview}>
-                  <img src={Blog1} style={style.blogItemImg}/>
-                  <aside style={style.typeTag}>Novedades</aside>
-                  <h3 style={style.title}>Presentamos ArtBasel cities Buenos Aires</h3>
-                  <div style={style.overlay}></div>
+              <div className={css(style.blogItem) + ' hover-shadow'}>
+                <div className={css(style.blogItemPreview)}>
+                  <img src={Blog1} className={css(style.blogItemImg)}/>
+                  <aside className={css(style.typeTag)}>Novedades</aside>
+                  <h3 className={css(style.title)}>Presentamos ArtBasel cities Buenos Aires</h3>
+                  <div className={css(style.overlay)}></div>
                 </div>
-                <div style={style.blogButton}>
+                <div className={css(style.blogButton)}>
                 Leer más
                 </div>
                 <BorderGradient />
               </div>
             </Link>
             <Link to='/blog/baf-week'>
-              <div style={style.blogItem} className='hover-shadow'>
-                <div style={style.blogItemPreview}>
-                  <img src={Blog2} style={style.blogItemImg} />
-                  <div style={style.typeTag}>Prensa</div>
-                  <h3 style={style.title}>Perry Farrel nos cuenta del Lolla Argentina</h3>
-                  <div style={style.overlay}></div>
+              <div className={css(style.blogItem) + ' hover-shadow'}>
+                <div className={css(style.blogItemPreview)}>
+                  <img src={Blog2} className={css(style.blogItemImg)} />
+                  <div className={css(style.typeTag)}>Prensa</div>
+                  <h3 className={css(style.title)}>Perry Farrel nos cuenta del Lolla Argentina</h3>
+                  <div className={css(style.overlay)}></div>
                 </div>
-                <div style={style.blogButton}>
+                <div className={css(style.blogButton)}>
                 Leer más
                 </div>
                 <BorderGradient />
               </div>
             </Link>
             <Link to='/blog/baf-week'>
-              <div style={style.blogItem} className='hover-shadow'>
-                <div style={style.blogItemPreview}>
-                  <img src={Blog3} style={style.blogItemImg} />
-                  <div style={style.typeTag}>Video</div>
-                  <h3 style={style.title}>Harry Styles sobre su visita a Argentina</h3>
-                  <div style={style.overlay}></div>
+              <div className={css(style.blogItem) + ' hover-shadow'}>
+                <div className={css(style.blogItemPreview)}>
+                  <img src={Blog3} className={css(style.blogItemImg)} />
+                  <div className={css(style.typeTag)}>Video</div>
+                  <h3 className={css(style.title)}>Harry Styles sobre su visita a Argentina</h3>
+                  <div className={css(style.overlay)}></div>
                 </div>
-                <div style={style.blogButton}>
+                <div className={css(style.blogButton)}>
                 Leer más
                 </div>
                 <BorderGradient />
               </div>
             </Link>
             <Link to='/blog/baf-week'>
-              <div style={style.blogItem} className='hover-shadow'>
-                <div style={style.blogItemPreview}>
-                  <img src={Blog4} style={style.blogItemImg} />
-                  <div style={style.typeTag}>Video</div>
-                  <h3 style={style.title}>Registro de la fiesta de apertura de la DF House</h3>
-                  <div style={style.overlay}></div>
+              <div className={css(style.blogItem) + ' hover-shadow'}>
+                <div className={css(style.blogItemPreview)}>
+                  <img src={Blog4} className={css(style.blogItemImg)} />
+                  <div className={css(style.typeTag)}>Video</div>
+                  <h3 className={css(style.title)}>Registro de la fiesta de apertura de la DF House</h3>
+                  <div className={css(style.overlay)}></div>
                 </div>
-                <div style={style.blogButton}>
+                <div className={css(style.blogButton)}>
                 Leer más
                 </div>
                 <BorderGradient />
               </div>
             </Link>
             <Link to='/blog/baf-week'>
-              <div style={style.blogItem} className='hover-shadow'>
-                <div style={style.blogItemPreview}>
-                  <img src={Blog5} style={style.blogItemImg} />
-                  <div style={style.typeTag}>Video</div>
-                  <h3 style={style.title}>Entrevista a Diego Finkelstein en Metro</h3>
-                  <div style={style.overlay}></div>
+              <div className={css(style.blogItem) + ' hover-shadow'}>
+                <div className={css(style.blogItemPreview)}>
+                  <img src={Blog5} className={css(style.blogItemImg)} />
+                  <div className={css(style.typeTag)}>Video</div>
+                  <h3 className={css(style.title)}>Entrevista a Diego Finkelstein en Metro</h3>
+                  <div className={css(style.overlay)}></div>
                 </div>
-                <div style={style.blogButton}>
+                <div className={css(style.blogButton)}>
                 Leer más
                 </div>
                 <BorderGradient />
               </div>
             </Link>
             <Link to='/blog/baf-week'>
-            <div style={style.blogItem} className='hover-shadow'>
-              <div style={style.blogItemPreview}>
-                <img src={Blog6} style={style.blogItemImg} />
-                <div style={style.typeTag}>Video</div>
-                <h3 style={style.title}>DFGroup abre su nueva oficina</h3>
-                <div style={style.overlay}></div>
+            <div className={css(style.blogItem) + ' hover-shadow'}>
+              <div className={css(style.blogItemPreview)}>
+                <img src={Blog6} className={css(style.blogItemImg)} />
+                <div className={css(style.typeTag)}>Video</div>
+                <h3 className={css(style.title)}>DFGroup abre su nueva oficina</h3>
+                <div className={css(style.overlay)}></div>
               </div>
-              <div style={style.blogButton}>
+              <div className={css(style.blogButton)}>
               Leer más
               </div>
               <BorderGradient />
@@ -111,7 +117,7 @@ export default class BlogGrid extends Component {
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   masonryGrid: {
     display: '-webkit-box', /* Not needed if autoprefixing */
     display: '-ms-flexbox', /* Not needed if autoprefixing */
@@ -178,4 +184,4 @@ const style = {
     color: '#161616',
     fontWeight: 'bold'
   }
-}
+})
