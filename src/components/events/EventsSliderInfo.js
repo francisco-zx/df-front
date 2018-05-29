@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
 
+import Calendar from '../../assets/events/calendar.svg'
+
 
 export default class EventsSliderInfo extends Component {
   render() {

@@ -3,14 +3,26 @@ import { StyleSheet, css } from 'aphrodite';
 
 import BorderGradient from '../layout/BorderGradient'
 import EventVenuePic from '../../assets/events/single_event_venue.jpg';
+import Calendar from '../../assets/events/calendar.svg';
+import mapMarker from '../../assets/events/map-marker.svg';
 
 export default class EventVenue extends React.Component{
   render(){
     return(
       <article className={css(style.eventVenue) + ' animated fadeIn'}>
         <div className={css(style.eventDetails)}>
-          <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>Sábado 28 de Septiembre</h3>
-          <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>DirecTV Arena</h3>
+          <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>
+            <img src={Calendar} className={css(style.venueIcon)} height='18rem'/>
+            <span>
+              Sábado 28 de Septiembre
+            </span>
+          </h3>
+          <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>
+            <img src={mapMarker} className={css(style.venueIcon)} width='18rem'/>
+            <span>
+              DirecTV Arena
+            </span>
+          </h3>
         </div>
         <BorderGradient />
         <div className={css(style.eventLocation)}>
@@ -26,20 +38,28 @@ const style = StyleSheet.create({
   eventVenue: {
     background: '#161616',
     verticalAlign:'top',
-    animationDelay: '0.8s'
+    animationDelay: '0.8s',
+    "@media(max-width: 1024px)": {
+
+    }
   },
   eventDetails: {
     padding: '2rem',
   },
   eventDetailTitle: {
+    display: 'flex',
     color: 'white',
     fontWeight: 'bold',
     lineHeight: 1.5,
     fontSize: '1.5rem',
-    animationDelay: '1s'
+    animationDelay: '1s',
+    alignItems: 'center'
   },
   eventLocation: {
     padding: '2rem'
+  },
+  venueIcon: {
+    paddingRight: '10px'
   },
   eventVenueImg: {
     animationDelay: '1.2s'
