@@ -10,7 +10,7 @@ export default class SingleVenueContent extends Component {
       <div>
         <div className='container'>
           <div className={css(style.content)}>
-            <article className={css(style.details)}>
+            <article className={css(style.details) + ' animated fadeIn'}>
               <h3 className={css(style.subTitle)}>ACERCA DE</h3>
               <p className={css(style.description)}>
               Ubicado en el barrio de Colegiales. El teatro Vorterix es un hito local. Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -52,6 +52,7 @@ const style = StyleSheet.create({
   details: {
     display: 'flex',
     flex: 4,
+    animationDelay: '0.4s',
     flexDirection: 'column',
     "@media(max-width: 1024px)": {
       flex: 1,

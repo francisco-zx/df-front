@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import CountTo from 'react-count-to';
+import Countdown from 'react-countdown-now';
 
 import EventVenue from './EventVenue';
 
 export default class SingleEventInfo extends Component {
+
+  renderer = ({ days, hours, minutes, seconds, completed }) => {
+    return <span>{days} días {hours}:{minutes}:{seconds}</span>;
+  }
+
   render() {
     return (
+
       <div className='container'>
         <div className={css(style.content)}>
           <article className={css(style.details)}>
             <h1 className={css(style.title) + ' animated fadeIn'}>Harry Styles</h1>
             <h1 className={css(style.title) + ' animated fadeIn'}style={{animationDelay: '0.2s'}}>-</h1>
-            <h3 className={css(style.subTitle) + ' animated fadeIn'}>Faltan: <CountTo to={20} speed={1000}/> días <CountTo to={16} speed={1000}/> : <CountTo to={48} speed={1000}/> : <CountTo to={56} speed={1000}/></h3>
+            <h3 className={css(style.subTitle) + ' animated fadeIn'}>
+              Faltan: <Countdown date={1528394400000} daysAsHours={false} renderer={this.renderer}/></h3>
             <p className={css(style.description) + ' animated fadeIn'}>
             Debido a la increíble demanda, Harry Styles ha añadido 56 nuevas fechas en 2018 a su ya agotada gira de 2017. Las fechas recién agregadas comenzarán en marzo 2018 en Basel, Suiza y concluirán en Los Angeles, California en julio. Las nuevas fechas contarán con invitados especiales como Kacey Musgraves (Estados Unidos y Canada), Warpaint (Asia) y Leon Bridges (Sudamérica y México) e invitados especiales para Europa y Australia a ser anunciados próximamente. La primera parte de Harry Styles Live On Tour, la cual se agotó en tiempo record, empezará en septiembre 2017 visitando venues íntimos alrededor del mundo y contará con MUNA como banda soporte.
             El álbum homónimo de Harry Styles fue lanzado el 12 de mayo y llegó rápidamente a la cima de los charts alrededor del mundo. En Estados Unidos llegó a lo más alto del Billboard 200 con la venta de más de 230.000 discos online y 193.000 CDs físicos, haciendo historia como el mayor debut de ventas semanal de un disco de larga duración para un artista masculino del Reino Unido desde el éxito de Nielsen Music en 1991. El disco llegó a ser #1 en más de 20 países incluyendo Estados Unidos, Reino Unido, Irlanda, Canadá, Australia, España, México, Brasil, Holanda, Bélgica, Polonia y alrededor de América Latina, el sudeste asiático y el Medio Oriente.
@@ -62,7 +70,8 @@ const style = StyleSheet.create({
     fontWeight: 500,
     fontSize: '1.6rem',
     marginBottom: '1rem',
-    animationDelay: '0.4s'
+    animationDelay: '0.4s',
+    transition: 'all 0.1s ease'
   },
   description: {
     marginTop: '3rem',

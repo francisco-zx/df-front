@@ -44,7 +44,7 @@ export default class SingleVenueSlider extends Component {
         </div>
         <div className={css(style.goBack)}>
           <Link to='/venues'>
-            <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
+            <button className={css(style.backButton) + ' animated fadeIn'}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />
