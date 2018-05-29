@@ -5,12 +5,12 @@ export default class EventsSliderItem extends Component {
   render() {
     return (
       <div className={css(style.eventSliderItem)}>
-        <h1 className={css(style.date)}>{this.props.date}</h1>
-        <h1 className={css(style.title)}>{this.props.title}</h1>
-        <p className={css(style.location)}>{this.props.location}</p>
+        <h1 className={css(style.date)  + ' animated fadeIn'}>{this.props.date}</h1>
+        <h1 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h1>
+        <p className={css(style.location) + ' animated fadeIn'}>{this.props.location}</p>
         <div className={css(style.buttonGroup)}>
-          <button className={css(style.button)}>VER MAS +</button>
-          <button className={css(style.button)}>COMPRAR</button>
+          <button className={css(style.button) + ' animated fadeIn'}>VER MAS +</button>
+          <button className={css(style.button) + ' animated fadeIn'}>COMPRAR</button>
         </div>
       </div>
     );
@@ -33,15 +33,17 @@ const style = StyleSheet.create({
     fontSize: '1.5rem',
     textDecoration: 'underline',
     fontWeight: 'bold',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
   },
   title: {
     fontSize: '2rem',
     fontWeight: 'bold',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    animationDelay: '0.2s'
   },
   location: {
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    animationDelay: '0.4s'
   },
   button: {
     color: 'white',
@@ -52,6 +54,7 @@ const style = StyleSheet.create({
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    animationDelay: '0.5s'
   }
 })

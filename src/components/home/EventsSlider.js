@@ -9,6 +9,13 @@ import {
 
 export default class HomeEventsSlider extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      showLeftArrow: false
+    }
+  }
+
   leftButton = e => {
     const slider = document.getElementById('slider');
     let transition = 0;
@@ -33,16 +40,31 @@ export default class HomeEventsSlider extends Component {
     }, 15);
   };
 
+  isScrolled = () => {
+    const slider = document.getElementById('slider');
+    console.log(slider.scrollWidth - slider.clientLeft)
+    console.log(slider.width)
+    if(slider.scrollLeft != 0){
+      this.setState({showLeftArrow: true})
+    }else{
+      this.setState({showLeftArrow: false})
+    }
+  }
+
+
   render() {
     return (
       <div className={css(style.eventSliderContainer)}>
-        <span
-          className={css(style.arrowLeft)}
-          onClick={this.leftButton}
-          >
-          {arrowLeftIcon}
-        </span>
-        <div className={css(style.eventSlider)} id='slider'>
+        {
+          this.state.showLeftArrow &&
+            <span
+              className={css(style.arrowLeft)}
+              onClick={this.leftButton}
+              >
+              {arrowLeftIcon}
+            </span>
+        }
+        <div className={css(style.eventSlider) + ' animated fadeIn'} id='slider' onScroll={() => this.isScrolled()}>
             <EventsSliderItem
               title='Lollapalooza Argentina 2018'
               location='Hipodromo de San Isidro'
@@ -107,7 +129,7 @@ export default class HomeEventsSlider extends Component {
         </div>
         <span
           onClick={this.rightButton}
-          className={css(style.arrowRight)}
+          className={css(style.arrowRight) + ' animated fadeIn'}
           >
           {arrowRightIcon}
         </span>
@@ -139,6 +161,7 @@ const style = StyleSheet.create({
     left: 0,
     top: '50%',
     transform: 'translateY(-50%)',
+    animationDelay: '0.6s',
     background: '-moz-linear-gradient(left, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
     background: 'linear-gradient(to right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
@@ -155,6 +178,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     right: 0,
     top: '50%',
+    animationDelay: '0.6s',
     transform: 'translateY(-50%)',
     background: '-moz-linear-gradient(right, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',

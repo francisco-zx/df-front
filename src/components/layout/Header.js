@@ -16,8 +16,8 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header className={css(style.header)}>
-        <Link to='/' className={css(style.logoWrapper)}>
+      <header className={css(style.header) + ' animated fadeIn'}>
+        <Link to='/' className={css(style.logoWrapper) + ' animated fadeIn'}>
           <img src={Logo} className={css(style.logo)} alt='Logo DF Entertainment'/>
         </Link>
         <Nav />

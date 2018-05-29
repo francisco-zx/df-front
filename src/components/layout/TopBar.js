@@ -23,7 +23,7 @@ export default class TopBar extends Component {
     return (
       <section className={css(style.topBar)}>
       <div className='sliderHolder'>
-      <Slider {...settings} className={css(style.slider)}>
+      <Slider {...settings} className={css(style.slider) + ' animated fadeIn'}>
         <div><b className={css(style.sliderItem, style.bold)}>Proximos Eventos: </b></div>
         <div><p className={css(style.sliderItem)}><b>Lollapalooza</b> | 20 de Marzo /</p></div>
         <div><p className={css(style.sliderItem)}><b>Phil Collins</b> | 30 de Abril /</p></div>

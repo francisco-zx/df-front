@@ -5,7 +5,7 @@ export default class SearchInput extends Component {
 
   render() {
     return (
-      <input className={css(style.searchInput)} type='textarea' placeholder='Buscá por artistas o venues'/>
+      <input className={css(style.searchInput) + ' animated fadeIn'} type='textarea' placeholder='Buscá por artistas o venues'/>
     );
   }
 }

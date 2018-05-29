@@ -5,7 +5,7 @@ export default class SectionTitle extends Component {
   render() {
     return (
       <div className={css(style.sectionTitleContainer)}>
-      <h1 className={css(style.sectionTitle)}>{this.props.text}</h1>
+      <h1 className={css(style.sectionTitle) + ' animated fadeIn'}>{this.props.text}</h1>
       </div>
     );
   }

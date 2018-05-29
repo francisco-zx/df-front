@@ -10,38 +10,38 @@ export default class Footer extends Component {
     return (
       <footer className={css(style.footer)}>
         <article className={css(style.footerTop)}>
-          <div className={css(style.topLeft)}>Mas de DF Entertainment</div>
-          <div className={css(style.topRight)}><i className='fa fa-caret-right'></i></div>
+          <div className={css(style.topLeft) + ' animated fadeIn'}>Mas de DF Entertainment</div>
+          <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
         </article>
         <BorderGradient />
         <article className={css(style.footerBottom)}>
-          <div className={css(style.bottomLeft)}>
-            <h3 className={css(style.bottomTitleLeft)}>Suscribite a Nuestro Newsletter</h3>
-            <div className={css(style.newsLetter)}>
-              <input type='text' className={css(style.input)} placeholder='Ingresa tu Email'/>
-              <img src={NewsletterIcon} className={css(style.newsIcon)} />
+          <div className={css(style.bottomLeft) + ' animated fadeIn'}>
+            <h3 className={css(style.bottomTitleLeft) + ' animated fadeIn'}>Suscribite a Nuestro Newsletter</h3>
+            <div className={css(style.newsLetter) + ' animated fadeIn'}>
+              <input type='text' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email'/>
+              <img src={NewsletterIcon} className={css(style.newsIcon) + ' animated fadeIn'} />
             </div>
           </div>
           <div className={css(style.bottomRight)}>
-            <h3 className={css(style.bottomTitle)}>Follow Us</h3>
-            <ul className={css(style.iconGroup)}>
+            <h3 className={css(style.bottomTitle) + ' animated fadeIn'}>Follow Us</h3>
+            <ul className={css(style.iconGroup) + ' animated fadeIn'}>
               <li className={css(style.icon)}>
-                <a href='https://www.facebook.com/dfallaccess/' target='_blank' className={css(style.iconLink)}>
+                <a href='https://www.facebook.com/dfallaccess/' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
                   <i className='fa fa-facebook'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://www.instagram.com/dfallaccess/?hl=es-la' target='_blank' className={css(style.iconLink)}>
+                <a href='https://www.instagram.com/dfallaccess/?hl=es-la' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
                   <i className='fa fa-instagram'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://twitter.com/dfallaccess' target='_blank' className={css(style.iconLink)}>
+                <a href='https://twitter.com/dfallaccess' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
                   <i className='fa fa-twitter'></i>
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink)}>
+                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink) + ' animated fadeIn'}>
                   <i className='fa fa-youtube'></i>
                 </a>
               </li>
@@ -87,7 +87,8 @@ const style = StyleSheet.create({
   topRight: {
     display:'flex',
     justifyContent: 'flex-start',
-    paddingLeft: '1rem'
+    paddingLeft: '1rem',
+    animationDelay: '0.3s'
   },
   footerBottom: {
     padding: '3rem 5rem',
@@ -143,7 +144,8 @@ const style = StyleSheet.create({
   },
   icon: {
     paddingLeft: '1rem',
-    fontSize: '1.3rem'
+    fontSize: '1.3rem',
+    animationDelay: '0.4s'
   },
   iconLink: {
     color: 'white'
@@ -179,7 +181,8 @@ const style = StyleSheet.create({
     width: 'auto',
     margin: '0 auto',
     display: 'flex',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    animationDelay: '0.3s'
   },
   newsIcon: {
     width: '1.5rem',
@@ -187,6 +190,7 @@ const style = StyleSheet.create({
     right: 0,
     paddingRight: '5px',
     top: '50%',
-    transform: 'translateY(-50%)'
+    transform: 'translateY(-50%)',
+    animationDelay: '0.6s'
   }
 })

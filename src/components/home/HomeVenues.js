@@ -20,45 +20,45 @@ export default class HomeVenues extends Component {
       <div className='container'>
         <SectionTitle text='Venues'/>
         <div className={css(style.venuesGrid)}>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div className={css(style.padding)}>
               <img className={css(style.itemImg)} src={LunaPark} />
-              <div className={css(style.venueName)}>Luna Park</div>
+              <div className={css(style.venueName) + ' animated fadeIn'}>Luna Park</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div className={css(style.padding)}>
               <img className={css(style.itemImg)} src={DirecTV} />
-              <div className={css(style.venueName)}>DirecTV Arena</div>
+              <div className={css(style.venueName) + ' animated fadeIn'}>DirecTV Arena</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div className={css(style.padding)}>
               <img className={css(style.itemImg)} src={Vorterix} />
-              <div className={css(style.venueName)}>Teatro Vorterix</div>
+              <div className={css(style.venueName) + ' animated fadeIn'}>Teatro Vorterix</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div className={css(style.padding)}>
               <img className={css(style.itemImg)} src={Hipodromo} />
-              <div className={css(style.venueName)}>Hipodromo de San Isidro</div>
+              <div className={css(style.venueName) + ' animated fadeIn'}>Hipodromo de San Isidro</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem)}>
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'}>
             <div className={css(style.padding)}>
               <img className={css(style.itemImg)} src={Niceto} />
-              <div className={css(style.venueName)}>Niceto Club</div>
+              <div className={css(style.venueName) + ' animated fadeIn'}>Niceto Club</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
           <div className={css(style.venuesGridItem)}>
             <div className={css(style.padding)}>
             <img className={css(style.itemImg)} src={Velez} />
-            <div className={css(style.venueName)}>Estadio Velez</div>
+            <div className={css(style.venueName) + ' animated fadeIn'}>Estadio Velez</div>
             <BorderGradient height='6px'/>
             </div>
           </div>
@@ -107,7 +107,7 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: 'white',
-    padding: '1rem'
+    padding: '1rem',
   },
 
 })

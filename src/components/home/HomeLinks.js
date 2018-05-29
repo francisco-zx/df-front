@@ -10,16 +10,16 @@ export default class HomePage extends Component {
     return (
       <div className='container'>
         <div className={css(style.linksHolder)}>
-          <div className={css(style.link, style.linkLeft)}>
-            <h3 className={css(style.linkTitle)}>Eventos</h3>
+          <div className={css(style.link, style.linkLeft) + ' animated fadeIn'}>
+            <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Eventos</h3>
             <Link to='/events'>
-              <button href='/events' className={css(style.linkButton)}>VER MAS</button>
+              <button href='/events' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
             </Link>
           </div>
-          <div className={css(style.link, style.linkRight)}>
-            <h3 className={css(style.linkTitle)}>Timeline</h3>
+          <div className={css(style.link, style.linkRight) + ' animated fadeIn'}>
+            <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Timeline</h3>
             <Link to='/timeline'>
-              <button href='/timeline' className={css(style.linkButton)}>VER MAS</button>
+              <button href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
             </Link>
           </div>
         </div>
@@ -77,14 +77,16 @@ const style = StyleSheet.create({
     fontSize: '2.5rem',
     marginBottom: '2rem',
     display: 'block',
-    zIndex: 999
+    zIndex: 999,
+    animationDelay: '0.3s'
   },
   linkButton: {
     background: '#161616',
     border: 'none',
     color: 'white',
     padding: '1rem',
-    zIndex: 999
+    zIndex: 999,
+    animationDelay: '0.5s'
   },
   left: {
     marginRight: '2rem'

@@ -27,7 +27,7 @@ export default class HomePage extends Component {
       autoplaySpeed: 7000,
       customPaging: (i) => {
         return(
-          <a className='animated fadeIn' style={{animationDelay: `${i * 0.1}s`}}>
+          <a className='animated fadeIn' style={{animationDelay: `${i * 0.1 + 0.6}s`}}>
           {i +1}
           </a>
         );
@@ -36,7 +36,7 @@ export default class HomePage extends Component {
 
     return (
       <section>
-        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+        <Slider {...settings} className={css(style.slider) + 'animated fadeIn'} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div className={css(style.sliderItem)}>
               <HomeSliderInfo title='Lollapalooza 2018' date='16, 17 y 18 de Marzo' location='Hipódromo de San Isidro Buenos Aires, Argentina.'/>
