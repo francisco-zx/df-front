@@ -77,6 +77,6 @@ const style = StyleSheet.create({
     borderRadius: '10px',
     marginRight: '1rem',
     marginTop: '1rem',
-    animationDelay: '0.5s',
+    animationDelay: '0.6s',
   }
 })

@@ -23,63 +23,63 @@ export default class EventsGrid extends Component {
       <div className='container'>
         <SectionTitle text='Eventos'/>
         <div className={css(style.venuesGrid)}>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid1} />
               <div className={css(style.venueName)}>Volbeat</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem)} >
+          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid2} />
               <div className={css(style.venueName)}>Metronomy</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem, style.hide)} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid3} />
               <div className={css(style.venueName)}>Phil Collins</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItemFull)} >
+          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid4} />
               <div className={css(style.venueName)}>Lollapalooza Argentina 2018</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItemFull)}>
+          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'}>
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid5} />
               <div className={css(style.venueName)}>Foo Fighters</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItemFull)}>
+          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'}>
             <div style={{padding: '0.5rem'}}>
             <img className={css(style.venuesGridItemFull)} src={Grid6} />
             <div className={css(style.venueName)}>Phil Collins</div>
             <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem, style.hide)} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid7} />
               <div className={css(style.venueName)}>LCD Soundsystem</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem, style.hide)} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid8} />
               <div className={css(style.venueName)}>Liam Gallagher</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem, style.hide)} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid9} />
               <div className={css(style.venueName)}>Harry Styles</div>

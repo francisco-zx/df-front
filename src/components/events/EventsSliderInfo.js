@@ -7,13 +7,13 @@ export default class EventsSliderInfo extends Component {
   render() {
     return (
         <div className={css(style.sliderInfo)}>
-          <h1 className={css(style.sliderInfoTitle)}>Phil Collins</h1>
-          <h3 className={css(style.sliderInfoSubtitle)}>19 de Marzo, Estadio Instituto
+          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>Phil Collins</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>19 de Marzo, Estadio Instituto
           </h3>
-          <h3 className={css(style.sliderInfoSubtitle)}>Córdoba, Argentina
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Córdoba, Argentina
           </h3>
           <div className={css(style.buttonGroup)}>
-            <button className={css(style.button)}>VER MAS +</button>
+            <button className={css(style.button) + ' animated fadeIn'}>VER MAS +</button>
           </div>
         </div>
     );
@@ -33,6 +33,7 @@ const style = StyleSheet.create({
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    animationDelay: '0.2s',
     "@media(max-width: 1024px)": {
       fontSize: '2.5rem'
     },
@@ -55,6 +56,7 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     lineHeight: 1.5,
     maxWidth:'70%',
+    animationDelay: '0.4s',
     "@media(max-width: 1024px)": {
       fontSize: '2rem',
       maxWidth:'90%',
@@ -73,6 +75,7 @@ const style = StyleSheet.create({
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    animationDelay: '0.6s',
   }
 })

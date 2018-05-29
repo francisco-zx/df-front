@@ -40,7 +40,7 @@ export default class SingleEventSlider extends Component {
           <div >
             <div className={css(style.sliderItem)}>
               <SingleEventSliderInfo name='coldplay'/>
-              <video autoPlay loop muted className={css(style.video)}>
+              <video autoPlay loop muted className={css(style.video) + ' animated fadeIn'}>
                 <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
               </video>
             </div>
@@ -58,9 +58,9 @@ export default class SingleEventSlider extends Component {
           </div>
         </Slider>
         <div className={css(style.buttonGroup)}>
-          <button className={css(style.button)}>COMPRAR  TICKETS</button>
+          <button className={css(style.button) + ' animated fadeIn'}>COMPRAR  TICKETS</button>
         </div>
-        <div className={css(style.shareEvent)}>
+        <div className={css(style.shareEvent) + ' animated fadeIn'}>
           Compartir:
           <i className='fa fa-facebook' className={css(style.shareIcon)}></i>
           <i className='fa fa-twitter' className={css(style.shareIcon)}></i>
