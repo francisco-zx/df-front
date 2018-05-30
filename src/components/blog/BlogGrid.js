@@ -122,7 +122,10 @@ const style = StyleSheet.create({
     display: '-webkit-box', /* Not needed if autoprefixing */
     display: '-ms-flexbox', /* Not needed if autoprefixing */
     display: 'flex',
-    width: 'auto'
+    width: 'auto',
+    "@media(max-width: 480px)": {
+      paddingLeft: 0
+    }
   },
   blogItem: {
     marginBottom: '3rem'
@@ -158,7 +161,28 @@ const style = StyleSheet.create({
     zIndex:2,
     fontWeight: '500',
     color: 'white',
-    maxWidth: '60%'
+    maxWidth: '60%',
+    transition: 'all 0.4s ease',
+    "@media(max-width: 1360px)": {
+      fontSize: '2rem',
+      padding: '30px',
+    },
+    "@media(max-width: 1170px)": {
+      fontSize: '1.6rem',
+      padding: '20px',
+    },
+    "@media(max-width: 1024px)": {
+      fontSize: '2.2rem',
+      padding: '40px',
+    },
+    "@media(max-width: 890px)": {
+      fontSize: '2rem',
+      padding: '30px',
+    },
+    "@media(max-width: 767px)": {
+      fontSize: '1.8rem',
+      padding: '20px',
+    }
   },
   typeTag: {
     position: 'absolute',
@@ -172,7 +196,27 @@ const style = StyleSheet.create({
     borderBottom: '1px solid white',
     textAlign: 'center',
     paddingBottom: '0.2rem',
-    paddingRight: '-6px'
+    paddingRight: '-6px',
+    "@media(max-width: 1360px)": {
+      top: 30,
+      left: 30,
+    },
+    "@media(max-width: 1170px)": {
+      top: 20,
+      left: 20,
+    },
+    "@media(max-width: 1024px)": {
+      top: 40,
+      left: 40,
+    },
+    "@media(max-width: 890px)": {
+      top: 30,
+      left: 30,
+    },
+    "@media(max-width: 767px)": {
+      top: 20,
+      left: 20,
+    }
   },
   blogButton: {
     zIndex:2,

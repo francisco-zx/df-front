@@ -98,7 +98,10 @@ const style = StyleSheet.create({
     left: 0,
     margin: '2rem 6rem',
     color: 'white',
-    zIndex: 999
+    zIndex: 999,
+    "@media(max-width:1024px)": {
+      margin: '2rem'
+    }
   },
   backButton: {
     color: 'white',

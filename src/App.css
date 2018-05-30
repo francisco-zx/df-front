@@ -161,7 +161,7 @@ button{
 }
 @media(max-width:  480px){
 	.container{
-		padding: 1rem;
+		padding: 2rem;
 	}
 }
 #slider::-webkit-scrollbar {
@@ -206,4 +206,9 @@ div, img, article{
 }
 .slick-active img{
 	filter: none !important;
+}
+@media(max-width: 480px){
+  .my-masonry-grid_column{
+    padding-left: 0;
+  }
 }

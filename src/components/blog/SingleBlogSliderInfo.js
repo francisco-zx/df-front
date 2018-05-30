@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-
+import { StyleSheet, css } from 'aphrodite';
 
 export default class SingleEventSliderInfo extends Component {
   render() {
     return (
-        <div style={style.sliderInfo}>
-          <aside style={style.sliderInfoTag}>NOVEDAD</aside>
-          <h1 style={style.sliderInfoTitle}>Anunciamos BAFWEEK FW18!</h1>
-          <h3 style={style.sliderInfoSubtitle}>Organizado por DF Entertainment, IRSA y La Rural.
+        <div className={css(style.sliderInfo)}>
+          <aside className={css(style.sliderInfoTag)}>NOVEDAD</aside>
+          <h1 className={css(style.sliderInfoTitle)}>Anunciamos BAFWEEK FW18!</h1>
+          <h3 className={css(style.sliderInfoSubtitle)}>Organizado por DF Entertainment, IRSA y La Rural.
           </h3>
         </div>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-    zIndex: 3
+    zIndex: 3,
+    "@media(max-width: 1024px)": {
+      padding: '3rem'
+    },
+    "@media(max-width: 480px)": {
+      padding: '2rem'
+    }
   },
   sliderInfoTitle: {
     color: 'white',
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    animationDelay: '0.2s',
+    "@media(max-width: 1024px)": {
+      fontSize: '2.5rem'
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '1.8rem'
+    }
   },
   sliderInfoTag: {
     color: 'white',
@@ -40,6 +53,15 @@ const style = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
+    animationDelay: '0.4s',
+    "@media(max-width: 1024px)": {
+      fontSize: '2rem',
+      maxWidth:'90%',
+    },
+    "@media(max-width: 900px)": {
+      fontSize: '1.3rem',
+      maxWidth:'none%',
+    }
   },
   button: {
     color: 'white',
@@ -52,4 +74,4 @@ const style = {
     marginRight: '1rem',
     marginTop: '1rem'
   }
-}
+})
