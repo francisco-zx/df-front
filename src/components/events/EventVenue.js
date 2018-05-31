@@ -40,7 +40,7 @@ const style = StyleSheet.create({
     verticalAlign:'top',
     animationDelay: '0.8s',
     "@media(max-width: 1024px)": {
-
+      marginTop: '1.5rem'
     }
   },
   eventDetails: {
@@ -53,7 +53,10 @@ const style = StyleSheet.create({
     lineHeight: 1.5,
     fontSize: '1.5rem',
     animationDelay: '1s',
-    alignItems: 'center'
+    alignItems: 'center',
+    "@media(max-width: 480px)": {
+      fontSize: '1.3rem'
+    }
   },
   eventLocation: {
     padding: '2rem'
@@ -70,7 +73,10 @@ const style = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: '0.5rem',
     marginTop: '1.5rem',
-    animationDelay: '1.4s'
+    animationDelay: '1.4s',
+    "@media(max-width: 480px)": {
+      fontSize: '1rem'
+    }
   },
   eventLocationAdress: {
     color: 'white',

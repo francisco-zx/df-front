@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from  'aphrodite';
 
 import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import VenuesSliderInfo from './VenuesSliderInfo';
@@ -35,27 +36,27 @@ export default class VenueSlider extends Component {
 
     return (
       <section>
-        <Slider {...settings} style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+        <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <Link to='/venue/teatro-vorterix'>
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <VenuesSliderInfo />
             </div>
             </Link>
-            <div style={style.sliderOverlay}></div>
+            <div className={css(style.sliderOverlay)}></div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <VenuesSliderInfo />
             </div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <VenuesSliderInfo />
             </div>
           </div>
           <div >
-            <div style={style.sliderItem}>
+            <div className={css(style.sliderItem)}>
               <VenuesSliderInfo />
             </div>
           </div>
@@ -66,13 +67,22 @@ export default class VenueSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${VenuesSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    "@media(max-width: 1024px)": {
+      height: '62vh'
+    },
+    "@media(max-width: 767px)": {
+      height: '45vh'
+    },
+    "@media(max-width: 480px)": {
+      height: '34vh'
+    }
   },
   sliderItemImg: {
     height: 'auto',
@@ -87,4 +97,4 @@ const style = {
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
   }
-}
+})

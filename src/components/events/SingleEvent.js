@@ -13,7 +13,10 @@ export default class SingleEventPage extends Component {
       <div>
         <SingleEventSlider />
         <SingleEventInfo />
-        <RelatedEventsSlider />
+        {
+          window.innerWidth > 480 &&
+          <RelatedEventsSlider />
+        }
       </div>
     );
   }

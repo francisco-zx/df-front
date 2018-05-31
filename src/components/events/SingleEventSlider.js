@@ -62,8 +62,8 @@ export default class SingleEventSlider extends Component {
         </div>
         <div className={css(style.shareEvent) + ' animated fadeIn'}>
           Compartir:
-          <i className='fa fa-facebook' className={css(style.shareIcon)}></i>
-          <i className='fa fa-twitter' className={css(style.shareIcon)}></i>
+          <i className='fa fa-facebook' ></i>
+          <i className='fa fa-twitter' ></i>
         </div>
         <div className={css(style.goBack)}>
           <Link to='/events'>
@@ -84,8 +84,18 @@ const style = StyleSheet.create({
     height: '72vh',
     backgroundImage: `url(${SingleEventSliderPic})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center center',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    "@media(max-width: 1024px)": {
+      height: '62vh'
+    },
+    "@media(max-width: 767px)": {
+      height: '45vh'
+    },
+    "@media(max-width: 480px)": {
+      height: '34vh'
+    }
   },
   sliderItemImg: {
     height: 'auto',
@@ -126,7 +136,8 @@ const style = StyleSheet.create({
     "@media(max-width: 480px)": {
       left: '50%',
       transform: 'translate(-50%, 50%)',
-      margin: 0
+      margin: 0,
+      fontSize: '0.8rem'
     }
   },
   shareEvent: {
@@ -137,7 +148,10 @@ const style = StyleSheet.create({
     color: 'white',
     fontFamily: 'Avenir',
     fontWeight: 600,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
   },
   shareIcon: {
     padding: '0 0.5rem',

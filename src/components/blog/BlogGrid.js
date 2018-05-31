@@ -137,7 +137,11 @@ const style = StyleSheet.create({
   blogItemImg: {
     position: 'relative',
     width: '100%',
-    height: 'auto'
+    height: 'auto',
+    "@media(max-width: 480px)": {
+      objectFit: 'cover',
+      maxHeight: '12rem'
+    }
   },
   overlay: {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.6+100 */
@@ -182,6 +186,18 @@ const style = StyleSheet.create({
     "@media(max-width: 767px)": {
       fontSize: '1.8rem',
       padding: '20px',
+    },
+    "@media(max-width: 696px)": {
+      fontSize: '1.6rem',
+      padding: '10px',
+    },
+    "@media(max-width: 585px)": {
+      fontSize: '1.4rem',
+      padding: '10px',
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '2rem',
+      padding: '10px',
     }
   },
   typeTag: {
@@ -216,7 +232,11 @@ const style = StyleSheet.create({
     "@media(max-width: 767px)": {
       top: 20,
       left: 20,
-    }
+    },
+    "@media(max-width: 696px)": {
+      top: 10,
+      left: 10,
+    },
   },
   blogButton: {
     zIndex:2,

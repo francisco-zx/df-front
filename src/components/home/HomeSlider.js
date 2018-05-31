@@ -64,7 +64,16 @@ const style = StyleSheet.create({
     backgroundImage: `url(${HomeSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    "@media(max-width: 1024px)": {
+      height: '62vh'
+    },
+    "@media(max-width: 767px)": {
+      height: '45vh'
+    },
+    "@media(max-width: 480px)": {
+      height: '34vh'
+    }
   },
   sliderItemImg: {
     height: 'auto',
