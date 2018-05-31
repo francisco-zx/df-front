@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 import CEOImg from '../../assets/about/CEOImg.png';
 
 export default class AboutText extends Component {
   render() {
     return (
-      <article style={style.aboutCEO}>
-        <div className='container' style={style.content}>
-          <div style={style.left}>
-            <img src={CEOImg} width='60%'/>
-          </div>
-          <div style={style.right}>
-            <div style={style.rightContent}>
-              <h2 style={style.title}>Diego Finkelstein</h2>
-              <h4 style={style.subTitle}>Fundador & CEO</h4>
-              <h4 style={style.subTitle}>-</h4>
-              <p style={style.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget tortor ultrices, mollis enim a, elementum quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ut lacus ut odio porta luctus. Praesent ut ante vel sapien fringilla consequat non non justo. Aliquam ac velit in nisl laoreet feugiat vitae et est. Quisque ut elit a mi luctus faucibus eget ut quam.
-              </p>
-            </div>
-          </div>
+      <article className={style.aboutCEO}>
+        <div className={css(style.content) + ' container'}>
+        <p className={css(style.text) + ' animated fadeIn'}>
+          La productora de los shows más importantes del país y de Lollapalooza Argentina se describe como una empresa que está atenta a las nuevas tendencias y costumbres de la industria del entretenimiento. Con un equipo de gente joven e inquieta, DF Entertainment se encuentra en pleno crecimiento y el día a día se basa en encontrar la manera de hacer las cosas de una forma diferente y creativa. Todo comienza desde la elección de los artistas que visitan nuestro país todos los años.
+        </p>
         </div>
       </article>
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   aboutCEO: {
     background: '#e9e9eb'
   },
@@ -58,7 +49,11 @@ const style = {
   },
   text: {
     maxWidth: '55%',
+    margin: '0 auto',
+    padding: '1rem',
     fontSize: '1.1rem',
-    lineHeight: 1.4
+    lineHeight: 1.4,
+    animationDelay: '0.6s',
+    textAlign: 'center'
   }
-}
+})

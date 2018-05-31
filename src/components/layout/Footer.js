@@ -182,7 +182,8 @@ const style = StyleSheet.create({
     margin: '0 auto',
     display: 'flex',
     alignItems: 'flex-start',
-    animationDelay: '0.3s'
+    animationDelay: '0.3s',
+    maxWidth: '100%'
   },
   newsIcon: {
     width: '1.5rem',

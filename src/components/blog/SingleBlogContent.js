@@ -84,5 +84,9 @@ const style = StyleSheet.create({
     lineHeight: '24pt',
     paddingRight: '2rem',
     marginBottom: '3rem',
+    "@media(max-width: 480px)": {
+      fontSize: '0.9rem',
+      lineHeight: '12pt'
+    }
   }
 })

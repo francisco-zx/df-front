@@ -8,19 +8,20 @@ export default class ContactPage extends Component {
   render() {
     return (
       <section className={css(style.contactForm)}>
+        <h3 className={css(style.contactTitle) + ' animated fadeIn'}>CONTACTO</h3>
         <form className={css(style.contactFormForm)}>
           <div className={css(style.row)}>
-            <input className={css(style.input, style.inputName)} type='text' placeholder='Nombre' name='name' />
-            <input className={css(style.input)} type='text' placeholder='E-Mail' name='email' />
+            <input className={css(style.input, style.inputName) + ' animated fadeIn'} type='text' placeholder='Nombre' name='name' />
+            <input className={css(style.input) + ' animated fadeIn'} type='text' placeholder='E-Mail' name='email' />
           </div>
           <div className={css(style.row)}>
-            <input className={css(style.input)} type='text' placeholder='Asunto' name='subject' />
+            <input className={css(style.input) + ' animated fadeIn'} type='text' placeholder='Asunto' name='subject' />
           </div>
           <div className={css(style.row)}>
-            <textarea className={css(style.inputArea)} type='text' placeholder='Escribí aca tu mensaje...' name='message' />
+            <textarea className={css(style.inputArea) + ' animated fadeIn'} type='text' placeholder='Escribí aca tu mensaje...' name='message' />
           </div>
           <div className={css(style.row)}>
-            <a className={css(style.submit)} type='submit' name='send'>
+            <a className={css(style.submit) + ' animated fadeIn'} type='submit' name='send'>
               ENVIAR
             </a>
           </div>
@@ -36,18 +37,46 @@ const style = StyleSheet.create({
     flex:1,
     justifyContent: 'center',
     zIndex: 8,
-    padding: '6rem'
+    padding: '6rem',
+    flexDirection: 'column',
+    "@media(max-width: 1024px)": {
+      padding: '3rem'
+    },
+    "@media(max-width: 480px)": {
+      padding: '2rem'
+    }
+  },
+  contactTitle: {
+    fontSize: '1.5rem',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    color: 'white',
+    display: 'inline-block',
+    paddingBottom: '4px',
+    borderBottom: '1px solid white',
+    marginBottom: '3rem',
+    "@media(max-width: 1024px)": {
+      marginTop: '2rem',
+    },
+    "@media(max-width: 900px)": {
+      marginTop: '3rem',
+    },
+    "@media(min-width: 480px)": {
+      display: 'none'
+    }
   },
   contactFormForm: {
     display: 'flex',
     flex:1,
     flexDirection: 'column',
-    padding: '5rem'
   },
   row: {
     display: 'flex',
     flex: 1,
-    padding: '0 3rem'
+    padding: '0 3rem',
+    "@media(max-width: 480px)": {
+      padding: '0'
+    }
   },
   input: {
     display: 'flex',
@@ -75,7 +104,9 @@ const style = StyleSheet.create({
     background: 'white',
     display: 'flex',
     alignItems: 'center',
-    borderRadius: '0'
-
+    borderRadius: '0',
+    "@media(max-width: 480px)": {
+      margin: '0 auto'
+    }
   }
 })
