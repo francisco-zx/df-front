@@ -100,7 +100,7 @@ const style = StyleSheet.create({
     }
   },
   mobileDescription: {
-    "media(min-width: 480px)": {
+    "@media(min-width: 480px)": {
       display: 'none'
     }
   },
@@ -110,7 +110,8 @@ const style = StyleSheet.create({
     fontSize: '0.9rem',
     lineHeight: '12pt',
     paddingRight: '2rem',
-    animationDelay: '0.6s',
+    animationDelay: '0.6s'
+
   },
   mobileShareEvent: {
     padding: '1rem 2rem',

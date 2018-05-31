@@ -180,6 +180,7 @@ const style = StyleSheet.create({
     position: 'relative',
     width: 'auto',
     margin: '0 auto',
+    marginLeft: '0 !important',
     display: 'flex',
     alignItems: 'flex-start',
     animationDelay: '0.3s',

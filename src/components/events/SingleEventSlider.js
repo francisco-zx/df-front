@@ -62,8 +62,8 @@ export default class SingleEventSlider extends Component {
         </div>
         <div className={css(style.shareEvent) + ' animated fadeIn'}>
           Compartir:
-          <i className='fa fa-facebook' ></i>
-          <i className='fa fa-twitter' ></i>
+          <i className={css(style.shareIcon) + ' fa fa-facebook'} ></i>
+          <i className={css(style.shareIcon) + ' fa fa-twitter'}  ></i>
         </div>
         <div className={css(style.goBack)}>
           <Link to='/events'>
