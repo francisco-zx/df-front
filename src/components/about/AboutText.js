@@ -33,7 +33,10 @@ const style = StyleSheet.create({
     color: '#161616',
     fontSize: '2.5rem',
     fontWeight: 'bold',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
   },
   subTitle: {
     fontWeight: 500,
@@ -47,6 +50,10 @@ const style = StyleSheet.create({
     padding: '1rem',
     fontSize: '1.1rem',
     lineHeight: 1.4,
-    animationDelay: '0.6s'
+    animationDelay: '0.6s',
+    "@media(max-width: 480px)": {
+      maxWidth: 'none',
+      padding: 0
+    }
   }
 })

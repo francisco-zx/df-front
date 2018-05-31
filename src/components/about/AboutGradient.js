@@ -33,13 +33,19 @@ const style = StyleSheet.create({
     fontSize: '5rem',
     fontWeight: 500,
     marginBottom: '1rem',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    "@media(max-width: 480px)": {
+      fontSize: '2rem'
+    }
   },
   lastTitle: {
     color: 'white',
     fontSize: '5rem',
     fontWeight: 500,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    "@media(max-width: 480px)": {
+      fontSize: '2rem'
+    }
   },
   bold: {
     fontWeight: 600

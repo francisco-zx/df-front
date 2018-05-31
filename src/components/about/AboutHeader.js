@@ -38,7 +38,10 @@ const style = StyleSheet.create({
   logo: {
     display: 'flex',
     zIndex: 666,
-    animationDelay: '0.3s'
+    animationDelay: '0.3s',
+    "@media(max-width: 480px)": {
+      width: '70%'
+    }
   },
   overlay: {
     background: 'rgba(0,0,0,0.4)',

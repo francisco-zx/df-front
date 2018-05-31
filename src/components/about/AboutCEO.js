@@ -54,6 +54,10 @@ const style = StyleSheet.create({
     fontSize: '1.1rem',
     lineHeight: 1.4,
     animationDelay: '0.6s',
-    textAlign: 'center'
+    textAlign: 'center',
+    "@media(max-width: 480px)": {
+      maxWidth: 'none',
+      padding: 0
+    }
   }
 })
