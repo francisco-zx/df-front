@@ -17,10 +17,16 @@ export default class Header extends Component {
   render() {
     return (
       <header className={css(style.header)}>
+        <div className={css(style.mobileMenuIcon)}>
+          <i className='fa fa-bars fa-2x'></i>
+        </div>
         <Link to='/' className={css(style.logoWrapper)}>
           <img src={Logo} className={css(style.logo) + ' animated fadeIn'} alt='Logo DF Entertainment'/>
         </Link>
         <Nav />
+        <div className={css(style.mobileSearchIcon)}>
+          <i className='fa fa-search fa-2x'></i>
+        </div>
       </header>
     );
   }
@@ -35,14 +41,20 @@ const style = StyleSheet.create({
     boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)',
     "@media(max-width: 996px)": {
       justifyContent: 'center',
-    }
+    },
+    "@media(max-width: 480px)": {
+      padding: '2rem',
+    },
   },
   logo: {
     height: '4rem',
     width: 'auto',
     display: 'flex',
     flex: 1,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    "@media(max-width: 996px)": {
+      flex: 2,
+    },
   },
   gradient: {
     width:'100%',
@@ -50,5 +62,23 @@ const style = StyleSheet.create({
     background: '#d6249f',
     background: 'linear-gradient(to right at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
     boxShadow: '0px 3px 10px rgba(0,0,0,.25)'
+  },
+  mobileMenuIcon: {
+    display: 'flex',
+    flex: 1,
+    "@media(min-width: 480px)": {
+      display: 'none'
+    }
+  },
+  mobileSearchIcon: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'flex-end',
+    "@media(min-width: 480px)": {
+      display: 'none'
+    }
+  },
+  mobileSearchIconIcon: {
+    display: 'flex'
   }
 })
