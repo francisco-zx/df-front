@@ -9,7 +9,7 @@ export default class EventsSliderItem extends Component {
         <h1 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h1>
         <p className={css(style.location) + ' animated fadeIn'}>{this.props.location}</p>
         <div className={css(style.buttonGroup)}>
-          <button className={css(style.button) + ' animated fadeIn'}>VER MAS +</button>
+          <button className={css(style.button) + ' animated fadeIn'}> VER MAS +</button>
           <button className={css(style.button) + ' animated fadeIn'}>COMPRAR</button>
         </div>
       </div>
@@ -26,23 +26,23 @@ const style = StyleSheet.create({
     maxWidth: '17rem',
     whiteSpace: 'normal',
     "@media(max-width: 480px)": {
-      padding: '2rem 5rem'
+      padding: '2rem'
     }
   },
   date: {
     fontSize: '1.5rem',
     textDecoration: 'underline',
     fontWeight: 'bold',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
   },
   title: {
     fontSize: '2rem',
     fontWeight: 'bold',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     animationDelay: '0.2s'
   },
   location: {
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     animationDelay: '0.4s'
   },
   button: {
