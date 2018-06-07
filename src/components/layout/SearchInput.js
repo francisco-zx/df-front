@@ -9,7 +9,7 @@ export default class SearchInput extends Component {
     return (
       <div style={{position: 'relative'}}>
         <input className={css(style.searchInput) + ' animated fadeIn'} type='textarea' placeholder='Buscá por artistas o venues...'/>
-        <img src={SearchIcon} className={css(style.searchIcon)} width='18srem'/>
+        <img src={SearchIcon} className={css(style.searchIcon) + ' animated fadeIn'} width='18rem'/>
       </div>
     );
   }
@@ -23,16 +23,14 @@ const style = StyleSheet.create({
     width: '13rem',
     border: '1px solid #161616',
     borderRadius: '20px',
-    justifyContent: 'flex-end',
-    "@media(max-width:  1024px)": {
-      display: 'none'
-    }
+    justifyContent: 'flex-end'
   },
   searchIcon: {
     position: 'absolute',
     right: 0,
     top: '50%',
     transform: 'translateY(-50%)',
-    paddingRight: '8px'
+    paddingRight: '8px',
+    animationDelay: '0.4s'
   }
 })

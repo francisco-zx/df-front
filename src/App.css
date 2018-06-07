@@ -149,12 +149,12 @@ button{
 .slick-next{
 	right: 0;
 	padding: 1rem;
-	z-index: 999;
+	z-index: 333;
 }
 .slick-prev{
 	left: 0;
 	padding: 1rem;
-	z-index: 999;
+	z-index: 333;
 }
 .container{
 	padding: 3rem 6rem;

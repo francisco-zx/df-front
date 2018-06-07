@@ -37,7 +37,7 @@ const style = StyleSheet.create({
   },
   logo: {
     display: 'flex',
-    zIndex: 666,
+    zIndex: 333,
     animationDelay: '0.3s',
     "@media(max-width: 480px)": {
       width: '70%'

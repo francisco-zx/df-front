@@ -5,18 +5,26 @@ import { StyleSheet, css } from 'aphrodite';
 
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
+import MobileSearch from './MobileSearch';
 
 export default class Header extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showMobileMenu: false
+      showMobileMenu: false,
+      showMobileSearch: false
     }
   }
   toggleMobileMenu = () => {
     console.log('clickiti')
     this.setState({
       showMobileMenu: !this.state.showMobileMenu
+    })
+  }
+  toggleMobileSearch = () => {
+    console.log('clickiti')
+    this.setState({
+      showMobileSearch: !this.state.showMobileSearch
     })
   }
   render() {
@@ -29,12 +37,16 @@ export default class Header extends Component {
           <img src={Logo} className={css(style.logo) + ' animated fadeIn'} alt='Logo DF Entertainment'/>
         </Link>
         <Nav />
-        <div className={css(style.mobileSearchIcon)}>
+        <div className={css(style.mobileSearchIcon)} onClick={() => {this.toggleMobileSearch()}}>
           <i className='fa fa-search fa-2x'></i>
         </div>
         {
           this.state.showMobileMenu &&
             <MobileMenu closeMenu={this.toggleMobileMenu}/>
+        }
+        {
+          this.state.showMobileSearch &&
+            <MobileSearch closeSearch={this.toggleMobileSearch}/>
         }
       </header>
     );

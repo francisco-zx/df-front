@@ -18,7 +18,9 @@ export default class Nav extends Component {
           <Link to='/about' className={css(style.navItem) + ' animated fadeIn'}>Quienes Somos</Link>
           <Link to='/contact' className={css(style.navItem) + ' animated fadeIn'}>Contacto</Link>
         </ul>
-        <SearchInput />
+        <div className={css(style.search)}>
+          <SearchInput />
+        </div>
       </nav>
     );
   }
@@ -51,6 +53,11 @@ const style = StyleSheet.create({
     "@media(max-width: 1024px)": {
       padding: '0.2rem',
       fontSize: '0.9rem'
+    }
+  },
+  search: {
+    "@media(max-width: 1024px)": {
+      display: 'none'
     }
   }
 })
