@@ -6,14 +6,6 @@ import { StyleSheet, css } from 'aphrodite';
 import Nav from './Nav';
 
 export default class Header extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      padding: '3rem 5rem'
-    }
-  }
-
   render() {
     return (
       <header className={css(style.header)}>
@@ -54,6 +46,9 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     "@media(max-width: 996px)": {
       flex: 2,
+    },
+    "@media(max-width: 480px)": {
+      height: '3rem',
     },
   },
   gradient: {
