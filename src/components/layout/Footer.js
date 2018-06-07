@@ -18,8 +18,10 @@ export default class Footer extends Component {
           <div className={css(style.bottomLeft) + ' animated fadeIn'}>
             <h3 className={css(style.bottomTitleLeft) + ' animated fadeIn'}>Suscribite a Nuestro Newsletter</h3>
             <div className={css(style.newsLetter) + ' animated fadeIn'}>
-              <input type='text' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email'/>
-              <img src={NewsletterIcon} className={css(style.newsIcon) + ' animated fadeIn'} />
+              <form>
+                <input type='email' name='email' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email'/>
+                <img src={NewsletterIcon} className={css(style.newsIcon) + ' animated fadeIn'} />
+              </form>
             </div>
           </div>
           <div className={css(style.bottomRight)}>

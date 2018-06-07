@@ -87,7 +87,10 @@ const style = StyleSheet.create({
     fontSize: '2rem',
     marginBottom: '1rem',
     animationDelay: '0.4s',
-    transition: 'all 0.1s ease'
+    transition: 'all 0.1s ease',
+    "@media(max-width: 480px)": {
+      fontSize: '1.8rem'
+    }
   },
   description: {
     marginTop: '3rem',

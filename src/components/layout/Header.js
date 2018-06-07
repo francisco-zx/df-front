@@ -61,7 +61,7 @@ const style = StyleSheet.create({
   mobileMenuIcon: {
     display: 'flex',
     flex: 1,
-    "@media(min-width: 480px)": {
+    "@media(min-width: 996px)": {
       display: 'none'
     }
   },
@@ -69,7 +69,7 @@ const style = StyleSheet.create({
     display: 'flex',
     flex: 1,
     justifyContent: 'flex-end',
-    "@media(min-width: 480px)": {
+    "@media(min-width: 996px)": {
       display: 'none'
     }
   },

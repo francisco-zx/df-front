@@ -157,7 +157,7 @@ button{
 	z-index: 999;
 }
 .container{
-	padding: 6rem;
+	padding: 3rem 6rem;
 }
 @media(max-width:  1024px){
 	.container{

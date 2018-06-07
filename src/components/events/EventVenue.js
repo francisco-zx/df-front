@@ -55,7 +55,8 @@ const style = StyleSheet.create({
     animationDelay: '1s',
     alignItems: 'center',
     "@media(max-width: 480px)": {
-      fontSize: '1.3rem'
+      fontSize: '1.1rem',
+      lineHeight: 2
     }
   },
   eventLocation: {
