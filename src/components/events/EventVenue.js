@@ -40,7 +40,8 @@ const style = StyleSheet.create({
     verticalAlign:'top',
     animationDelay: '0.8s',
     "@media(max-width: 1024px)": {
-      marginTop: '1.5rem'
+      marginTop: '1.5rem',
+      margin: '0 auto'
     }
   },
   eventDetails: {

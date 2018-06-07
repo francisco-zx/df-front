@@ -73,6 +73,8 @@ const style = StyleSheet.create({
     flexDirection: 'column',
     "@media(max-width: 1024px)": {
       flex: 1,
+      margin: '0 auto',
+      marginTop: '3rem'
     }
   },
   title: {
