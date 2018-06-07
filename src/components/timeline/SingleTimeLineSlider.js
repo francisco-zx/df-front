@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { StyleSheet, css } from 'aphrodite';
 
 import SingleTimelineSliderPic from '../../assets/timeline/single_timeline_slider.png';
 import TimelinePicker from '../../assets/timeline/timeline_picker.svg';
@@ -44,35 +45,33 @@ export default class SingleTimelineSlider extends Component {
     };
 
     return (
-      <section style={style.section}>
-        <Slider {...settings} ref='mainSlider' style={style.slider} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+      <section className={css(style.section)}>
+        <Slider {...settings} ref='mainSlider' className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <Link to='#'>
-              <div style={style.sliderItem}>
-                <SingleTimeLineSliderInfo name='Monsters of Rock'/>
-              </div>
-
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div style={style.sliderItem}>
+              <div className={css(style.sliderItem)}>
                 <SingleTimeLineSliderInfo name='Monsters of Rock'/>
               </div>
             </Link>
           </div>
           <div >
             <Link to='#'>
-              <div style={style.sliderItem}>
+              <div className={css(style.sliderItem)}>
+                <SingleTimeLineSliderInfo name='Monsters of Rock'/>
+              </div>
+            </Link>
+          </div>
+          <div >
+            <Link to='#'>
+              <div className={css(style.sliderItem)}>
                 <SingleTimeLineSliderInfo name='Monsters of Rock'/>
               </div>
             </Link>
           </div>
         </Slider>
-        <div style={style.goBack}>
+        <div className={css(style.goBack)}>
           <Link to='/timeline'>
-            <button style={style.backButton}><i class='fa fa-angle-left'></i> VOLVER</button>
-
+            <button className={css(style.backButton)}><i class='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />
@@ -81,10 +80,9 @@ export default class SingleTimelineSlider extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   section: {
     position: 'relative',
-
   },
   sliderItem: {
     height: '72vh',
@@ -121,6 +119,9 @@ const style = {
     left: 0,
     margin: '2rem 6rem',
     color: 'white',
+    "@media(max-width:1024px)": {
+      margin: '1rem 3rem'
+    }
   },
   backButton: {
     color: 'white',
@@ -130,7 +131,8 @@ const style = {
     background: 'transparent',
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
-    marginRight: '0.3rem'
+    marginRight: '0.3rem',
+
   },
   navSlider: {
     background: '#161616',
@@ -171,7 +173,5 @@ const style = {
   },
   timelineSubTitle: {
     fontSize: '0.8rem',
-
-
   },
-}
+})

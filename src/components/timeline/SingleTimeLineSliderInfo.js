@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { StyleSheet, css } from 'aphrodite';
 
 import { Link } from 'react-router-dom';
 
@@ -7,27 +8,37 @@ import { Link } from 'react-router-dom';
 export default class SingleTimeLineSliderInfo extends Component {
   render() {
     return (
-        <div style={style.sliderInfo}>
-          <h1 style={style.sliderInfoTitle}>{this.props.name}</h1>
-          <h3 style={style.sliderInfoSubtitle}>19 de Marzo, Estadio Instituto
+        <div className={css(style.sliderInfo)}>
+          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.name}</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>19 de Marzo, Estadio Instituto
           </h3>
-          <h3 style={style.sliderInfoSubtitle}>Córdoba, Argentina
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Córdoba, Argentina
           </h3>
         </div>
     );
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-    zIndex: 3
+    zIndex: 3,
+    "@media(max-width: 1024px)": {
+      padding: '3rem'
+    }
   },
   sliderInfoTitle: {
     color: 'white',
     fontSize: '3rem',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    animationDelay: '0.2s',
+    "@media(max-width: 1024px)": {
+      fontSize: '2.5rem'
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '1.8rem'
+    }
   },
   sliderInfoTag: {
     color: 'white',
@@ -43,6 +54,16 @@ const style = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
+    maxWidth:'70%',
+    animationDelay: '0.4s',
+    "@media(max-width: 1024px)": {
+      fontSize: '2rem',
+      maxWidth:'90%',
+    },
+    "@media(max-width: 900px)": {
+      fontSize: '1.3rem',
+      maxWidth:'none%',
+    }
   },
   button: {
     color: 'white',
@@ -53,6 +74,7 @@ const style = {
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    animationDelay: '0.6s',
   }
-}
+})

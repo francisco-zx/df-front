@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { StyleSheet, css } from 'aphrodite';
 import BorderGradient from  '../layout/BorderGradient';
 
 import Gallery1 from '../../assets/timeline/single_timeline_gallery_1.png';
@@ -11,25 +11,25 @@ export default class SingleTimelineGallery extends Component {
   render() {
     return (
       <section>
-        <h3 style={style.title}>GALERIA</h3>
+        <h3 className={css(style.title)}>GALERIA</h3>
         <BorderGradient />
         <div>
-          <div style={style.galleryGrid}>
-            <img style={style.img1} src={Gallery1} />
+          <div className={css(style.galleryGrid)}>
+            <img className={css(style.img1, style.img)} src={Gallery1} height='auto'/>
           </div>
-          <div style={style.galleryGrid}>
-            <img style={style.img2} src={Gallery2} />
-            <img style={style.img2} src={Gallery3} />
+          <div className={css(style.galleryGrid)}>
+            <img className={css(style.img2, style.img)} src={Gallery2} height='auto'/>
+            <img className={css(style.img2, style.img)} src={Gallery3} height='auto'/>
           </div>
         </div>
-        <div style={style.galleryGrid}>
-          <img style={style.img1} src={Gallery4} />
+        <div className={css(style.galleryGrid)}>
+          <img className={css(style.img1, style.img)} src={Gallery4} height='auto'/>
         </div>
       </section>
     );
   }
 }
-const style = {
+const style = StyleSheet.create({
   aboutText: {
     display: 'flex',
     justifyContent: 'center',
@@ -41,6 +41,9 @@ const style = {
     display: 'flex',
     flex:1
   },
+  img: {
+    objectFit: 'cover'
+  },
   img1: {
     display: 'flex',
     flex: 1
@@ -48,7 +51,10 @@ const style = {
   img2: {
     display: 'flex',
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    "@media(max-width:1024px)": {
+      flexDirection: 'column',
+    }
   },
   title: {
     background: '#161616',
@@ -63,4 +69,4 @@ const style = {
     fontWeight: 'bold',
     marginTop: '3rem'
   }
-}
+})

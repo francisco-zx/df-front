@@ -21,9 +21,6 @@ const style = StyleSheet.create({
     zIndex: 3,
     "@media(max-width: 1024px)": {
       padding: '3rem'
-    },
-    "@media(max-width: 480px)": {
-      padding: '2rem'
     }
   },
   sliderInfoTitle: {
