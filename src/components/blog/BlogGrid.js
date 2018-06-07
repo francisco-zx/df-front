@@ -41,6 +41,10 @@ export default class BlogGrid extends Component {
             {
               this.props.blog.length ?
                 this.props.blog.map((item, index) => {
+                  const img = new Image();
+                  img.url = item.img_principal;
+                  console.log(img.naturalHeight)
+                  
                   return(
                     <BlogGridItem
                       title={item.nombre}

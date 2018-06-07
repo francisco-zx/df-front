@@ -4,12 +4,25 @@ import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
 import Nav from './Nav';
+import MobileMenu from './MobileMenu';
 
 export default class Header extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      showMobileMenu: false
+    }
+  }
+  toggleMobileMenu = () => {
+    console.log('clickiti')
+    this.setState({
+      showMobileMenu: !this.state.showMobileMenu
+    })
+  }
   render() {
     return (
       <header className={css(style.header)}>
-        <div className={css(style.mobileMenuIcon)}>
+        <div className={css(style.mobileMenuIcon)+ ' clickable'} onClick={() => {this.toggleMobileMenu()}}>
           <i className='fa fa-bars fa-2x'></i>
         </div>
         <Link to='/' className={css(style.logoWrapper)}>
@@ -19,6 +32,10 @@ export default class Header extends Component {
         <div className={css(style.mobileSearchIcon)}>
           <i className='fa fa-search fa-2x'></i>
         </div>
+        {
+          this.state.showMobileMenu &&
+            <MobileMenu closeMenu={this.toggleMobileMenu}/>
+        }
       </header>
     );
   }
