@@ -8,7 +8,7 @@ export default class HomeEvents extends Component {
     return (
       <div>
         <div className='container'>
-          <SectionTitle text='Eventos'/>
+          <SectionTitle text='Eventos' link='/events'/>
           <EventsSlider />
         </div>
       </div>

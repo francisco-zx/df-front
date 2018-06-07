@@ -18,7 +18,7 @@ export default class HomeVenues extends Component {
   render() {
     return (
       <div className='container'>
-        <SectionTitle text='Venues'/>
+        <SectionTitle text='Venues' link='/venues'/>
         <div className={css(style.venuesGrid)}>
           <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
             <div className={css(style.padding)}>
