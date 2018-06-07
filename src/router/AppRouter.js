@@ -23,12 +23,28 @@ class AppRouter extends Component {
   constructor(props){
     super(props);
     this.state = {
+      events: {},
       blog: {}
     }
   }
 
   componentDidMount(){
+    this.initializeEvents();
     this.initializeBlog();
+  }
+
+  initializeEvents = () => {
+    fetch('https://dfapi.dlmr.co/api/eventos/all')
+    .then(response => response.json())
+    .then()
+    .then(data => {
+      console.log(data);
+      this.setState({
+        events: data
+      }, () => {
+        console.log(this.state.events)
+      })
+    })
   }
 
   initializeBlog = () => {
