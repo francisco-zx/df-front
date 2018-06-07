@@ -18,8 +18,33 @@ import BlogPage from '../components/blog/Index';
 import AboutPage from '../components/about/Index';
 import ContactPage from '../components/contact/Index';
 
-
 class AppRouter extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      blog: {}
+    }
+  }
+
+  componentDidMount(){
+    this.initializeBlog();
+  }
+
+  initializeBlog = () => {
+    fetch('https://dfapi.dlmr.co/api/blog/all')
+    .then(response => response.json())
+    .then()
+    .then(data => {
+      console.log(data);
+      this.setState({
+        blog: data
+      }, () => {
+        console.log(this.state.blog)
+      })
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -34,7 +59,7 @@ class AppRouter extends Component {
                 <Route path="/venue/teatro-vorterix" component={SingleVenue} />
               <Route path="/timeline" exact component={TimelinePage} />
                 <Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
-              <Route path="/blog" exact component={BlogPage} />
+              <Route path="/blog" exact render={()=><BlogPage blog={this.state.blog}/>}/>
                 <Route path="/blog/baf-week" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />

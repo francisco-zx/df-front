@@ -1,60 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Masonry from 'react-masonry-css';
 import { StyleSheet, css } from 'aphrodite';
+import { Link } from 'react-router-dom';
 
-import BlogGridItem from './BlogGridItem';
-import SectionTitle from '../layout/SectionTitle';
 import BorderGradient from '../layout/BorderGradient';
 
-import Blog1 from '../../assets/blog/blog1.jpg';
-import Blog2 from '../../assets/blog/blog2.jpg';
-import Blog3 from '../../assets/blog/blog3.jpg';
-import Blog4 from '../../assets/blog/blog4.jpg';
-import Blog5 from '../../assets/blog/blog5.jpg';
-import Blog6 from '../../assets/blog/blog6.jpg';
-
-export default class BlogGrid extends Component {
-
-  constructor(props){
-    super(props);
-  }
-
-  componentDidMount(){
-    this.props.blog.length &&
-    console.log(this.props.blog)
-  }
-
-  render() {
-    const settings = {
-      default: 3,
-      1024: 2,
-      480: 1
-    };
-    return (
-      <article className='container'>
-        <SectionTitle text='Blog'/>
-        <Masonry
-          breakpointCols={settings}
-          className={css(style.masonryGrid) + ' hover-parent'}
-          columnClassName="my-masonry-grid_column">
-            {
-              this.props.blog.length ?
-                this.props.blog.map((item, index) => {
-                  return(
-                    <BlogGridItem
-                      title={item.nombre}
-                      imgPrincipal={item.img_principal}
-                      slug={item.slug}
-                      key={item.id}
-                    />
-                  )
-                })
-              : <h1>Cargando</h1>
-            }
-        </Masonry>
-      </article>
-    );
+export default class BlogGridItem extends Component{
+  render(){
+    return(
+      <Link to={`/blog/${this.props.slug}`} className='animated fadeIn'>
+        <div className={css(style.blogItem) + ' hover-shadow'}>
+          <div className={css(style.blogItemPreview)}>
+            <img src={this.props.imgPrincipal} className={css(style.blogItemImg) + ' animated fadeIn'}/>
+            <aside className={css(style.typeTag) + ' animated fadeIn'}>Novedades</aside>
+            <h3 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h3>
+            <div className={css(style.overlay)}></div>
+          </div>
+          <div className={css(style.blogButton)}>
+                Leer más
+                </div>
+          <BorderGradient />
+        </div>
+      </Link>
+    )
   }
 }
 const style = StyleSheet.create({
