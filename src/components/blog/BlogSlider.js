@@ -38,22 +38,25 @@ export default class BlogSlider extends Component {
           <div >
             <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
-            </div>
-            <div className={css(style.sliderOverlay)}></div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <BlogSliderInfo />
+              <div className={css(style.sliderOverlay)}></div>
             </div>
           </div>
           <div >
             <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
+              <div className={css(style.sliderOverlay)}></div>
             </div>
           </div>
           <div >
             <div className={css(style.sliderItem)}>
               <BlogSliderInfo />
+              <div className={css(style.sliderOverlay)}></div>
+            </div>
+          </div>
+          <div >
+            <div className={css(style.sliderItem)}>
+              <BlogSliderInfo />
+              <div className={css(style.sliderOverlay)}></div>
             </div>
           </div>
         </Slider>
@@ -69,7 +72,9 @@ const style = StyleSheet.create({
     backgroundImage: `url(${BlogSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
+    position: 'relative',
     alignItems: 'center',
+    overflow: 'hidden',
     "@media(max-width: 1024px)": {
       height: '62vh'
     },
@@ -91,6 +96,7 @@ const style = StyleSheet.create({
     top: 0,
     left: 0,
     background: 'rgba(0, 0, 0, 0.3)',
-    zIndex: 1
+    zIndex: 1,
+    maxHeight: '100%'
   }
 })

@@ -217,3 +217,7 @@ div, img, article{
     padding-left: 0;
   }
 }
+
+.slick-slide.slick-active.slick-current{
+  border: none;
+}

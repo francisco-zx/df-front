@@ -4,7 +4,6 @@ import AboutHeader from './AboutHeader';
 import BorderGradient from '../layout/BorderGradient';
 import AboutText from './AboutText';
 import AboutGradient from './AboutGradient';
-import AboutCEO from './AboutCEO';
 import AboutGroup from './AboutGroup';
 
 export default class AboutPage extends Component {
@@ -15,7 +14,6 @@ export default class AboutPage extends Component {
           <BorderGradient />
         <AboutText />
         <AboutGradient />
-        <AboutCEO />
         <AboutGroup />
       </section>
     );

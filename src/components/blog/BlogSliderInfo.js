@@ -12,6 +12,7 @@ export default class BlogSliderInfo extends Component {
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>Anunciamos BAFWEEK FW18!</h1>
           <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Organizado por DF Entertainment, IRSA y La Rural.
           </h3>
+
         </Link>
     );
   }
@@ -20,7 +21,7 @@ export default class BlogSliderInfo extends Component {
 const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
-    zIndex: 3,
+    zIndex: 666,
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }
@@ -28,6 +29,7 @@ const style = StyleSheet.create({
   sliderInfoTitle: {
     color: 'white',
     fontSize: '3rem',
+    zIndex: 8,
     textTransform: 'uppercase',
     fontWeight: 'bold',
     animationDelay: '0.2s',
@@ -41,6 +43,7 @@ const style = StyleSheet.create({
   sliderInfoTag: {
     color: 'white',
     lineHeight: '2px',
+    zIndex: 8,
     textDecoration: 'underline',
     textTransform: 'uppercase',
     fontWeight: 300,
@@ -52,6 +55,7 @@ const style = StyleSheet.create({
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
+    zIndex: 8,
     animationDelay: '0.4s',
     "@media(max-width: 1024px)": {
       fontSize: '2rem',
@@ -67,11 +71,22 @@ const style = StyleSheet.create({
     fontSize: '0.7rem',
     border: '1px solid white',
     fontWeight: 'bold',
+    zIndex: 8,
     background: 'transparent',
     padding: '0.3rem 0.6rem',
     borderRadius: '10px',
     marginRight: '1rem',
     marginTop: '1rem',
     animationDelay: '0.6s'
+  },
+  sliderOverlay: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    background: 'rgba(0, 0, 0, 0.3)',
+    zIndex: 1,
+    maxHeight: '100%'
   }
 })

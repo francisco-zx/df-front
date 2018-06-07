@@ -50,6 +50,13 @@ export default class HomePage extends Component {
             <div className={css(style.sliderItem)}>
               <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
             </div>
+            <div className={css(style.sliderOverlay)}></div>
+          </div>
+          <div >
+            <div className={css(style.sliderItem)}>
+              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
+            </div>
+            <div className={css(style.sliderOverlay)}></div>
           </div>
         </Slider>
         <BorderGradient />
@@ -64,7 +71,9 @@ const style = StyleSheet.create({
     backgroundImage: `url(${HomeSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
+    position: 'relative',
     alignItems: 'center',
+    overflow: 'hidden',
     "@media(max-width: 1024px)": {
       height: '62vh'
     },
