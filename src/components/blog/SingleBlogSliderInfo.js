@@ -6,7 +6,6 @@ export default class SingleEventSliderInfo extends Component {
   render() {
     return (
         <div className={css(style.sliderInfo)}>
-          <aside className={css(style.sliderInfoTag)}>NOVEDAD</aside>
           <h1 className={css(style.sliderInfoTitle)}>Anunciamos BAFWEEK FW18!</h1>
           <h3 className={css(style.sliderInfoSubtitle)}>Organizado por DF Entertainment, IRSA y La Rural.
           </h3>
