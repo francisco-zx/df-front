@@ -18,22 +18,52 @@ export default class MobileMenu extends Component{
           </header>
           <ul className={css(style.mobileNavList)}>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.4s'}}>
-              <NavLink to='/events' className={css(style.mobileNavItemLink)}>Eventos</NavLink>
+              <NavLink
+                to='/events'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                  Eventos
+                </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.5s'}}>
-              <NavLink to='/venues' className={css(style.mobileNavItemLink)}>Venues</NavLink>
+              <NavLink
+                to='/venues'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                  Venues
+              </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.6s'}}>
-              <NavLink to='/timeline' className={css(style.mobileNavItemLink)}>Timeline</NavLink>
+              <NavLink
+                to='/timeline'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                  Timeline
+              </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.7s'}}>
-              <NavLink to='/blog' className={css(style.mobileNavItemLink)}>Blog</NavLink>
+              <NavLink
+                to='/blog'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                Blog
+              </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.8s'}}>
-              <NavLink to='/about' className={css(style.mobileNavItemLink)}>Quienes Somos</NavLink>
+              <NavLink
+                to='/about'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                  Quienes Somos
+              </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.9s'}}>
-              <NavLink to='/contact' className={css(style.mobileNavItemLink)}>Contacto</NavLink>
+              <NavLink
+                to='/contact'
+                className={css(style.mobileNavItemLink)}
+                onClick={this.props.closeMenu}>
+                  Contacto
+              </NavLink>
             </li>
 
           </ul>
