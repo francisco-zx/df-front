@@ -26,14 +26,32 @@ class AppRouter extends Component {
   constructor(props){
     super(props);
     this.state = {
+      topBar: {},
       events: {},
+      venues: {},
       blog: {}
     }
   }
 
   componentDidMount(){
+    this.initializeTopBar();
     this.initializeEvents();
+    this.initializeVenues();
     this.initializeBlog();
+  }
+
+  initializeTopBar = () => {
+    fetch('https://dfapi.dlmr.co/api/eventos/header')
+    .then(response => response.json())
+    .then()
+    .then(data => {
+      console.log(data);
+      this.setState({
+        topBar: data
+      }, () => {
+        console.log(this.state.events)
+      })
+    })
   }
 
   initializeEvents = () => {
@@ -46,6 +64,19 @@ class AppRouter extends Component {
         events: data
       }, () => {
         console.log(this.state.events)
+      })
+    })
+  }
+
+  initializeVenues = () => {
+    fetch('https://dfapi.dlmr.co/api/venues/all')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({
+        venues: data
+      }, () => {
+        console.log(this.state.venues)
       })
     })
   }
@@ -68,8 +99,8 @@ class AppRouter extends Component {
     return (
       <BrowserRouter>
         <div>
-          <TopBar />
-          <Route component={Header}/>
+          <TopBar topBar={this.state.topBar}/>
+          <Route render={(history) => <Header topBar={this.state.topBar} history={history}/>} />
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/events" exact component={EventsPage} />

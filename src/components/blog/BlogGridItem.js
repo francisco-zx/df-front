@@ -5,12 +5,24 @@ import { Link } from 'react-router-dom';
 import BorderGradient from '../layout/BorderGradient';
 
 export default class BlogGridItem extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      isLoading: true
+    }
+  }
+  loaded = () => {
+    this.setState({
+      isLoading: !this.state.isLoading
+    })
+  }
   render(){
     return(
       <Link to={`/blog/${this.props.slug}`} className='animated fadeIn'>
         <div className={css(style.blogItem) + ' hover-shadow'}>
           <div className={css(style.blogItemPreview)}>
-            <img src={this.props.imgPrincipal} className={css(style.blogItemImg) + ' animated fadeIn'}/>
+            <div className={css(style.lazyLoad)} style={!this.state.isLoading ? {display:'none'} : {display: 'flex'}}></div>
+            <img src={this.props.imgPrincipal} className={css(style.blogItemImg) + ' animated fadeIn'} onLoad={() => this.loaded()} style={this.state.isLoading ? {display:'none'} : {display: 'flex'}}/>
             <aside className={css(style.typeTag) + ' animated fadeIn'}>Novedades</aside>
             <h3 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h3>
             <div className={css(style.overlay)}></div>
@@ -50,6 +62,12 @@ const style = StyleSheet.create({
       maxHeight: '12rem'
     }
   },
+  lazyLoad: {
+    background: '#d6249f',
+    width: '100%',
+    height: '300px',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+  },
   overlay: {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.6+100 */
     background: '-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)',
@@ -61,7 +79,11 @@ const style = StyleSheet.create({
     top: 0,
     width: '100%',
     height: '100%',
-    verticalAlign: 'top'
+    verticalAlign: 'top',
+    "@media(max-width: 480px)": {
+      objectFit: 'cover',
+      maxHeight: '12rem'
+    }
   },
   title: {
     position: 'absolute',

@@ -55,7 +55,7 @@ export default class Header extends Component {
         }
         {
           this.state.showMobileSearch &&
-            <MobileSearch closeSearch={this.toggleMobileSearch} search={this.search}/>
+            <MobileSearch closeSearch={this.toggleMobileSearch} search={this.search} topBar={this.props.topBar}/>
         }
       </header>
     );

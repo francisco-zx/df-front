@@ -10,7 +10,7 @@ export default class MobileMenu extends Component{
   render(){
     return(
       <article className={css(style.mobileMenu) + ' animated fadeIn'}>
-          <TopBar />
+          <TopBar topBar={this.props.topBar}/>
           <header className={css(style.header) + ' animated fadeIn'}>
             <div className={css(style.logoWrapper)} onClick={this.props.closeSearch}>
               <img src={Logo} width='100%'/>

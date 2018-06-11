@@ -25,12 +25,13 @@ export default class TopBar extends Component {
       <div className='sliderHolder'>
       <Slider {...settings} className={css(style.slider)}>
         <div><b className={css(style.sliderItem, style.bold)}>Proximos Eventos: </b></div>
-        <div><p className={css(style.sliderItem)}><b>Lollapalooza</b> | 20 de Marzo /</p></div>
-        <div><p className={css(style.sliderItem)}><b>Phil Collins</b> | 30 de Abril /</p></div>
-        <div><p className={css(style.sliderItem)}><b>Harry Styles</b> | 15 de Junio /</p></div>
-        <div><p className={css(style.sliderItem)}><b>John Malone</b> | 12 de Septiembre /</p></div>
-        <div><p className={css(style.sliderItem)}><b>Sergio Ramos</b> | 10 de Octubre /</p></div>
-        <div><p className={css(style.sliderItem)}><b>Duki & YSY A</b> | 15 de Diciembre /</p></div>
+        {
+          this.props.topBar.length ?
+            this.props.topBar.map((item, index) => {
+              return( <div><p className={css(style.sliderItem)}>{item} /</p></div> )
+            })
+          : <div>Cargando...</div>
+        }
       </Slider>
       </div>
       <BorderGradient />

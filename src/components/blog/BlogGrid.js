@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import { StyleSheet, css } from 'aphrodite';
+import base64 from 'base-64';
 
 import BlogGridItem from './BlogGridItem';
 import SectionTitle from '../layout/SectionTitle';
@@ -44,7 +45,7 @@ export default class BlogGrid extends Component {
                   const img = new Image();
                   img.url = item.img_principal;
                   console.log(img.naturalHeight)
-                  
+
                   return(
                     <BlogGridItem
                       title={item.nombre}
@@ -57,6 +58,7 @@ export default class BlogGrid extends Component {
               : <h1>Cargando</h1>
             }
         </Masonry>
+
       </article>
     );
   }
