@@ -11,12 +11,14 @@ export default class HomePage extends Component {
       <div className='container'>
         <div className={css(style.linksHolder)}>
           <div className={css(style.link, style.linkLeft) + ' animated fadeIn'}>
+            <img src={EventBanner} className={css(style.linkImg)}/>
             <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Eventos</h3>
             <Link to='/events'>
               <button href='/events' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
             </Link>
           </div>
           <div className={css(style.link, style.linkRight) + ' animated fadeIn'}>
+            <img src={TimelineBanner} className={css(style.linkImg)}/>
             <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Timeline</h3>
             <Link to='/timeline'>
               <button href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
@@ -60,7 +62,6 @@ const style = StyleSheet.create({
   },
   linkLeft: {
     marginRight: '2rem',
-    background: `url(${EventBanner})`,
     backgroundSize: 'cover',
     "@media(max-width:  1024px)": {
       marginRight: 0,
@@ -68,8 +69,16 @@ const style = StyleSheet.create({
     }
   },
   linkRight: {
-    background: `url(${TimelineBanner})`,
     backgroundSize: 'cover'
+  },
+  linkImg: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    filter: 'brightness(70%)'
   },
   linkTitle: {
     color: 'white',
