@@ -1,11 +1,39 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { toast } from 'react-toastify';
 
 import BorderGradient  from './BorderGradient';
 import { arrowRightIcon } from "../../assets/IconsSvg";
 import NewsletterIcon from '../../assets/newsletter.svg';
+import OK from '../../assets/ok.svg';
 
 export default class Footer extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      suscribed: false
+    }
+  }
+  handleChange = (e) => {
+    this.setState({email: e.target.value})
+    console.log(this.state.email)
+  }
+  suscribe = (email) => {
+    if(!this.state.suscribed){
+      this.toastId = toast('Cargando...', {hideProgressBar: true, position: 'bottom-right', className: 'animated rotateY ', autoClose: false})
+      fetch('https://dfapi.dlmr.co/api/newsletter', {
+        method: 'post',
+        body: JSON.stringify({'email': email})
+      }).then((response) => {
+        response.ok &&
+          toast.update(this.toastId, { render: 'Te suscribiste con exito 😀!',hideProgressBar: false, type: toast.TYPE.SUCCESS, autoClose: 5000, className: 'animated rotateY ' });
+          this.setState({suscribed: true})
+      }).catch(err => {
+          toast.update(this.toastId, { render: 'Hubo en error en la suscripcion.',hideProgressBar: false, type: toast.TYPE.ERROR, autoClose: 5000, className: 'rotateY animated' });
+      });
+    }
+  }
   render() {
     return (
       <footer className={css(style.footer)}>
@@ -18,9 +46,9 @@ export default class Footer extends Component {
           <div className={css(style.bottomLeft) + ' animated fadeIn'}>
             <h3 className={css(style.bottomTitleLeft) + ' animated fadeIn'}>Suscribite a Nuestro Newsletter</h3>
             <div className={css(style.newsLetter) + ' animated fadeIn'}>
-              <form>
-                <input type='email' name='email' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email'/>
-                <img src={NewsletterIcon} className={css(style.newsIcon) + ' animated fadeIn'} />
+              <form >
+                <input type='email' name='email' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email' onChange={this.handleChange}/>
+                <img onClick={(email) => {this.suscribe(this.state.email)}}  src={!this.state.suscribed ? NewsletterIcon : OK } className={css(style.newsIcon) + ' animated fadeIn'} />
               </form>
             </div>
           </div>
@@ -195,6 +223,9 @@ const style = StyleSheet.create({
     paddingRight: '5px',
     top: '50%',
     transform: 'translateY(-50%)',
-    animationDelay: '0.6s'
+    animationDelay: '0.6s',
+    "@media(max-width: 480px)": {
+      paddingRight: '0'
+    }
   }
 })

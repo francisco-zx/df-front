@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //Layout
 import Header from '../components/layout/Header';
@@ -17,6 +19,7 @@ import BlogPage from '../components/blog/Index';
   import SingleBlog from '../components/blog/SingleBlog';
 import AboutPage from '../components/about/Index';
 import ContactPage from '../components/contact/Index';
+import SearchPage from '../components/search/Index';
 
 class AppRouter extends Component {
 
@@ -66,7 +69,7 @@ class AppRouter extends Component {
       <BrowserRouter>
         <div>
           <TopBar />
-          <Header />
+          <Route component={Header}/>
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/events" exact component={EventsPage} />
@@ -79,8 +82,10 @@ class AppRouter extends Component {
                 <Route path="/blog/baf-week" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
+              <Route path="/search/:search" component={SearchPage}/>
             </Switch>
           <Footer />
+          <ToastContainer />
         </div>
       </BrowserRouter>
     );

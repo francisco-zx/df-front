@@ -19,7 +19,7 @@ export default class Nav extends Component {
           <Link to='/contact' className={css(style.navItem) + ' animated fadeIn'}>Contacto</Link>
         </ul>
         <div className={css(style.search)}>
-          <SearchInput />
+          <SearchInput search={this.props.search} goBack={this.props.goBack}/>
         </div>
       </nav>
     );

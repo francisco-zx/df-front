@@ -51,6 +51,15 @@ export default class TimelineSlider extends Component {
       dots: false,
       rtl: false,
       focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 4,
+            centerMode: false
+          }
+        }
+      ]
     };
 
     return (
@@ -287,6 +296,9 @@ const style = StyleSheet.create({
     left: 0,
     margin: '2rem 6rem',
     color: 'white',
+    "@media(max-width:480px)": {
+      display: 'none'
+    }
   },
   backButton: {
     color: 'white',
@@ -307,14 +319,16 @@ const style = StyleSheet.create({
     margin: '0 120px ',
     textAlign: 'center',
     position: 'relative',
-    width: '7rem'
+    width: '7rem',
+    "@media(max-width:480px)": {
+    }
   },
   navSliderItemFilter: {
     margin: '0 120px ',
     textAlign: 'center',
     position: 'relative',
     width: '7rem',
-    filter: 'greyscale()'
+    filter: 'greyscale()',
   },
   pickerImg: {
 
@@ -351,7 +365,5 @@ const style = StyleSheet.create({
   },
   timelineSubTitle: {
     fontSize: '0.8rem',
-
-
   },
 })

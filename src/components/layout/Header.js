@@ -27,6 +27,15 @@ export default class Header extends Component {
       showMobileSearch: !this.state.showMobileSearch
     })
   }
+  search = (search) => {
+    const url = document.location.href.split('/')[3];
+    url === 'search' ?
+      this.props.history.replace(`/search/${search}`)
+    : this.props.history.push(`/search/${search}`)
+  }
+  goBack = () => {
+    this.props.history.goBack()
+  }
   render() {
     return (
       <header className={css(style.header)}>
@@ -36,7 +45,7 @@ export default class Header extends Component {
         <Link to='/' className={css(style.logoWrapper)}>
           <img src={Logo} className={css(style.logo) + ' animated fadeIn'} alt='Logo DF Entertainment'/>
         </Link>
-        <Nav />
+        <Nav search={this.search} goBack={this.goBack}/>
         <div className={css(style.mobileSearchIcon)} onClick={() => {this.toggleMobileSearch()}}>
           <i className='fa fa-search fa-2x'></i>
         </div>
@@ -46,7 +55,7 @@ export default class Header extends Component {
         }
         {
           this.state.showMobileSearch &&
-            <MobileSearch closeSearch={this.toggleMobileSearch}/>
+            <MobileSearch closeSearch={this.toggleMobileSearch} search={this.search}/>
         }
       </header>
     );
