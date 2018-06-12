@@ -56,7 +56,7 @@ class AppRouter extends Component {
               <Route path="/timeline" exact component={TimelinePage} />
                 <Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
               <Route path="/blog" exact component={BlogPage}/>
-                <Route path="/blog/baf-week" component={SingleBlog} />
+                <Route path="/blog/:slug" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
               <Route path="/search/:search" component={SearchPage}/>
@@ -72,7 +72,8 @@ const mapStateToProps = state =>({
   blog: state.blog,
   events: state.events,
   venues: state.venues,
-  topBar: state.topBar
+  topBar: state.topBar,
+  selectedBlog: state.selectedBlog
 })
 const mapDispatchToProps = dispatch => ({
   fetchBlog: () => dispatch(fetchBlog()),

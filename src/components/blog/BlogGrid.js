@@ -52,13 +52,14 @@ class BlogGrid extends Component {
                       imgPrincipal={item.img_principal}
                       slug={item.slug}
                       key={item.id}
+                      item={item}
+                      history={this.props.history}
                     />
                   )
                 })
               : <h1>Cargando</h1>
             }
         </Masonry>
-        <div onClick={() => {console.log(this.props.blog)}}>HOLAAA</div>
       </article>
     );
   }

@@ -36,8 +36,8 @@ export default class SingleEventSlider extends Component {
     return (
       <section className={css(style.section)}>
         <div >
-          <div className={css(style.sliderItem)}>
-            <SingleBlogSliderInfo />
+          <div className={css(style.sliderItem)} style={{backgroundImage: `url(${this.props.selectedBlog.img_portada})` }}>
+            <SingleBlogSliderInfo selectedBlog={this.props.selectedBlog}/>
           </div>
           <div className={css(style.sliderOverlay)}></div>
         </div>
@@ -55,11 +55,11 @@ export default class SingleEventSlider extends Component {
 
 const style = StyleSheet.create({
   section: {
-    position: 'relative'
+    position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${BlogSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

@@ -15,7 +15,7 @@ class BlogPage extends Component {
     return (
       <div>
         <BlogSlider />
-        <BlogGrid/>
+        <BlogGrid history={this.props.history}/>
       </div>
     );
   }

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 import { Link } from 'react-router-dom';
 
+import { selectBlog } from '../../Actions/Blog_Action';
+
 import BorderGradient from '../layout/BorderGradient';
 
-export default class BlogGridItem extends Component{
+class BlogGridItem extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -16,9 +19,13 @@ export default class BlogGridItem extends Component{
       isLoading: !this.state.isLoading
     })
   }
+  select = (item) => {
+    this.props.selectBlog(item);
+    this.props.history.push(`/blog/${item.slug}`)
+  }
   render(){
     return(
-      <Link to={`/blog/${this.props.slug}`} className='animated fadeIn'>
+      <div to={`/blog/baf-week`} className='animated fadeIn' onClick={() => {this.select(this.props.item)}}>
         <div className={css(style.blogItem) + ' hover-shadow'}>
           <div className={css(style.blogItemPreview)}>
             <div className={css(style.lazyLoad)} style={!this.state.isLoading ? {display:'none'} : {display: 'flex'}}></div>
@@ -32,10 +39,20 @@ export default class BlogGridItem extends Component{
                 </div>
           <BorderGradient />
         </div>
-      </Link>
+      </div>
     )
   }
 }
+
+const mapStateToProps = state =>({
+ blog: state.blog,
+ selectedBlog: state.selectedBlog
+})
+const mapDispatchToProps = dispatch => ({
+  selectBlog: (item) => dispatch(selectBlog(item))
+});
+export default connect(mapStateToProps, mapDispatchToProps)(BlogGridItem);
+
 const style = StyleSheet.create({
   masonryGrid: {
     display: '-webkit-box', /* Not needed if autoprefixing */

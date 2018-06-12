@@ -5,6 +5,13 @@ export const initializeBlog = (data = []) => {
   };
 };
 
+export const setSelectedBlog = (item = {}) => {
+  return {
+    type: "SET_SELECTED_BLOG",
+    item
+  };
+};
+
 export const fetchBlog = () => {
   return dispatch => {
     fetch('https://dfapi.dlmr.co/api/blog/all')
@@ -14,3 +21,10 @@ export const fetchBlog = () => {
     })
   };
 };
+
+export const selectBlog = (item) => {
+  return dispatch =>{
+    console.log(item)
+    dispatch(setSelectedBlog(item))
+  }
+}
