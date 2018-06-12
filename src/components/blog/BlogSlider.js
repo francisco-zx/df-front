@@ -33,7 +33,7 @@ export default class BlogSlider extends Component {
     };
 
     return (
-      <section>
+      <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div className={css(style.sliderItem)}>
@@ -67,6 +67,10 @@ export default class BlogSlider extends Component {
 }
 
 const style = StyleSheet.create({
+  section: {
+    position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+  },
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${BlogSliderPic})`,
