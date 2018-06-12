@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
@@ -12,12 +13,29 @@ import Niceto from '../../assets/home/niceto.jpg';
 import Velez from '../../assets/home/velez.jpg';
 
 
-export default class VenuesGrid extends Component {
+class VenuesGrid extends Component {
+  componentDidMount(){
+    console.log(this.props.venues)
+  }
   render() {
     return (
       <div className='container'>
         <SectionTitle text='Venues'/>
         <div style={style.venuesGrid}>
+        {
+          this.props.venues.length &&
+            this.props.venues.map((venue, index) => {
+              return(
+                <div style={style.venuesGridItem}>
+                  <div style={{padding: '0.5rem'}} className='hover-shadow'>
+                    <img style={style.itemImg} src={venue.img_principal} />
+                    <div style={style.venueName}>{venue.nombre}</div>
+                    <BorderGradient height='6px'/>
+                  </div>
+                </div>
+              )
+            })
+        }
           <div style={style.venuesGridItem}>
             <div style={{padding: '0.5rem'}} className='hover-shadow'>
               <img style={style.itemImg} src={LunaPark} />
@@ -65,6 +83,13 @@ export default class VenuesGrid extends Component {
     );
   }
 }
+const mapStateToProps = state =>({
+ venues: state.venues
+})
+const mapDispatchToProps = dispatch => ({
+});
+export default connect(mapStateToProps, mapDispatchToProps)(VenuesGrid);
+
 const style = {
   venuesGrid: {
     flexDirection: 'row',

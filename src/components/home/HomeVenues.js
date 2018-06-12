@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenueGridItem from './VenueGridItem';
@@ -14,59 +15,41 @@ import Niceto from '../../assets/home/niceto.jpg';
 import Velez from '../../assets/home/velez.jpg';
 
 
-export default class HomeVenues extends Component {
+class HomeVenues extends Component {
   render() {
     return (
       <div className='container'>
         <SectionTitle text='Venues' link='/venues'/>
         <div className={css(style.venuesGrid)}>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
-            <div className={css(style.padding)}>
-              <img className={css(style.itemImg)} src={LunaPark} />
-              <div className={css(style.venueName) + ' animated fadeIn'}>Luna Park</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
-            <div className={css(style.padding)}>
-              <img className={css(style.itemImg)} src={DirecTV} />
-              <div className={css(style.venueName) + ' animated fadeIn'}>DirecTV Arena</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
-            <div className={css(style.padding)}>
-              <img className={css(style.itemImg)} src={Vorterix} />
-              <div className={css(style.venueName) + ' animated fadeIn'}>Teatro Vorterix</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
-            <div className={css(style.padding)}>
-              <img className={css(style.itemImg)} src={Hipodromo} />
-              <div className={css(style.venueName) + ' animated fadeIn'}>Hipodromo de San Isidro</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'}>
-            <div className={css(style.padding)}>
-              <img className={css(style.itemImg)} src={Niceto} />
-              <div className={css(style.venueName) + ' animated fadeIn'}>Niceto Club</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem)}>
-            <div className={css(style.padding)}>
-            <img className={css(style.itemImg)} src={Velez} />
-            <div className={css(style.venueName) + ' animated fadeIn'}>Estadio Velez</div>
-            <BorderGradient height='6px'/>
-            </div>
-          </div>
+        {
+          this.props.venues.length &&
+            this.props.venues.map((venue, index) => {
+              return(
+                <div className={css(style.venuesGridItem)}>
+                  <div style={{padding: '0.5rem'}} className='hover-shadow'>
+                    <img className={css(style.itemImg)} src={venue.img_principal} />
+                    <div className={css(style.venueName)}>{venue.nombre}</div>
+                    <BorderGradient height='6px'/>
+                  </div>
+                </div>
+              )
+            })
+        }
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state =>({
+  venues: state.venues,
+  events: state.events,
+  blog: state.blog
+})
+const mapDispatchToProps = dispatch => ({
+});
+export default connect(mapStateToProps, mapDispatchToProps)(HomeVenues);
+
 const style = StyleSheet.create({
   venuesGrid: {
     flexDirection: 'row',

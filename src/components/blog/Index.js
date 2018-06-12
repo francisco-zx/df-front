@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import BlogSlider from './BlogSlider';
 import BlogGrid from './BlogGrid';
 
-export default class BlogPage extends Component {
+class BlogPage extends Component {
   constructor(props){
     super(props)
   }
@@ -14,8 +15,15 @@ export default class BlogPage extends Component {
     return (
       <div>
         <BlogSlider />
-        <BlogGrid blog={this.props.blog}/>
+        <BlogGrid/>
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  blog: state.blog
+});
+const mapDispatchToProps = dispatch => ({
+
+})
+export default connect(mapStateToProps, mapDispatchToProps)(BlogPage)

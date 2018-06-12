@@ -25,12 +25,13 @@ export default class TopBar extends Component {
       <div className='sliderHolder'>
       <Slider {...settings} className={css(style.slider)}>
         <div><b className={css(style.sliderItem, style.bold)}>Proximos Eventos: </b></div>
-        {
+        { /*
           this.props.topBar.length ?
             this.props.topBar.map((item, index) => {
               return( <div><p className={css(style.sliderItem)}>{item} /</p></div> )
             })
           : <div>Cargando...</div>
+          */
         }
       </Slider>
       </div>

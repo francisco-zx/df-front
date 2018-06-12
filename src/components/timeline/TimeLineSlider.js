@@ -57,7 +57,7 @@ export default class TimelineSlider extends Component {
           settings: {
             slidesToShow: 4,
             centerMode: true,
-            
+
           }
         }
       ]
@@ -384,6 +384,9 @@ const style = StyleSheet.create({
     background: '-moz-linear-gradient(left, rgba(255,183,73,1) 0%, rgba(255,38,125,1) 50%, rgba(111,23,255,1) 100%)',
     background: '-webkit-linear-gradient(left, rgba(255,183,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%)',
     background: 'linear-gradient(to right, rgba(255,183,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%)',
-    filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffb749", endColorstr="#6f17ff",GradientType=1 )'
+    filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffb749", endColorstr="#6f17ff",GradientType=1 )',
+    "@media(min-width: 480px)": {
+      display: 'none'
+    }
   }
 })

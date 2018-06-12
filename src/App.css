@@ -180,12 +180,12 @@ button{
 }
 
 
-p::-moz-selection {
-	background: linear-gradient(to right, rgba(255,183,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%);
+::-moz-selection {
+	background: rgba(255,38,125,1);
 }
 ::selection {
-	background: linear-gradient(to right, rgba(255,183,73,1) 0%,rgba(255,38,125,1) 50%,rgba(111,23,255,1) 100%);
-
+	background: rgba(255,38,125,1);
+  color: white;
 }
 div, img, article{
 	vertical-align: top;

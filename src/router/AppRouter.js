@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import TopBar from '../components/layout/TopBar';
-
+//Index Components
 import HomePage from '../components/home/Home';
 import EventsPage from '../components/events/Index';
   import SingleEvent from '../components/events/SingleEvent';
@@ -20,87 +21,32 @@ import BlogPage from '../components/blog/Index';
 import AboutPage from '../components/about/Index';
 import ContactPage from '../components/contact/Index';
 import SearchPage from '../components/search/Index';
+//Actions
+import { fetchBlog } from '../Actions/Blog_Action';
+import { fetchEvents } from '../Actions/Events_Action';
+import { fetchVenues } from '../Actions/Venues_Action';
+import { fetchTopBar } from '../Actions/TopBar_Action';
 
 class AppRouter extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      topBar: {},
-      events: {},
-      venues: {},
-      blog: {}
-    }
   }
 
-  componentDidMount(){
-    this.initializeTopBar();
-    this.initializeEvents();
-    this.initializeVenues();
-    this.initializeBlog();
+  componentWillMount(){
+    this.props.fetchBlog()
+    this.props.fetchEvents()
+    this.props.fetchVenues()
+    this.props.fetchTopBar()
   }
 
-  initializeTopBar = () => {
-    fetch('https://dfapi.dlmr.co/api/eventos/header')
-    .then(response => response.json())
-    .then()
-    .then(data => {
-      console.log(data);
-      this.setState({
-        topBar: data
-      }, () => {
-        console.log(this.state.events)
-      })
-    })
-  }
-
-  initializeEvents = () => {
-    fetch('https://dfapi.dlmr.co/api/eventos/all')
-    .then(response => response.json())
-    .then()
-    .then(data => {
-      console.log(data);
-      this.setState({
-        events: data
-      }, () => {
-        console.log(this.state.events)
-      })
-    })
-  }
-
-  initializeVenues = () => {
-    fetch('https://dfapi.dlmr.co/api/venues/all')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      this.setState({
-        venues: data
-      }, () => {
-        console.log(this.state.venues)
-      })
-    })
-  }
-
-  initializeBlog = () => {
-    fetch('https://dfapi.dlmr.co/api/blog/all')
-    .then(response => response.json())
-    .then()
-    .then(data => {
-      console.log(data);
-      this.setState({
-        blog: data
-      }, () => {
-        console.log(this.state.blog)
-      })
-    })
-  }
 
   render() {
     return (
       <BrowserRouter>
         <div>
-          <TopBar topBar={this.state.topBar}/>
-          <Route render={(history) => <Header topBar={this.state.topBar} history={history}/>} />
+          <TopBar/>
+          <Route component={Header} />
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/events" exact component={EventsPage} />
@@ -109,7 +55,7 @@ class AppRouter extends Component {
                 <Route path="/venue/teatro-vorterix" component={SingleVenue} />
               <Route path="/timeline" exact component={TimelinePage} />
                 <Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
-              <Route path="/blog" exact render={()=><BlogPage blog={this.state.blog}/>}/>
+              <Route path="/blog" exact component={BlogPage}/>
                 <Route path="/blog/baf-week" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
@@ -122,5 +68,16 @@ class AppRouter extends Component {
     );
   }
 }
-
-export default AppRouter;
+const mapStateToProps = state =>({
+  blog: state.blog,
+  events: state.events,
+  venues: state.venues,
+  topBar: state.topBar
+})
+const mapDispatchToProps = dispatch => ({
+  fetchBlog: () => dispatch(fetchBlog()),
+  fetchEvents: () => dispatch(fetchEvents()),
+  fetchVenues: () => dispatch(fetchVenues()),
+  fetchTopBar: () => dispatch(fetchTopBar())
+});
+export default connect(mapStateToProps, mapDispatchToProps)(AppRouter);

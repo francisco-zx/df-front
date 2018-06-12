@@ -7,12 +7,14 @@ import AppRouter from "./router/AppRouter.js";
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
+
   render() {
+    const store = configureStore();
     return (
-      <AppRouter />
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
     );
   }
 }
-
-export default App;

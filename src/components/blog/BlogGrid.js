@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import { StyleSheet, css } from 'aphrodite';
@@ -15,14 +16,13 @@ import Blog4 from '../../assets/blog/blog4.jpg';
 import Blog5 from '../../assets/blog/blog5.jpg';
 import Blog6 from '../../assets/blog/blog6.jpg';
 
-export default class BlogGrid extends Component {
+class BlogGrid extends Component {
 
   constructor(props){
     super(props);
   }
 
   componentDidMount(){
-    this.props.blog.length &&
     console.log(this.props.blog)
   }
 
@@ -34,7 +34,7 @@ export default class BlogGrid extends Component {
     };
     return (
       <article className='container'>
-        <SectionTitle text='Blog'/>
+        <SectionTitle text='Blog' />
         <Masonry
           breakpointCols={settings}
           className={css(style.masonryGrid) + ' hover-parent'}
@@ -58,11 +58,18 @@ export default class BlogGrid extends Component {
               : <h1>Cargando</h1>
             }
         </Masonry>
-
+        <div onClick={() => {console.log(this.props.blog)}}>HOLAAA</div>
       </article>
     );
   }
 }
+const mapStateToProps = state =>({
+ blog: state.blog
+})
+const mapDispatchToProps = dispatch => ({
+});
+export default connect(mapStateToProps, mapDispatchToProps)(BlogGrid);
+
 const style = StyleSheet.create({
   masonryGrid: {
     display: '-webkit-box', /* Not needed if autoprefixing */
