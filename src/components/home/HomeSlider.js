@@ -35,11 +35,11 @@ export default class HomePage extends Component {
     };
 
     return (
-      <section>
+      <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider) + 'animated fadeIn'} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           <div >
             <div className={css(style.sliderItem)}>
-              <HomeSliderInfo title='Lollapalooza 2018' date='16, 17 y 18 de Marzo' location='Hipódromo de San Isidro Buenos Aires, Argentina.'/>
+              <HomeSliderInfo title='Lollapalooza 2018' date='16, 17 y 18 de Marzo' location='Hipódromo de San Isidro'/>
               <video autoPlay loop muted className={css(style.video)} poster={HomeSliderVideoPoster}>
                 <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
               </video>
@@ -48,13 +48,13 @@ export default class HomePage extends Component {
           </div>
           <div >
             <div className={css(style.sliderItem)}>
-              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
+              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix' url='../../assets/events/events_slider.jpg'/>
             </div>
             <div className={css(style.sliderOverlay)}></div>
           </div>
           <div >
             <div className={css(style.sliderItem)}>
-              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix, Buenos Aires, Argentina.' url='../../assets/events/events_slider.jpg'/>
+              <HomeSliderInfo title='Phil Collins' date='26 y 28 de Junio' location='Teatro Vorterix' url='../../assets/events/events_slider.jpg'/>
             </div>
             <div className={css(style.sliderOverlay)}></div>
           </div>
@@ -66,6 +66,10 @@ export default class HomePage extends Component {
 }
 
 const style = StyleSheet.create({
+  section: {
+    position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+  },
   sliderItem: {
     height: '72vh',
     backgroundImage: `url(${HomeSliderPic})`,
@@ -81,7 +85,7 @@ const style = StyleSheet.create({
       height: '45vh'
     },
     "@media(max-width: 480px)": {
-      height: '34vh'
+      height: '42vh'
     }
   },
   sliderItemImg: {

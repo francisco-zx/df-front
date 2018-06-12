@@ -23,14 +23,14 @@ export default class EventsGrid extends Component {
       <div className='container'>
         <SectionTitle text='Eventos'/>
         <div className={css(style.venuesGrid)}>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid1} />
               <div className={css(style.venueName)}>Volbeat</div>
               <BorderGradient height='6px'/>
             </div>
           </div>
-          <div className={css(style.venuesGridItem) + ' animated fadeIn'} >
+          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
             <div style={{padding: '0.5rem'}}>
               <img className={css(style.itemImg)} src={Grid2} />
               <div className={css(style.venueName)}>Metronomy</div>

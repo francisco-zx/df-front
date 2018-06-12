@@ -42,7 +42,7 @@ const style = StyleSheet.create({
       fontSize: '2.5rem'
     },
     "@media(max-width: 480px)": {
-      fontSize: '1.8rem'
+      fontSize: '1.5rem'
     }
   },
   sliderInfoTag: {
@@ -66,7 +66,7 @@ const style = StyleSheet.create({
       maxWidth:'90%',
     },
     "@media(max-width: 900px)": {
-      fontSize: '1.3rem',
+      fontSize: '1rem',
       maxWidth:'none%',
     }
   },

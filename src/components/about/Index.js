@@ -7,6 +7,9 @@ import AboutGradient from './AboutGradient';
 import AboutGroup from './AboutGroup';
 
 export default class AboutPage extends Component {
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
   render() {
     return (
       <section>

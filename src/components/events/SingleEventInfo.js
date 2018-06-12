@@ -82,6 +82,9 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     "@media(max-width: 480px)": {
       fontSize: '3rem'
+    },
+    "@media(max-width: 400px)": {
+      fontSize: '2.3rem',
     }
   },
   subTitle: {
@@ -92,6 +95,9 @@ const style = StyleSheet.create({
     transition: 'all 0.1s ease',
     "@media(max-width: 480px)": {
       fontSize: '1.8rem'
+    },
+    "@media(max-width: 480px)": {
+      fontSize: '1.4rem'
     }
   },
   description: {

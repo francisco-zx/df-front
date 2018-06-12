@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux'
+
 import Slider from 'react-slick';
 import AliceCarousel from 'react-alice-carousel';
 import BorderGradient from './BorderGradient';
 import "./topbar.css";
 
-export default class TopBar extends Component {
+class TopBar extends Component {
   render() {
 
     const settings = {
@@ -25,13 +27,14 @@ export default class TopBar extends Component {
       <div className='sliderHolder'>
       <Slider {...settings} className={css(style.slider)}>
         <div><b className={css(style.sliderItem, style.bold)}>Proximos Eventos: </b></div>
-        { /*
+        {
           this.props.topBar.length ?
             this.props.topBar.map((item, index) => {
-              return( <div><p className={css(style.sliderItem)}>{item} /</p></div> )
+              return(
+                <div><p className={css(style.sliderItem)}>{item} /</p></div>
+              )
             })
           : <div>Cargando...</div>
-          */
         }
       </Slider>
       </div>
@@ -40,6 +43,13 @@ export default class TopBar extends Component {
     );
   }
 }
+
+const mapStateToProps = state =>({
+  topBar: state.topBar
+})
+
+export default connect(mapStateToProps, null)(TopBar);
+
 
 const style = StyleSheet.create({
   topBar: {

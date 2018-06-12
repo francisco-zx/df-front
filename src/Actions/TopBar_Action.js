@@ -1,6 +1,6 @@
 export const initializeTopBar = (data = []) => {
   return {
-    type: "INITIALIZE_TOPBAR",
+    type: "INITIALIZE_TOP_BAR",
     data
   };
 };

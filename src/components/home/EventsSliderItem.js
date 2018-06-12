@@ -27,6 +27,9 @@ const style = StyleSheet.create({
     whiteSpace: 'normal',
     "@media(max-width: 480px)": {
       padding: '2rem'
+    },
+    "@media(max-width: 400px)": {
+      padding: '0.6rem'
     }
   },
   date: {

@@ -35,7 +35,13 @@ const style = StyleSheet.create({
     color: '#161616',
     fontSize: '2.5rem',
     fontWeight: 'bold',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    "@media(max-width: 480px)": {
+      fontSize: '3rem'
+    },
+    "@media(max-width: 400px)": {
+      fontSize: '2.3rem',
+    }
   },
   subTitle: {
     fontWeight: 500,
@@ -49,8 +55,13 @@ const style = StyleSheet.create({
     fontSize: '1.1rem',
     lineHeight: 1.4,
     "@media(max-width: 480px)": {
+      margin: 0,
       maxWidth: 'none',
-      padding: 0
+      textAlign: 'left',
+      fontWeight: 500,
+      fontSize: '0.9rem',
+      lineHeight: '12pt',
+      animationDelay: '0.6s'
     }
   },
   viewMore: {

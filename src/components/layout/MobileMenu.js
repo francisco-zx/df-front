@@ -207,10 +207,11 @@ const style = StyleSheet.create({
     background: 'transparent',
     border: '1px solid white',
     borderRadius: '50px',
-    width: '15rem',
+    width: '100%',
     color: 'white',
     position: 'relative',
     padding: '0.6rem',
+    paddingRight: 0,
     ":focus": {
       borderRadius: '50px',
     }
@@ -265,6 +266,9 @@ const style = StyleSheet.create({
     paddingRight: '5px',
     top: '50%',
     transform: 'translateY(-50%)',
-    animationDelay: '0.6s'
+    animationDelay: '0.6s',
+    "@media(max-width: 480px)": {
+      paddingRight: 0
+    }
   }
 })

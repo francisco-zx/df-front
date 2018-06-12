@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 import BorderGradient  from './BorderGradient';
 import { arrowRightIcon } from "../../assets/IconsSvg";
@@ -38,18 +39,18 @@ export default class Footer extends Component {
     return (
       <footer className={css(style.footer)}>
         <article className={css(style.footerTop)}>
-          <div className={css(style.topLeft) + ' animated fadeIn'}>Mas de DF Entertainment</div>
-          <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
+          <Link to='/about' style={{display: 'flex', color: 'white'}}>
+            <div className={css(style.topLeft) + ' animated fadeIn'}>Mas de DF Entertainment</div>
+            <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
+          </Link>
         </article>
         <BorderGradient />
         <article className={css(style.footerBottom)}>
           <div className={css(style.bottomLeft) + ' animated fadeIn'}>
             <h3 className={css(style.bottomTitleLeft) + ' animated fadeIn'}>Suscribite a Nuestro Newsletter</h3>
             <div className={css(style.newsLetter) + ' animated fadeIn'}>
-              <form >
-                <input type='email' name='email' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email' onChange={this.handleChange}/>
-                <img onClick={(email) => {this.suscribe(this.state.email)}}  src={!this.state.suscribed ? NewsletterIcon : OK } className={css(style.newsIcon) + ' animated fadeIn'} />
-              </form>
+              <input type='email' name='email' className={css(style.input) + ' animated fadeIn'} placeholder='Ingresa tu Email' onChange={this.handleChange}/>
+              <img onClick={(email) => {this.suscribe(this.state.email)}}  src={!this.state.suscribed ? NewsletterIcon : OK } className={css(style.newsIcon) + ' animated fadeIn'} />
             </div>
           </div>
           <div className={css(style.bottomRight)}>
@@ -126,6 +127,9 @@ const style = StyleSheet.create({
     flex: 1,
     "@media(max-width: 1024px)": {
       flexDirection: 'column-reverse',
+    },
+    "@media(max-width: 480px)": {
+      padding: '2rem',
     }
   },
   bottomLeft: {
@@ -188,7 +192,10 @@ const style = StyleSheet.create({
     padding: '1rem',
     color: 'white',
     textTransform: 'uppercase',
-    fontSize: '0.8rem'
+    fontSize: '0.8rem',
+    "@media(max-width:400px)": {
+      fontSize: '0.7rem'
+    }
   },
   footerLink: {
     color: 'white',
@@ -202,6 +209,10 @@ const style = StyleSheet.create({
     color: 'white',
     position: 'relative',
     padding: '0.6rem',
+    maxWidth: '100%',
+    "@media(max-width:1024px)": {
+      margin: '0 auto'
+    },
     ":focus": {
       borderRadius: '50px',
     }
@@ -214,7 +225,10 @@ const style = StyleSheet.create({
     display: 'flex',
     alignItems: 'flex-start',
     animationDelay: '0.3s',
-    maxWidth: '100%'
+    maxWidth: '100%',
+    "@media(max-width:1024px)": {
+      margin: '0 auto'
+    },
   },
   newsIcon: {
     width: '1.5rem',
@@ -225,7 +239,7 @@ const style = StyleSheet.create({
     transform: 'translateY(-50%)',
     animationDelay: '0.6s',
     "@media(max-width: 480px)": {
-      paddingRight: '0'
+      paddingRight: '4px'
     }
   }
 })

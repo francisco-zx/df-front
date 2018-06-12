@@ -83,6 +83,9 @@ const style = StyleSheet.create({
     width: '100%',
     height: '300px',
     background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+    "@media(max-width: 480px)": {
+      height: '12rem'
+    }
   },
   overlay: {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.6+100 */
@@ -142,6 +145,10 @@ const style = StyleSheet.create({
     },
     "@media(max-width: 480px)": {
       fontSize: '2rem',
+      padding: '10px',
+    },
+    "@media(max-width: 380px)": {
+      fontSize: '1.5rem',
       padding: '10px',
     }
   },

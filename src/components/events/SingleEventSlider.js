@@ -78,7 +78,8 @@ export default class SingleEventSlider extends Component {
 
 const style = StyleSheet.create({
   section: {
-    position: 'relative'
+    position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
   },
   sliderItem: {
     height: '72vh',
@@ -94,7 +95,7 @@ const style = StyleSheet.create({
       height: '45vh'
     },
     "@media(max-width: 480px)": {
-      height: '34vh'
+      height: '42vh'
     }
   },
   sliderItemImg: {
@@ -138,6 +139,9 @@ const style = StyleSheet.create({
       transform: 'translate(-50%, 50%)',
       margin: 0,
       fontSize: '0.8rem'
+    },
+    "@media(max-width: 400px)": {
+      fontSize: '0.6rem'
     }
   },
   shareEvent: {

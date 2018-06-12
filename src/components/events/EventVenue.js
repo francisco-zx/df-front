@@ -46,6 +46,9 @@ const style = StyleSheet.create({
   },
   eventDetails: {
     padding: '2rem',
+    "@media(max-width: 480px)": {
+      padding: '1rem',
+    }
   },
   eventDetailTitle: {
     display: 'flex',
@@ -58,10 +61,16 @@ const style = StyleSheet.create({
     "@media(max-width: 480px)": {
       fontSize: '1.1rem',
       lineHeight: 2
+    },
+    "@media(max-width: 400px)": {
+      fontSize: '1rem',
     }
   },
   eventLocation: {
-    padding: '2rem'
+    padding: '2rem',
+    "@media(max-width: 480px)": {
+      padding: '1rem',
+    }
   },
   venueIcon: {
     paddingRight: '10px'

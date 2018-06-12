@@ -37,6 +37,10 @@ const style = StyleSheet.create({
     },
     "@media(max-width: 900px)": {
       marginTop: '3rem',
+    },
+    "@media(max-width: 380px)": {
+      marginTop: '1rem',
+      marginBottom: '2rem'
     }
   }
 })

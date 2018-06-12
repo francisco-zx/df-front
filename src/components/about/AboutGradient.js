@@ -34,6 +34,9 @@ const style = StyleSheet.create({
     fontWeight: 500,
     marginBottom: '1rem',
     textTransform: 'uppercase',
+    "@media(max-width: 1024px)": {
+      fontSize: '3.5rem'
+    },
     "@media(max-width: 480px)": {
       fontSize: '2rem'
     }
@@ -43,6 +46,9 @@ const style = StyleSheet.create({
     fontSize: '5rem',
     fontWeight: 500,
     textTransform: 'uppercase',
+    "@media(max-width: 1024px)": {
+      fontSize: '3.5rem'
+    },
     "@media(max-width: 480px)": {
       fontSize: '2rem'
     }

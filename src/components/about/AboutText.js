@@ -53,6 +53,15 @@ const style = StyleSheet.create({
     "@media(max-width: 480px)": {
       maxWidth: 'none',
       padding: 0
+    },
+    "@media(max-width: 480px)": {
+      margin: 0,
+      maxWidth: 'none',
+      textAlign: 'left',
+      fontWeight: 500,
+      fontSize: '0.9rem',
+      lineHeight: '12pt',
+      animationDelay: '0.6s'
     }
   }
 })

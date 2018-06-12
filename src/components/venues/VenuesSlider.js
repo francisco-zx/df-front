@@ -81,7 +81,7 @@ const style = StyleSheet.create({
       height: '45vh'
     },
     "@media(max-width: 480px)": {
-      height: '34vh'
+      height: '42svh'
     }
   },
   sliderItemImg: {
