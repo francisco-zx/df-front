@@ -46,7 +46,7 @@ export default class TimelineSlider extends Component {
     };
     const settingsNav = {
       slidesToScroll: 1,
-      slidesToShow: 10,
+      variableWidth: true,
       asNavFor: this.refs.mainSlider,
       dots: false,
       rtl: false,
@@ -55,9 +55,8 @@ export default class TimelineSlider extends Component {
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 4,
+            variableWidth: true,
             centerMode: true,
-
           }
         }
       ]
@@ -140,14 +139,14 @@ export default class TimelineSlider extends Component {
         </Slider>
         <div className={css(style.goBack)}>
           <Link to='#'>
-            <button className={css(style.backButton)}>2018</button>
+            <button className={css(style.backButton, style.active)}>2018</button>
             <button className={css(style.backButton)}>2017</button>
             <button className={css(style.backButton)}>2016</button>
             <button className={css(style.backButton)}>2015</button>
           </Link>
         </div>
         <div className={css(style.mobileYears)}>
-          <button className={css(style.backButton)}>2018</button>
+          <button className={css(style.backButton, style.active)}>2018</button>
           <button className={css(style.backButton)}>2017</button>
           <button className={css(style.backButton)}>2016</button>
           <button className={css(style.backButton)}>2015</button>
@@ -239,7 +238,7 @@ export default class TimelineSlider extends Component {
               </div>
             </div>
             <div>
-              <div className={css(style.navSliderItemFilter) + ' clickable'}>
+              <div className={css(style.navSliderItem) + ' clickable'}>
                 <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
                 <img src={pickerArtist} className={css(style.pickerArtistFilter)} width='84%'/>
                 <h3 className={css(style.timelineTitle)}>Bowie by Mick Rock</h3>
@@ -305,6 +304,9 @@ const style = StyleSheet.create({
     color: 'white',
     "@media(max-width:480px)": {
       display: 'none'
+    },
+    "@media(max-width:1024px)": {
+      margin: '3rem'
     }
   },
   backButton: {
@@ -323,7 +325,7 @@ const style = StyleSheet.create({
     color: 'white',
   },
   navSliderItem: {
-    margin: '0 120px ',
+    margin: '0 20px ',
     textAlign: 'center',
     position: 'relative',
     width: '7rem',
@@ -388,5 +390,9 @@ const style = StyleSheet.create({
     "@media(min-width: 480px)": {
       display: 'none'
     }
+  },
+  active: {
+    background: 'white',
+    color: '#161616'
   }
 })
