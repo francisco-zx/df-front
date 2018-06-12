@@ -25,13 +25,7 @@ class HomeVenues extends Component {
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
               return(
-                <div className={css(style.venuesGridItem)}>
-                  <div style={{padding: '0.5rem'}} className='hover-shadow'>
-                    <img className={css(style.itemImg)} src={venue.img_principal} />
-                    <div className={css(style.venueName)}>{venue.nombre}</div>
-                    <BorderGradient height='6px'/>
-                  </div>
-                </div>
+                <VenueGridItem venue={venue} history={this.props.history}/>
               )
             })
         }
@@ -57,40 +51,10 @@ const style = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
   },
-  venuesGridItem: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    width: '33%',
-    marginBottom: '2rem',
-    flexBasis: '33%',
-    overflow: 'hidden',
-    transition: 'all 0.4s ease-in-out',
-    '@media (max-width: 1024px)': {
-      flexBasis: '50%',
-      width:'50%'
-    },
-    '@media (max-width: 480px)': {
-        flexBasis: '100%',
-        width:'100%'
-    }
-  },
   padding: {
     padding: '0.5rem',
     "@media(max-width: 480px)": {
       padding: 0
     }
-  },
-  itemImg: {
-    width: '100%',
-  },
-  venueName:{
-    background: '#161616',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    color: 'white',
-    padding: '1rem',
-  },
-
+  }
 })

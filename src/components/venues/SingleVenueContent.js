@@ -28,7 +28,7 @@ export default class SingleVenueContent extends Component {
               </p>
             </article>
             <article className={css(style.flyer)}>
-              <SingleVenueDetails />
+              <SingleVenueDetails selectedVenue={this.props.selectedVenue}/>
             </article>
           </div>
         </div>

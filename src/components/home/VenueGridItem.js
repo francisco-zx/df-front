@@ -1,29 +1,65 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { StyleSheet, css } from 'aphrodite';
 
-export default class VenueGridItem extends Component {
-  render() {
-    return (
-      <div>
-        <div style={style.venueGridItem}>
-        Hola loquillos
-        </div>
-        <div style={style.venueGridItem}>
-        Hola loquillos
-        </div>
-        <div style={style.venueGridItem}>
-        Hola loquillos
-        </div>
-        <div style={style.venueGridItem}>
-        Hola loquillos
+import { selectVenue } from '../../Actions/Venues_Action';
+
+import BorderGradient from '../layout/BorderGradient';
+
+class VenueGridItem extends Component{
+  select = (venue) => {
+    this.props.selectVenue(venue);
+    this.props.history.push(`/venue/${venue.slug}`)
+  }
+  render(){
+    return(
+      <div className={css(style.venuesGridItem)} onClick={() => this.select(this.props.venue)}>
+        <div style={{padding: '0.5rem'}} className='hover-shadow'>
+          <img className={css(style.itemImg)} src={this.props.venue.img_principal} />
+          <div className={css(style.venueName)}>{this.props.venue.nombre}</div>
+          <BorderGradient height='6px'/>
         </div>
       </div>
-    );
+    )
   }
 }
-const style = {
-  venueGridItem: {
+
+const mapStateToProps = state =>({
+})
+const mapDispatchToProps = dispatch => ({
+  selectVenue: (venue) => dispatch(selectVenue(venue))
+});
+export default connect(mapStateToProps, mapDispatchToProps)(VenueGridItem);
+
+
+const style =  StyleSheet.create({
+  venuesGridItem: {
     display: 'flex',
     flex: 1,
-    width: '33.3333%'
-  }
-}
+    flexDirection: 'column',
+    width: '33%',
+    marginBottom: '2rem',
+    flexBasis: '33%',
+    overflow: 'hidden',
+    transition: 'all 0.4s ease-in-out',
+    '@media (max-width: 1024px)': {
+      flexBasis: '50%',
+      width:'50%'
+    },
+    '@media (max-width: 480px)': {
+        flexBasis: '100%',
+        width:'100%'
+    }
+  },
+  itemImg: {
+    width: '100%',
+  },
+  venueName:{
+    background: '#161616',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    color: 'white',
+    padding: '1rem',
+  },
+})

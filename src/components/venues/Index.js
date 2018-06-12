@@ -11,7 +11,7 @@ export default class VenuesPage extends Component {
     return (
       <section id='venues' alt='venues'>
         <VenuesSlider />
-        <VenuesGrid />
+        <VenuesGrid history={this.props.history}/>
       </section>
     );
   }

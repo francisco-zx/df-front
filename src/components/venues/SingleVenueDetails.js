@@ -15,7 +15,7 @@ export default class SingleVenueDetail extends React.Component{
         <BorderGradient />
         <div className={css(style.eventLocation)}>
           <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>CAPACIDAD</h3>
-          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>1584 Espectadores</p>
+          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.capacidad} Espectadores</p>
         </div>
       </article>
     )

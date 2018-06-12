@@ -52,7 +52,7 @@ class AppRouter extends Component {
               <Route path="/events" exact component={EventsPage} />
                 <Route path="/events/harry-styles" component={SingleEvent} />
               <Route path="/venues" exact component={VenuesPage} />
-                <Route path="/venue/teatro-vorterix" component={SingleVenue} />
+                <Route path="/venue/:slug" component={SingleVenue} />
               <Route path="/timeline" exact component={TimelinePage} />
                 <Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
               <Route path="/blog" exact component={BlogPage}/>
@@ -73,7 +73,8 @@ const mapStateToProps = state =>({
   events: state.events,
   venues: state.venues,
   topBar: state.topBar,
-  selectedBlog: state.selectedBlog
+  selectedBlog: state.selectedBlog,
+  selectedVenue: state.selectedVenue
 })
 const mapDispatchToProps = dispatch => ({
   fetchBlog: () => dispatch(fetchBlog()),

@@ -45,8 +45,7 @@ class BlogGridItem extends Component{
 }
 
 const mapStateToProps = state =>({
- blog: state.blog,
- selectedBlog: state.selectedBlog
+ blog: state.blog
 })
 const mapDispatchToProps = dispatch => ({
   selectBlog: (item) => dispatch(selectBlog(item))
