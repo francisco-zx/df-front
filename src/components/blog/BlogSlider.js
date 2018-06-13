@@ -22,6 +22,7 @@ export default class BlogSlider extends Component {
       slidesToScroll: 1,
       dotsClass: "slick-dots",
       autoplay: true,
+      fade: true,
       autoplaySpeed: 5000,
       customPaging: (i) => {
         return(
