@@ -43,7 +43,7 @@ class EventsSlider extends Component {
               this.props.events.map((event, index) => {
                 return(
                   <div >
-                  <Link to='/events/harry-styles'>
+                  <Link to={`/events/${event.slug}`}>
                     <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
                       <EventsSliderInfo
                         title={event.nombre}

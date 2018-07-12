@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
@@ -17,80 +18,36 @@ import Grid9 from '../../assets/events/events_grid_9.png';
 
 
 
-export default class EventsGrid extends Component {
+class EventsGrid extends Component {
   render() {
     return (
       <div className='container'>
         <SectionTitle text='Eventos'/>
         <div className={css(style.venuesGrid)}>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid1} />
-              <div className={css(style.venueName)}>Volbeat</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid2} />
-              <div className={css(style.venueName)}>Metronomy</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid3} />
-              <div className={css(style.venueName)}>Phil Collins</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid4} />
-              <div className={css(style.venueName)}>Lollapalooza Argentina 2018</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'}>
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid5} />
-              <div className={css(style.venueName)}>Foo Fighters</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItemFull) + ' animated fadeIn'}>
-            <div style={{padding: '0.5rem'}}>
-            <img className={css(style.venuesGridItemFull)} src={Grid6} />
-            <div className={css(style.venueName)}>Phil Collins</div>
-            <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid7} />
-              <div className={css(style.venueName)}>LCD Soundsystem</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid8} />
-              <div className={css(style.venueName)}>Liam Gallagher</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
-          <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-            <div style={{padding: '0.5rem'}}>
-              <img className={css(style.itemImg)} src={Grid9} />
-              <div className={css(style.venueName)}>Harry Styles</div>
-              <BorderGradient height='6px'/>
-            </div>
-          </div>
+          {
+            this.props.events.map((event, index) => {
+              return(
+                <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
+                  <div style={{padding: '0.5rem'}}>
+                    <img className={css(style.itemImg)} src={event.img_principal} />
+                    <div className={css(style.venueName)}>{event.nombre}</div>
+                    <BorderGradient height='6px'/>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  events: state.events
+});
+
+export default connect(mapStateToProps, null)(EventsGrid);
 const style = StyleSheet.create({
   venuesGrid: {
     flexDirection: 'row',
