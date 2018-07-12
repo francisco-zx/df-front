@@ -75,7 +75,8 @@ class HomeEventsSlider extends Component {
                     date={event.fecha_formateda}
                     ticketsURL={event.nombre}
                     slug={event.slug}
-                    />
+                    link={event.link}
+                  />
                 )
               })
           }

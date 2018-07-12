@@ -50,7 +50,7 @@ class AppRouter extends Component {
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/events" exact component={EventsPage} />
-                <Route path="/events/harry-styles" component={SingleEvent} />
+                <Route path="/event/:slug" component={SingleEvent} />
               <Route path="/venues" exact component={VenuesPage} />
                 <Route path="/venue/:slug" component={SingleVenue} />
               //<Route path="/timeline" exact component={TimelinePage} />

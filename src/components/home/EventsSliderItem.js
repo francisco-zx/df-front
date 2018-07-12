@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {  StyleSheet, css } from 'aphrodite';
+import { Link } from 'react-router-dom';
 
 export default class EventsSliderItem extends Component {
   render() {
@@ -9,8 +10,12 @@ export default class EventsSliderItem extends Component {
         <h1 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h1>
         <p className={css(style.location) + ' animated fadeIn'}>{this.props.location}</p>
         <div className={css(style.buttonGroup)}>
-          <button className={css(style.button) + ' animated fadeIn'}> VER MAS +</button>
-          <button className={css(style.button) + ' animated fadeIn'}>COMPRAR</button>
+          <Link to={`/event/${this.props.slug}`}>
+            <button className={css(style.button) + ' animated fadeIn'}> VER MAS +</button>
+          </Link>
+          <a href={this.props.link} target='_blank'>
+            <button className={css(style.button) + ' animated fadeIn'}>COMPRAR</button>
+          </a>
         </div>
       </div>
     );
