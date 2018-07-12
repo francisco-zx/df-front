@@ -12,7 +12,7 @@ export default class HomePage extends Component {
         <HomeSlider />
         <HomeEvents />
         <HomeVenues />
-        <HomeLinks />
+        <HomeLinks history={this.props.history}/>
       </section>
     );
   }

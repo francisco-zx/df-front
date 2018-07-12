@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import EventsSliderPic from '../../assets/events/events_slider.jpg';
 import EventsSliderInfo from './EventsSliderInfo';
@@ -12,7 +13,7 @@ import {
   arrowRightIconWhite
 } from "../../assets/IconsSvg";
 
-export default class EventsSlider extends Component {
+class EventsSlider extends Component {
 
   render() {
     const settings = {
@@ -37,41 +38,50 @@ export default class EventsSlider extends Component {
     return (
       <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <Link to='/events/harry-styles'>
-              <div className={css(style.sliderItem)}>
-                <EventsSliderInfo />
+          {
+            this.props.events.length ?
+              this.props.events.map((event, index) => {
+                return(
+                  <div >
+                  <Link to='/events/harry-styles'>
+                    <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
+                      <EventsSliderInfo
+                        title={event.nombre}
+                        date={event.fecha_formateda}
+                        location={event.venue.nombre}
+                        link={event.link}
+                        slug={event.slug}
+                      />
+                      {
+                        event.video != null &&
+                          <video autoPlay loop muted className={css(style.video)}>
+                            <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+                          </video>
+                      }
+                    </div>
+                    <div className={css(style.sliderOverlay)}></div>
+                    </Link>
+                  </div>
+                )
+              })
+            : <div >
+                <div className={css(style.sliderItem)}>
+                </div>
+                <div className={css(style.sliderOverlay)}></div>
               </div>
-              <div className={css(style.sliderOverlay)}></div>
-            </Link>
-          </div>
-          <div >
-            <Link to='/events/harry-styles'>
-              <div className={css(style.sliderItem)}>
-                <EventsSliderInfo />
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='/events/harry-styles'>
-              <div className={css(style.sliderItem)}>
-                <EventsSliderInfo />
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='/events/harry-styles'>
-              <div className={css(style.sliderItem)}>
-                <EventsSliderInfo />
-              </div>
-            </Link>
-          </div>
+          }
         </Slider>
         <BorderGradient />
       </section>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  events: state.events
+})
+
+export default connect(mapStateToProps, null)(EventsSlider)
 
 const style = StyleSheet.create({
   section: {
@@ -80,7 +90,6 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${EventsSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

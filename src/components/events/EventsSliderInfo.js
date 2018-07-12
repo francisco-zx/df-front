@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 import Calendar from '../../assets/events/calendar.svg'
 
@@ -9,13 +10,13 @@ export default class EventsSliderInfo extends Component {
   render() {
     return (
         <div className={css(style.sliderInfo)}>
-          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>Phil Collins</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>19 de Marzo, Estadio Instituto
-          </h3>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Córdoba, Argentina
+          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.title}</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.date} | {this.props.location}
           </h3>
           <div className={css(style.buttonGroup)}>
-            <button className={css(style.button) + ' animated fadeIn'}>VER MAS +</button>
+            <Link to={`/event/${this.props.slug}`}>
+              <button className={css(style.button) + ' animated fadeIn'}>VER MAS +</button>
+            </Link>
           </div>
         </div>
     );
