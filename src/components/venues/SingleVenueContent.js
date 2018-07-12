@@ -32,7 +32,7 @@ export default class SingleVenueContent extends Component {
             </article>
           </div>
         </div>
-        <SingleVenueEventsSlider />
+        <SingleVenueEventsSlider selectedVenue={this.props.selectedVenue}/>
 
 
       </div>

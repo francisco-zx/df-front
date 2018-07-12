@@ -28,7 +28,7 @@ export default class SingleEventInfo extends Component {
           </p>
         </article>
         <article className={css(style.flyer)}>
-          <SingleBlogDetails />
+          <SingleBlogDetails selectedBlog={this.props.selectedBlog}/>
         </article>
       </div>
     );

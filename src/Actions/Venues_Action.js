@@ -12,6 +12,13 @@ export const setSelectedVenue = (item = {}) => {
   };
 };
 
+export const fetchAndSetSelectedVenue = (item = {}) => {
+  return {
+    type: "FETCH_SELECTED_VENUE",
+    item
+  };
+};
+
 export const fetchVenues = () => {
   return dispatch => {
     fetch('https://dfapi.dlmr.co/api/venues/all')
@@ -29,3 +36,13 @@ export const selectVenue = (item) => {
     dispatch(setSelectedVenue(item))
   }
 }
+
+export const fetchSelectedVenue = (slug) => {
+  return dispatch => {
+    fetch(`https://dfapi.dlmr.co/api/venues/slug/${slug}`)
+    .then(response => response.json())
+    .then(data => {
+      dispatch(fetchAndSetSelectedVenue(data[0]))
+    })
+  };
+};

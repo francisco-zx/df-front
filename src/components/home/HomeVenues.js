@@ -7,13 +7,6 @@ import VenueGridItem from './VenueGridItem';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
 import BorderGradient from '../layout/BorderGradient';
 
-import LunaPark from '../../assets/home/lunapark.jpg';
-import DirecTV from '../../assets/home/directv.jpg';
-import Vorterix from '../../assets/home/vorterix.jpg';
-import Hipodromo from '../../assets/home/hipodromo.jpg';
-import Niceto from '../../assets/home/niceto.jpg';
-import Velez from '../../assets/home/velez.jpg';
-
 
 class HomeVenues extends Component {
   render() {

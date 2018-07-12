@@ -8,7 +8,7 @@ export default class AboutText extends Component {
       <article style={style.aboutGroup}>
         <div className='container' style={style.content}>
           <h4 style={style.subTitle}>Conocé más</h4>
-          <a href='https://www.dfgroup.com' target='_blank'>
+          <a href='http://www.dfgroup.com' target='_blank'>
             <img src={LogoGroup} width='200px'/>
           </a>
         </div>

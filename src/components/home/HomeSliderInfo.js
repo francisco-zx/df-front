@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 
 export default class HomeSliderInfo extends Component {
@@ -12,8 +13,12 @@ export default class HomeSliderInfo extends Component {
           <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{`${this.props.date} | ${this.props.location}`}
           </h3>
           <div className={css(style.buttonGroup) + " animated fadeIn"}>
-            <button className={css(style.button) + " animated fadeIn"}>VER MAS +</button>
-            <button className={css(style.button) + " animated fadeIn"}>COMPRAR</button>
+            <Link to={`/events/${this.props.slug}`}>
+              <button className={css(style.button) + " animated fadeIn"}>VER MAS +</button>
+            </Link>
+            <a href={`${this.props.link}`} target='_blank'>
+              <button className={css(style.button) + " animated fadeIn"}>COMPRAR</button>
+            </a>
           </div>
 
         </div>

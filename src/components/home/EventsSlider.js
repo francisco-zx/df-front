@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
 import EventsSliderItem from './EventsSliderItem';
 import {
@@ -7,7 +8,7 @@ import {
   arrowRightIcon
 } from "../../assets/IconsSvg";
 
-export default class HomeEventsSlider extends Component {
+class HomeEventsSlider extends Component {
 
   constructor(props){
     super(props);
@@ -65,78 +66,41 @@ export default class HomeEventsSlider extends Component {
             </span>
         }
         <div className={css(style.eventSlider) + ' animated fadeIn'} id='slider' onScroll={() => this.isScrolled()}>
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-            <EventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
-
+          {
+              this.props.events.map((event, index) => {
+                return(
+                  <EventsSliderItem
+                    title={event.nombre}
+                    location={event.venue.nombre}
+                    date={event.fecha_formateda}
+                    ticketsURL={event.nombre}
+                    slug={event.slug}
+                    />
+                )
+              })
+          }
         </div>
-        <span
-          onClick={this.rightButton}
-          className={css(style.arrowRight) + ' animated fadeIn'}
-          >
-          {arrowRightIcon}
-        </span>
+        {
+          this.props.events.length > 6 &&
+            <span
+              onClick={this.rightButton}
+              className={css(style.arrowRight) + ' animated fadeIn'}
+              >
+              {arrowRightIcon}
+            </span>
+        }
+
       </div>
     );
   }
 }
+
+const mapStateToProps = state =>({
+ events: state.events
+})
+const mapDispatchToProps = dispatch => ({
+});
+export default connect(mapStateToProps, mapDispatchToProps)(HomeEventsSlider);
 
 const style = StyleSheet.create({
   eventSliderContainer: {

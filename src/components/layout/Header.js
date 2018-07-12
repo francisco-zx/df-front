@@ -12,8 +12,15 @@ export default class Header extends Component {
     super(props);
     this.state = {
       showMobileMenu: false,
-      showMobileSearch: false
+      showMobileSearch: false,
+      headerStyle: false
     }
+    window.addEventListener('scroll', this.fixHeader);
+  }
+  fixHeader = (event) => {
+    window.scrollY > 50 ?
+      this.setState({fixed: true})
+    : this.setState({fixed: false})
   }
   toggleMobileMenu = () => {
     console.log('clickiti')
@@ -38,7 +45,7 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <header className={css(style.header)}>
+      <header className={(this.state.fixed ? css(style.headerFixed) : css(style.header))}>
         <div className={css(style.mobileMenuIcon)+ ' clickable'} onClick={() => {this.toggleMobileMenu()}}>
           <i className='fa fa-bars fa-2x'></i>
         </div>
@@ -55,7 +62,7 @@ export default class Header extends Component {
         }
         {
           this.state.showMobileSearch &&
-            <MobileSearch closeSearch={this.toggleMobileSearch} search={this.search} topBar={this.props.topBar}/>
+            <MobileSearch closeSearch={this.toggleMobileSearch} goBack={this.goBack} search={this.search} topBar={this.props.topBar}/>
         }
       </header>
     );
@@ -68,12 +75,34 @@ const style = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: '2rem 6rem',
+    transition: 'all 0.6s ease',
     boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)',
     "@media(max-width: 996px)": {
       justifyContent: 'center',
     },
     "@media(max-width: 480px)": {
       padding: '2rem',
+    },
+  },
+  headerFixed: {
+    display: 'flex',
+    flex: 1,
+    position: 'fixed',
+    background: 'white',
+    top: 0,
+    left: 0,
+    zIndex: 9999,
+    padding: '0.6rem',
+    alignItems: 'center',
+    width: '100%',
+    boxSizing: 'border-box',
+    transition: 'all 0.6s ease',
+    boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)',
+    "@media(max-width: 996px)": {
+      justifyContent: 'center',
+    },
+    "@media(max-width: 480px)": {
+      padding: '1rem',
     },
   },
   logo: {

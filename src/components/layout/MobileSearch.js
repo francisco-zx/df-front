@@ -16,7 +16,7 @@ export default class MobileMenu extends Component{
               <img src={Logo} width='100%'/>
             </div>
             <div className={css(style.search)}>
-              <SearchInput search={this.props.search}/>
+              <SearchInput search={this.props.search} goBack={this.props.goBack}/>
             </div>
           </header>
       </article>

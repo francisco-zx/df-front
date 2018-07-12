@@ -39,19 +39,24 @@ const style = StyleSheet.create({
   },
   galleryGrid: {
     display: 'flex',
-    flex:1
+    flex:1,
+    alignItems: 'flex-start',
   },
   img: {
     objectFit: 'cover'
   },
   img1: {
     display: 'flex',
-    flex: 1
+    width: '100%',
+    height: 'auto',
+    alignSelf: 'center'
   },
   img2: {
     display: 'flex',
-    flex: 1,
+    width: '100%',
+    height: '100%',
     flexDirection: 'row',
+    alignSelf: 'center',
     "@media(max-width:1024px)": {
       flexDirection: 'column',
     }
