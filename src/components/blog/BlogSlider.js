@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
 import BlogSliderPic from '../../assets/blog/blog_slider.png';
 import BlogSliderInfo from './BlogSliderInfo';
@@ -11,7 +12,7 @@ import {
   arrowRightIconWhite
 } from "../../assets/IconsSvg";
 
-export default class BlogSlider extends Component {
+class BlogSlider extends Component {
 
   render() {
     const settings = {
@@ -36,36 +37,40 @@ export default class BlogSlider extends Component {
     return (
       <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <BlogSliderInfo />
-              <div className={css(style.sliderOverlay)}></div>
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <BlogSliderInfo />
-              <div className={css(style.sliderOverlay)}></div>
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <BlogSliderInfo />
-              <div className={css(style.sliderOverlay)}></div>
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <BlogSliderInfo />
-              <div className={css(style.sliderOverlay)}></div>
-            </div>
-          </div>
+          {
+            this.props.blog.length ?
+              this.props.blog.map((blog, index) => {
+                return(
+                  <div >
+                    <div className={css(style.sliderItem)} style={{background: `url(${blog.img_portada})`}}>
+                      <BlogSliderInfo
+                        title={blog.nombre}
+                        subtitle={blog.subtitulo}
+                        slug={blog.slug}
+                      />
+                      <div className={css(style.sliderOverlay)}></div>
+                    </div>
+                  </div>
+                )
+              })
+            : <div >
+                <div className={css(style.sliderItem)}>
+                  <div className={css(style.sliderOverlay)}></div>
+                </div>
+              </div>
+          }
         </Slider>
         <BorderGradient />
       </section>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  blog: state.blog
+})
+
+export default connect(mapStateToProps, null)(BlogSlider)
 
 const style = StyleSheet.create({
   section: {
@@ -74,7 +79,6 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${BlogSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     position: 'relative',
