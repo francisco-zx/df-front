@@ -21,7 +21,7 @@ export const fetchAndSetSelectedBlog = (item = {}) => {
 
 export const fetchBlog = () => {
   return dispatch => {
-    fetch('https://dfapi.dlmr.co/api/blog/all')
+    fetch('http://dfapi.dfentertainment.com/api/public/api/blog/all')
     .then(response => response.json())
     .then(data => {
       dispatch(initializeBlog(data))
@@ -38,7 +38,7 @@ export const selectBlog = (item) => {
 
 export const fetchSelectedBlog = (slug) => {
   return dispatch => {
-    fetch(`https://dfapi.dlmr.co/api/blog/slug/${slug}`)
+    fetch(`http://dfapi.dfentertainment.com/api/public/api/blog/slug/${slug}`)
     .then(response => response.json())
     .then(data => {
       dispatch(fetchAndSetSelectedBlog(data[0]))

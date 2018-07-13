@@ -37,29 +37,28 @@ export default class SingleEventSlider extends Component {
     return (
       <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <SingleEventSliderInfo name='coldplay'/>
-              <video autoPlay loop muted className={css(style.video) + ' animated fadeIn'}>
-                <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
-              </video>
-            </div>
-            <div className={css(style.sliderOverlay)}></div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <SingleEventSliderInfo name='Dua Lipa'/>
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <SingleEventSliderInfo name='Ariana Grande' />
-            </div>
-          </div>
+          {
+            this.props.selectedEvent ?
+              <div >
+                <div className={css(style.sliderItem)} style={{background: `url(${this.props.selectedEvent.img_portada})`}}>
+                  <SingleEventSliderInfo name={this.props.selectedEvent.nombre}/>
+                </div>
+                <div className={css(style.sliderOverlay)}></div>
+              </div>
+            : <div >
+                <div className={css(style.sliderItem)}>
+                </div>
+              </div>
+          }
         </Slider>
-        <div className={css(style.buttonGroup)}>
-          <button className={css(style.button) + ' animated fadeIn'}>COMPRAR  TICKETS</button>
-        </div>
+        {
+          this.props.selectedEvent &&
+            <div className={css(style.buttonGroup)}>
+              <a href={this.props.selectedEvent.link} target='_blank'>
+                <button className={css(style.button) + ' animated fadeIn'}>COMPRAR  TICKETS</button>
+              </a>
+            </div>
+        }
         <div className={css(style.shareEvent) + ' animated fadeIn'}>
           Compartir:
           <i className={css(style.shareIcon) + ' fa fa-facebook'} ></i>
@@ -83,7 +82,6 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${SingleEventSliderPic})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     display: 'flex',

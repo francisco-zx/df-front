@@ -7,7 +7,7 @@ export const initializeTopBar = (data = []) => {
 
 export const fetchTopBar = () => {
   return dispatch => {
-    fetch('https://dfapi.dlmr.co/api/eventos/header')
+    fetch('http://dfapi.dfentertainment.com/api/public/api/eventos/header')
     .then(response => response.json())
     .then(data => {
       console.log(data)

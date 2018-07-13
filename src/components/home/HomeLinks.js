@@ -21,7 +21,7 @@ export default class HomePage extends Component {
             <img src={TimelineBanner} className={css(style.linkImg)}/>
             <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Timeline</h3>
             <Link to='/timeline'>
-              <button href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
+              <button disabled href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>PROXIMAMENTE</button>
             </Link>
           </div>
         </div>

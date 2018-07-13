@@ -14,21 +14,26 @@ export default class EventVenue extends React.Component{
           <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>
             <img src={Calendar} className={css(style.venueIcon)} height='18rem'/>
             <span>
-              Sábado 28 de Septiembre
+            {this.props.selectedEvent.fecha_formateda}
             </span>
           </h3>
           <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>
+
             <img src={mapMarker} className={css(style.venueIcon)} width='18rem'/>
             <span>
-              DirecTV Arena
+              {this.props.selectedEvent.venue.nombre}
             </span>
           </h3>
         </div>
         <BorderGradient />
         <div className={css(style.eventLocation)}>
-          <img src={EventVenuePic} width='100%' className={css(style.eventVenueImg) + ' animated fadeIn'}/>
+          {
+            this.props.selectedEvent.venue.img_plano &&
+              <img src={this.props.selectedEvent.venue.img_plano} width='100%' className={css(style.eventVenueImg) + ' animated fadeIn'}/>
+
+          }
           <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>UBICACIóN</h3>
-          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>Avenida Federico Lacroze 3455,<br/>Ciudad de Buenos Aires</p>
+          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedEvent.venue.ubicacion}</p>
         </div>
       </article>
     )

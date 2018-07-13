@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import base64 from 'base-64';
 
 import SingleVenueDetails from './SingleVenueDetails';
 import SingleVenueEventsSlider from './SingleVenueEventsSlider';
@@ -11,29 +12,43 @@ export default class SingleVenueContent extends Component {
         <div className='container'>
           <div className={css(style.content)}>
             <article className={css(style.details) + ' animated fadeIn'}>
-              <h3 className={css(style.subTitle)}>ACERCA DE</h3>
-              <p className={css(style.description)}>
-              Ubicado en el barrio de Colegiales. El teatro Vorterix es un hito local. Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-              </p>
+              {
+                this.props.selectedVenue.texto &&
+                  <div>
+                    <h3 className={css(style.subTitle)}>ACERCA DE</h3>
+                    <p
+                      className={css(style.description)}
+                      dangerouslySetInnerHTML={{ __html: base64.decode(this.props.selectedVenue.texto)}}
+                    >
+                    </p>
+                  </div>
+              }
               <h3 className={css(style.subTitle)}>UBICACION</h3>
               <p className={css(style.description)}>
-                Avenida Federico Lacroze 3455,
-                Ciudad de Buenos Aires
+                {this.props.selectedVenue.ubicacion}
               </p>
-              <h3 className={css(style.subTitle)}>COMO LLEGAR</h3>
-              <p className={css(style.description)}>
-                Colectivo: 19  21 – 39 – 42 – 44 – 63 – 65 – 76 – 87 – 93 – 108 – 112 – 140 – 151 – 168 – 176 – 184
-                Tren: Línea Mitre Ramal Retiro-José León Suárez est. Colegiales (a 7 cuadras) / Línea Urquiza (Metrovías) est. Federico Lacroze (a 6 cuadras)
-                Subte: Línea B est. Federico Lacroze (a 6 cuadras)
-              </p>
+              {
+                this.props.selectedVenue.comollegar &&
+                <div>
+                  <h3 className={css(style.subTitle)}>COMO LLEGAR</h3>
+                  <p className={css(style.description)}>
+                    Colectivo: 19  21 – 39 – 42 – 44 – 63 – 65 – 76 – 87 – 93 – 108 – 112 – 140 – 151 – 168 – 176 – 184
+                    Tren: Línea Mitre Ramal Retiro-José León Suárez est. Colegiales (a 7 cuadras) / Línea Urquiza (Metrovías) est. Federico Lacroze (a 6 cuadras)
+                    Subte: Línea B est. Federico Lacroze (a 6 cuadras)
+                  </p>
+                </div>
+              }
+
             </article>
             <article className={css(style.flyer)}>
               <SingleVenueDetails selectedVenue={this.props.selectedVenue}/>
             </article>
           </div>
         </div>
-        <SingleVenueEventsSlider selectedVenue={this.props.selectedVenue}/>
-
+        {
+          false &&
+          <SingleVenueEventsSlider selectedVenue={this.props.selectedVenue}/>
+        }
 
       </div>
 

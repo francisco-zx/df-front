@@ -7,8 +7,8 @@ export default class VenueSliderInfo extends Component {
   render() {
     return (
         <div className={css(style.sliderInfo)}>
-          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>Teatro Vorterix</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Colegiales, Buenos Aires.
+          <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.name}</h1>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.location}
           </h3>
         </div>
     );
@@ -50,7 +50,7 @@ const style = StyleSheet.create({
     fontSize: '2.5rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
-    maxWidth:'70%',
+    maxWidth:'90%',
     animationDelay: '0.4s',
     "@media(max-width: 1024px)": {
       fontSize: '2rem',

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from  'aphrodite';
+import { connect } from 'react-redux';
 
 import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import VenuesSliderInfo from './VenuesSliderInfo';
@@ -12,7 +13,7 @@ import {
   arrowRightIconWhite
 } from "../../assets/IconsSvg";
 
-export default class VenueSlider extends Component {
+class VenueSlider extends Component {
 
   render() {
     const settings = {
@@ -35,31 +36,32 @@ export default class VenueSlider extends Component {
     };
 
     return (
-      <section>
+      <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <Link to='/venue/teatro-vorterix'>
-            <div className={css(style.sliderItem)}>
-              <VenuesSliderInfo />
-            </div>
-            </Link>
-            <div className={css(style.sliderOverlay)}></div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <VenuesSliderInfo />
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <VenuesSliderInfo />
-            </div>
-          </div>
-          <div >
-            <div className={css(style.sliderItem)}>
-              <VenuesSliderInfo />
-            </div>
-          </div>
+          {
+            this.props.venues.length ?
+              this.props.venues.map((venue, index) => {
+                return(
+                  <div>
+                    <Link to={`/venue/${venue.slug}`}>
+                    <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`}}>
+                      <VenuesSliderInfo
+                        name={venue.nombre}
+                        location={venue.ubicacion}
+                      />
+                    </div>
+                    </Link>
+                    <div className={css(style.sliderOverlay)}></div>
+                  </div>
+                )
+
+              })
+            : <div>
+                <div className={css(style.sliderItem)}>
+                </div>
+                <div className={css(style.sliderOverlay)}></div>
+              </div>
+          }
         </Slider>
         <BorderGradient />
       </section>
@@ -67,10 +69,18 @@ export default class VenueSlider extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  venues: state.venues
+})
+
+export default connect(mapStateToProps, null)(VenueSlider)
+
 const style = StyleSheet.create({
+  section: {
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+  },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${VenuesSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

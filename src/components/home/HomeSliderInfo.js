@@ -10,7 +10,9 @@ export default class HomeSliderInfo extends Component {
         <div className={css(style.sliderInfo) + " animated fadeIn"}>
           <aside className={css(style.sliderInfoTag) + " animated fadeIn"}>EVENTO</aside>
           <h1 className={css(style.sliderInfoTitle) + " animated fadeIn"}>{this.props.title}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{`${this.props.date} | ${this.props.location}`}
+          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.date}
+          </h3>
+          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.location}
           </h3>
           <div className={css(style.buttonGroup) + " animated fadeIn"}>
             <Link to={`/events/${this.props.slug}`}>
@@ -30,6 +32,7 @@ const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
     zIndex: 3,
+    width: '100%',
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }

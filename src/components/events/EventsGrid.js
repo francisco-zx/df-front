@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
@@ -19,6 +20,11 @@ import Grid9 from '../../assets/events/events_grid_9.png';
 
 
 class EventsGrid extends Component {
+
+  goToEvent = slug => {
+    this.props.history.push(`/event/${slug}`)
+  }
+
   render() {
     return (
       <div className='container'>
@@ -27,13 +33,13 @@ class EventsGrid extends Component {
           {
             this.props.events.map((event, index) => {
               return(
-                <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} >
-                  <div style={{padding: '0.5rem'}}>
-                    <img className={css(style.itemImg)} src={event.img_principal} />
-                    <div className={css(style.venueName)}>{event.nombre}</div>
-                    <BorderGradient height='6px'/>
+                  <div className={css(style.venuesGridItem, style.hide) + ' animated fadeIn'} onClick={slug => this.goToEvent(event.slug)}>
+                    <div style={{padding: '0.5rem'}}>
+                      <img className={css(style.itemImg)} src={event.img_principal} />
+                      <div className={css(style.venueName)}>{event.nombre}</div>
+                      <BorderGradient height='6px'/>
+                    </div>
                   </div>
-                </div>
               )
             })
           }

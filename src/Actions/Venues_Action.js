@@ -21,7 +21,7 @@ export const fetchAndSetSelectedVenue = (item = {}) => {
 
 export const fetchVenues = () => {
   return dispatch => {
-    fetch('https://dfapi.dlmr.co/api/venues/all')
+    fetch('http://dfapi.dfentertainment.com/api/public/api/venues/all')
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -39,7 +39,7 @@ export const selectVenue = (item) => {
 
 export const fetchSelectedVenue = (slug) => {
   return dispatch => {
-    fetch(`https://dfapi.dlmr.co/api/venues/slug/${slug}`)
+    fetch(`http://dfapi.dfentertainment.com/api/public/api/venues/slug/${slug}`)
     .then(response => response.json())
     .then(data => {
       dispatch(fetchAndSetSelectedVenue(data[0]))
