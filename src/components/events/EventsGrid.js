@@ -30,6 +30,21 @@ class EventsGrid extends Component {
               )
             })
           }
+          {
+            this.props.events.map((event, index) => {
+              return(
+                <div className={css(style.mobile)}>
+                  <div className={css(style.venuesGridItemFull) + ' animated fadeIn'} onClick={slug => this.goToEvent(event.slug)}>
+                    <div style={{padding: '0.5rem'}}>
+                      <img className={css(style.itemImg)} src={event.img_portada} />
+                      <div className={css(style.venueName)}>{event.nombre}</div>
+                      <BorderGradient height='6px'/>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     );
@@ -47,6 +62,11 @@ const style = StyleSheet.create({
     flexWrap: 'wrap',
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  mobile: {
+    '@media(min-width: 480px)': {
+      display: 'none'
+    }
   },
   venuesGridItem: {
     display: 'flex',
