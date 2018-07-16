@@ -35,6 +35,9 @@ const style = StyleSheet.create({
     },
     "@media(max-width: 400px)": {
       padding: '0.6rem'
+    },
+    ":last-child": {
+      borderRight: 'none'
     }
   },
   date: {

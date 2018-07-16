@@ -40,20 +40,21 @@ class VenueSlider extends Component {
           {
             this.props.venues.length ?
               this.props.venues.map((venue, index) => {
-                return(
-                  <div>
-                    <Link to={`/venue/${venue.slug}`}>
-                    <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`}}>
-                      <VenuesSliderInfo
-                        name={venue.nombre}
-                        location={venue.localidad}
-                      />
+                if(venue.visible === 1){
+                  return(
+                    <div>
+                      <Link to={`/venue/${venue.slug}`}>
+                      <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`}}>
+                        <VenuesSliderInfo
+                          name={venue.nombre}
+                          location={venue.localidad}
+                        />
+                      </div>
+                      </Link>
+                      <div className={css(style.sliderOverlay)}></div>
                     </div>
-                    </Link>
-                    <div className={css(style.sliderOverlay)}></div>
-                  </div>
-                )
-
+                  )
+                }
               })
             : <div>
                 <div className={css(style.sliderItem)}>

@@ -8,17 +8,47 @@ import BorderGradient from '../layout/BorderGradient';
 
 
 class HomeVenues extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isVenues: false
+    }
+  }
+
+  componentDidMount(){
+    const path = document.location.href.split('/')[3];
+    console.log(path)
+    if(path === 'venues'){
+      this.setState({
+        isVenues: true
+      })
+    }
+  }
   render() {
     return (
       <div className='container'>
         <SectionTitle text='Venues' link='/venues'/>
         <div className={css(style.venuesGrid)}>
         {
+          !this.state.isVenues &&
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
-              return(
-                <VenueGridItem venue={venue} history={this.props.history}/>
-              )
+              if(venue.visible === 1){
+                return(
+                  <VenueGridItem venue={venue} history={this.props.history}/>
+                )
+              }
+
+            })
+        }
+        {
+          this.state.isVenues &&
+          this.props.venues.length &&
+            this.props.venues.map((venue, index) => {
+                return(
+                  <VenueGridItem venue={venue} history={this.props.history}/>
+                )
             })
         }
         </div>

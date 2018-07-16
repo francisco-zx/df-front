@@ -32,7 +32,7 @@ export default class EventVenue extends React.Component{
 
           }
           <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>UBICACIóN</h3>
-          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedEvent.venue.ubicacion}</p>
+          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedEvent.venue.ubicacion}, {this.props.selectedEvent.venue.localidad}</p>
         </div>
       </article>
     )

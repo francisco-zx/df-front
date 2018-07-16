@@ -105,13 +105,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(HomeEventsSlider);
 
 const style = StyleSheet.create({
   eventSliderContainer: {
-    position: 'relative'
+    position: 'relative',
+
   },
   eventSlider: {
     width: '100%',
     overflow: 'scroll',
     position: 'relative',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    textAlign: 'center',
   },
   sliderItem: {
     display: 'inline-block'

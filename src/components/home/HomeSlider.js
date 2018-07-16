@@ -39,26 +39,28 @@ class HomeSlider extends Component {
         {
           this.props.events.length ?
             this.props.events.map((event, index) => {
-              return(
-                <div >
-                  <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
-                    <HomeSliderInfo
-                      title={event.nombre}
-                      date={event.fecha_formateada}
-                      location={event.venue.nombre}
-                      link={event.link}
-                      slug={event.slug}
-                    />
-                    {
-                      event.video != null &&
-                        <video autoPlay loop muted className={css(style.video)}>
-                          <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
-                        </video>
-                    }
+              if(event.destacado === 1){
+                return(
+                  <div >
+                    <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
+                      <HomeSliderInfo
+                        title={event.nombre}
+                        date={event.fecha_formateada}
+                        location={event.venue.nombre}
+                        link={event.link}
+                        slug={event.slug}
+                      />
+                      {
+                        event.video != null &&
+                          <video autoPlay loop muted className={css(style.video)}>
+                            <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+                          </video>
+                      }
+                    </div>
+                    <div className={css(style.sliderOverlay)}></div>
                   </div>
-                  <div className={css(style.sliderOverlay)}></div>
-                </div>
-              )
+                )
+              }
             })
           : <div >
               <div className={css(style.sliderItem)}>
