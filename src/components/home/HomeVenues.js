@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import SectionTitle from '../layout/SectionTitle';
 import VenueGridItem from './VenueGridItem';
-import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
 import BorderGradient from '../layout/BorderGradient';
 
 

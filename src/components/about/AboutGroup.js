@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import LogoGroup from '../../logo_group.svg';
+import BorderGradient from '../layout/BorderGradient';
 
 export default class AboutText extends Component {
   render() {
@@ -9,9 +10,10 @@ export default class AboutText extends Component {
         <div className='container' style={style.content}>
           <h4 style={style.subTitle}>Conocé más</h4>
           <a href='http://www.dfgroup.com' target='_blank'>
-            <img src={LogoGroup} width='200px'/>
+            <img src={LogoGroup} width='300px'/>
           </a>
         </div>
+        <BorderGradient />
       </article>
     );
   }
@@ -19,7 +21,6 @@ export default class AboutText extends Component {
 const style = {
   aboutGroup: {
     background: '#161616',
-    marginBottom: '1rem',
   },
   content: {
     display: 'flex',

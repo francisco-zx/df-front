@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import RelatedEvent from '../../assets/events/related_event.jpg';
 import BorderGradient from '../layout/BorderGradient';
 
 export default class SingleVenueEventsSliderItem extends Component {
@@ -8,7 +7,7 @@ export default class SingleVenueEventsSliderItem extends Component {
     return (
       <div style={style.eventSliderItem}>
         <div style={{padding: '0.5rem'}}>
-          <img style={style.itemImg} src={RelatedEvent} />
+          <img style={style.itemImg}/>
           <div style={style.eventTitle}>Phil Collins</div>
           <BorderGradient height='6px'/>
         </div>

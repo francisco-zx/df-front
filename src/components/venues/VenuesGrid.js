@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import SectionTitle from '../layout/SectionTitle';
-import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
 import BorderGradient from '../layout/BorderGradient';
-
-import LunaPark from '../../assets/home/lunapark.jpg';
-import DirecTV from '../../assets/home/directv.jpg';
-import Vorterix from '../../assets/home/vorterix.jpg';
-import Hipodromo from '../../assets/home/hipodromo.jpg';
-import Niceto from '../../assets/home/niceto.jpg';
-import Velez from '../../assets/home/velez.jpg';
 
 
 class VenuesGrid extends Component {
@@ -108,6 +100,7 @@ const style = {
   },
   itemImg: {
     width: '100%',
+    maxHeight: '23rem'
   },
   venueName:{
     background: '#161616',

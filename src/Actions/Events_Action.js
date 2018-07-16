@@ -5,6 +5,21 @@ export const initializeEvents = (data = []) => {
   };
 };
 
+export const setSelectedEvent = (data = {}) => {
+  return {
+    type: "SET_SELECTED_EVENT",
+    data
+  };
+};
+
+export const selectEvent = (data) => {
+  return dispatch =>{
+    console.log(data)
+    dispatch(setSelectedEvent(data))
+  }
+}
+
+
 export const fetchEvents = () => {
   return dispatch => {
     fetch('http://dfapi.dfentertainment.com/api/public/api/eventos/all')

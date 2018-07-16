@@ -3,9 +3,7 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
-import SingleTimelineSliderPic from '../../assets/timeline/single_timeline_slider.png';
 import TimelinePicker from '../../assets/timeline/timeline_picker.svg';
-import pickerArtist from '../../assets/timeline/timeline_artist_picker.png';
 import SingleTimeLineSliderInfo from './SingleTimeLineSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -86,7 +84,6 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${SingleTimelineSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

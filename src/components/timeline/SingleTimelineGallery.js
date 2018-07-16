@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import BorderGradient from  '../layout/BorderGradient';
 
-import Gallery1 from '../../assets/timeline/single_timeline_gallery_1.png';
-import Gallery2 from '../../assets/timeline/single_timeline_gallery_2.png';
-import Gallery3 from '../../assets/timeline/single_timeline_gallery_3.png';
-import Gallery4 from '../../assets/timeline/single_timeline_gallery_4.png';
-
 export default class SingleTimelineGallery extends Component {
   render() {
     return (
-      <section>
-        <h3 className={css(style.title)}>GALERIA</h3>
-        <BorderGradient />
-        <div>
-          <div className={css(style.galleryGrid)}>
-            <img className={css(style.img1, style.img)} src={Gallery1} height='auto'/>
+      {
+        /*
+        <section>
+          <h3 className={css(style.title)}>GALERIA</h3>
+          <BorderGradient />
+          <div>
+            <div className={css(style.galleryGrid)}>
+              <img className={css(style.img1, style.img)} src={Gallery1} height='auto'/>
+            </div>
+            <div className={css(style.galleryGrid)}>
+              <img className={css(style.img2, style.img)} src={Gallery2} height='auto'/>
+              <img className={css(style.img2, style.img)} src={Gallery3} height='auto'/>
+            </div>
           </div>
           <div className={css(style.galleryGrid)}>
-            <img className={css(style.img2, style.img)} src={Gallery2} height='auto'/>
-            <img className={css(style.img2, style.img)} src={Gallery3} height='auto'/>
+            <img className={css(style.img1, style.img)} src={Gallery4} height='auto'/>
           </div>
-        </div>
-        <div className={css(style.galleryGrid)}>
-          <img className={css(style.img1, style.img)} src={Gallery4} height='auto'/>
-        </div>
-      </section>
+        </section>
+        */
+      }
+
     );
   }
 }

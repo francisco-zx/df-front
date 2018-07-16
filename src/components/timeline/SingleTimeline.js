@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HomeSliderPic from '../../assets/home/home_slider.jpg';
 
 import SingleTimeLineSlider from './SingleTimeLineSlider';
 import SingleTimelineInfo from './SingleTimelineInfo';

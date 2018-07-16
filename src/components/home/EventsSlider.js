@@ -72,7 +72,7 @@ class HomeEventsSlider extends Component {
                   <EventsSliderItem
                     title={event.nombre}
                     location={event.venue.nombre}
-                    date={event.fecha_formateda}
+                    date={event.fecha_formateada}
                     ticketsURL={event.nombre}
                     slug={event.slug}
                     link={event.link}

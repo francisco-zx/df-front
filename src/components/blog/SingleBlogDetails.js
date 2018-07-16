@@ -2,23 +2,26 @@ import React from 'react';
 
 import BorderGradient from '../layout/BorderGradient'
 
-import Flyer from '../../assets/blog/flyer_bafweek.jpg';
-import Back from '../../assets/blog/back_bafweek.jpg';
 
 export default class SingleBlogDetail extends React.Component{
   render(){
     return(
       <article>
-        <div style={{padding: '0.5rem', marginBottom: '2rem'}}>
-          <img style={style.itemImg} src={this.props.selectedBlog.img_flyer} />
-          <div style={style.eventTitle}>Flyer</div>
-          <BorderGradient height='6px'/>
-        </div>
-        <div style={{padding: '0.5rem', marginBottom: '2rem'}}>
-          <img style={style.itemImg} src={this.props.selectedBlog.img_secundaria} />
-          <div style={style.eventTitle}>Backstage: Pelo y Makeup</div>
-          <BorderGradient height='6px'/>
-        </div>
+        {
+          this.props.selectedBlog.img_flyer &&
+            <div style={{padding: '0.5rem', marginBottom: '2rem'}}>
+              <img style={style.itemImg} src={this.props.selectedBlog.img_flyer} />
+              <div style={style.eventTitle}>Flyer</div>
+              <BorderGradient height='6px'/>
+            </div>
+        }
+        {
+          this.props.selectedBlog.img_secundaria &&
+            <div style={{padding: '0.5rem', marginBottom: '2rem'}}>
+              <img style={style.itemImg} src={this.props.selectedBlog.img_secundaria} />
+              <BorderGradient height='6px'/>
+            </div>
+        }
       </article>
 
     )

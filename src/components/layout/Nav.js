@@ -13,7 +13,7 @@ export default class Nav extends Component {
         <ul className={css(style.navUl)}>
           <Link to='/events' className={css(style.navItem) + ' animated fadeIn'}>Eventos</Link>
           <Link to='/venues' className={css(style.navItem) + ' animated fadeIn'}>Venues</Link>
-          <Link to='/blog' className={css(style.navItem) + ' animated fadeIn'}>Blog</Link>
+          <Link to='/news' className={css(style.navItem) + ' animated fadeIn'}>News</Link>
           <Link to='/about' className={css(style.navItem) + ' animated fadeIn'}>Quienes Somos</Link>
           <Link to='/contact' className={css(style.navItem) + ' animated fadeIn'}>Contacto</Link>
         </ul>

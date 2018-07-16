@@ -16,6 +16,8 @@ export default (state = initialState, action) => {
       return {...state, selectedBlog: action.item};
     case "INITIALIZE_EVENTS":
       return {...state, events: action.data};
+    case "SET_SELECTED_EVENT":
+      return {...state, selectedBlog: action.data};
     case "FETCH_SELECTED_EVENT":
       return {...state, selectedEvent: action.data};
     case "INITIALIZE_VENUES":

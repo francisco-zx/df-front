@@ -15,7 +15,7 @@ export default class HomeSliderInfo extends Component {
           <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.location}
           </h3>
           <div className={css(style.buttonGroup) + " animated fadeIn"}>
-            <Link to={`/events/${this.props.slug}`}>
+            <Link to={`/event/${this.props.slug}`}>
               <button className={css(style.button) + " animated fadeIn"}>VER MAS +</button>
             </Link>
             <a href={`${this.props.link}`} target='_blank'>

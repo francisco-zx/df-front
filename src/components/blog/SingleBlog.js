@@ -22,7 +22,11 @@ class SingleBlogPage extends Component {
       <section>
         <SingleBlogSlider selectedBlog={this.props.selectedBlog}/>
         <SingleBlogContent selectedBlog={this.props.selectedBlog}/>
-        <SingleBlogVideo />
+        {
+          this.props.selectedBlog &&
+            this.props.selectedBlog.video &&
+              <SingleBlogVideo />
+        }
       </section>
     );
   }

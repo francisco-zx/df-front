@@ -9,13 +9,6 @@ import BlogGridItem from './BlogGridItem';
 import SectionTitle from '../layout/SectionTitle';
 import BorderGradient from '../layout/BorderGradient';
 
-import Blog1 from '../../assets/blog/blog1.jpg';
-import Blog2 from '../../assets/blog/blog2.jpg';
-import Blog3 from '../../assets/blog/blog3.jpg';
-import Blog4 from '../../assets/blog/blog4.jpg';
-import Blog5 from '../../assets/blog/blog5.jpg';
-import Blog6 from '../../assets/blog/blog6.jpg';
-
 class BlogGrid extends Component {
 
   constructor(props){

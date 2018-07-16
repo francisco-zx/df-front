@@ -3,8 +3,6 @@ import Slider from 'react-slick';
 import { StyleSheet, css } from 'aphrodite';
 import { connect } from 'react-redux';
 
-import HomeSliderPic from '../../assets/events/events_slider.jpg';
-import HomeSliderVideoPoster from '../../assets/home/video-poster.jpg';
 import HomeSliderInfo from './HomeSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -46,14 +44,14 @@ class HomeSlider extends Component {
                   <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
                     <HomeSliderInfo
                       title={event.nombre}
-                      date={event.fecha_formateda}
+                      date={event.fecha_formateada}
                       location={event.venue.nombre}
                       link={event.link}
                       slug={event.slug}
                     />
                     {
                       event.video != null &&
-                        <video autoPlay loop muted className={css(style.video)} poster={HomeSliderVideoPoster}>
+                        <video autoPlay loop muted className={css(style.video)}>
                           <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
                         </video>
                     }

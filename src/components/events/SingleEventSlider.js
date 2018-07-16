@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
-import SingleEventSliderPic from '../../assets/events/single_event_slider.jpg';
 import SingleEventSliderInfo from './SingleEventSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -53,6 +52,7 @@ export default class SingleEventSlider extends Component {
         </Slider>
         {
           this.props.selectedEvent &&
+          this.props.selectedEvent.link &&
             <div className={css(style.buttonGroup)}>
               <a href={this.props.selectedEvent.link} target='_blank'>
                 <button className={css(style.button) + ' animated fadeIn'}>COMPRAR  TICKETS</button>

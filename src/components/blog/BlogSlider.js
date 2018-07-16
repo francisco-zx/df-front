@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { StyleSheet, css } from 'aphrodite';
 import { connect } from 'react-redux';
 
-import BlogSliderPic from '../../assets/blog/blog_slider.png';
 import BlogSliderInfo from './BlogSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 

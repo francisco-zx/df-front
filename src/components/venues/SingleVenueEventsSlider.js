@@ -45,12 +45,19 @@ export default class RelatedEventsSlider extends Component {
             {arrowLeftIcon}
           </span>
           <div style={style.eventSlider} id='slider'>
-            <SingleVenueEventsSliderItem
-              title='Lollapalooza Argentina 2018'
-              location='Hipodromo de San Isidro'
-              date='16, 17 y 18 de Marzo'
-              ticketsURL='asdasd'
-              />
+            {
+              this.props.selectedVenue.eventos.map((event, index) => {
+                return(
+                  <SingleVenueEventsSliderItem
+                    title={event.nombre}
+                    location={event.venue}
+                    date='16, 17 y 18 de Marzo'
+                    ticketsURL='asdasd'
+                  />
+                )
+              })
+            }
+
             <SingleVenueEventsSliderItem
               title='Lollapalooza Argentina 2018'
               location='Hipodromo de San Isidro'

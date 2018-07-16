@@ -4,20 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import SectionTitle from '../layout/SectionTitle';
-import VenuePlaceholder from '../../assets/home/venue_placeholder.jpg';
 import BorderGradient from '../layout/BorderGradient';
-
-import Grid1 from '../../assets/events/events_grid_1.png';
-import Grid2 from '../../assets/events/events_grid_2.png';
-import Grid3 from '../../assets/events/events_grid_3.png';
-import Grid4 from '../../assets/events/events_grid_4.png';
-import Grid5 from '../../assets/events/events_grid_5.png';
-import Grid6 from '../../assets/events/events_grid_6.png';
-import Grid7 from '../../assets/events/events_grid_7.png';
-import Grid8 from '../../assets/events/events_grid_8.png';
-import Grid9 from '../../assets/events/events_grid_9.png';
-
-
 
 class EventsGrid extends Component {
 
@@ -66,6 +53,7 @@ const style = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     width: '33%',
+    maxWidth: '33%',
     marginBottom: '2rem',
     flexBasis: '33%',
     overflow: 'hidden'

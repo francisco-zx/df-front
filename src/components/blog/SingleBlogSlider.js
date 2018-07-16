@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
-import BlogSliderPic from '../../assets/blog/blog_slider.png';
 import SingleBlogSliderInfo from './SingleBlogSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -42,7 +41,7 @@ export default class SingleEventSlider extends Component {
           <div className={css(style.sliderOverlay)}></div>
         </div>
         <div className={css(style.goBack) + ' animated fadeIn'}>
-          <Link to='/blog'>
+          <Link to='/news'>
             <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>

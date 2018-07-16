@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite';
-
-import TimelineSliderPic from '../../assets/timeline/timeline_slider.png';
+import { StyleSheet, css } from 'aphrodite'
 import TimelinePicker from '../../assets/timeline/timeline_picker.svg';
-import pickerArtist from '../../assets/timeline/timeline_artist_picker.png';
+import pickerArtist from '../../assets/timeline/timeline_picker.svg';
 import TimeLineSliderInfo from './TimeLineSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 import Overlay from '../layout/Overlay';
@@ -269,7 +267,6 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
-    backgroundImage: `url(${TimelineSliderPic})`,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

@@ -4,9 +4,10 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import EventsSliderPic from '../../assets/events/events_slider.jpg';
 import EventsSliderInfo from './EventsSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
+
+import { selectEvent } from '../../Actions/Events_Action'
 
 import {
   arrowLeftIconWhite,
@@ -14,6 +15,11 @@ import {
 } from "../../assets/IconsSvg";
 
 class EventsSlider extends Component {
+
+  select = (item) => {
+    this.props.selectEvent(item);
+    this.props.history.push(`/event/${item.slug}`)
+  }
 
   render() {
     const settings = {
@@ -34,7 +40,6 @@ class EventsSlider extends Component {
         );
       }
     };
-
     return (
       <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
@@ -43,11 +48,11 @@ class EventsSlider extends Component {
               this.props.events.map((event, index) => {
                 return(
                   <div >
-                  <Link to={`/event/${event.slug}`}>
+                  <div onClick={item => this.select(event)}>
                     <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
                       <EventsSliderInfo
                         title={event.nombre}
-                        date={event.fecha_formateda}
+                        date={event.fecha_formateada}
                         location={event.venue.nombre}
                         link={event.link}
                         slug={event.slug}
@@ -60,7 +65,7 @@ class EventsSlider extends Component {
                       }
                     </div>
                     <div className={css(style.sliderOverlay)}></div>
-                    </Link>
+                    </div>
                   </div>
                 )
               })
@@ -81,7 +86,11 @@ const mapStateToProps = state => ({
   events: state.events
 })
 
-export default connect(mapStateToProps, null)(EventsSlider)
+const mapDispatchToProps = dispatch => ({
+  selectEvent: item => dispatch(selectEvent(item))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsSlider)
 
 const style = StyleSheet.create({
   section: {
@@ -90,6 +99,7 @@ const style = StyleSheet.create({
   },
   sliderItem: {
     height: '72vh',
+    width: '100%',
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',

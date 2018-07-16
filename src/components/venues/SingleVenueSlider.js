@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
-import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import SingleVenueSliderInfo from './SingleVenueSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 

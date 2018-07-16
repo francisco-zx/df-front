@@ -46,10 +46,10 @@ export default class SingleVenueContent extends Component {
           </div>
         </div>
         {
-          false &&
-          <SingleVenueEventsSlider selectedVenue={this.props.selectedVenue}/>
+          this.props.selectedVenues &&
+          this.props.selectedVenues.eventos.length &&
+            <SingleVenueEventsSlider selectedVenue={this.props.selectedVenue}/>
         }
-
       </div>
 
     );

@@ -55,8 +55,8 @@ class AppRouter extends Component {
                 <Route path="/venue/:slug" component={SingleVenue} />
               //<Route path="/timeline" exact component={TimelinePage} />
                 //<Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
-              <Route path="/blog" exact component={BlogPage}/>
-                <Route path="/blog/:slug" component={SingleBlog} />
+              <Route path="/news" exact component={BlogPage}/>
+                <Route path="/news/:slug" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
               <Route path="/search/:search" component={SearchPage}/>

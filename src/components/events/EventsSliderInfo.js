@@ -11,7 +11,11 @@ export default class EventsSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.title}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.date} | {this.props.location}
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
+            {this.props.date}
+          </h3>
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
+            {this.props.location}
           </h3>
           <div className={css(style.buttonGroup)}>
             <Link to={`/event/${this.props.slug}`}>
@@ -27,6 +31,7 @@ const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
     zIndex: 3,
+    width: '100%',
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }

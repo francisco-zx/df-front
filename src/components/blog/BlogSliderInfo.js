@@ -7,7 +7,7 @@ import { StyleSheet, css } from 'aphrodite';
 export default class BlogSliderInfo extends Component {
   render() {
     return (
-        <Link to={`/blog/${this.props.slug}`} className={css(style.sliderInfo)}>
+        <Link to={`/news/${this.props.slug}`} className={css(style.sliderInfo)}>
           <aside className={css(style.sliderInfoTag) + ' animated fadeIn'}>NOVEDAD</aside>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.title}</h1>
           <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.subtitle}

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { StyleSheet, css } from  'aphrodite';
 import { connect } from 'react-redux';
 
-import VenuesSliderPic from '../../assets/venues/venues_slider.jpg';
 import VenuesSliderInfo from './VenuesSliderInfo';
 import BorderGradient from  '../layout/BorderGradient';
 
@@ -47,7 +46,7 @@ class VenueSlider extends Component {
                     <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`}}>
                       <VenuesSliderInfo
                         name={venue.nombre}
-                        location={venue.ubicacion}
+                        location={venue.localidad}
                       />
                     </div>
                     </Link>

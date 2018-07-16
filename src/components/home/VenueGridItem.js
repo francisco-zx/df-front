@@ -14,7 +14,7 @@ class VenueGridItem extends Component{
   render(){
     return(
       <div className={css(style.venuesGridItem)} onClick={() => this.select(this.props.venue)}>
-        <div style={{padding: '0.5rem'}} className='hover-shadow'>
+        <div className='hover-shadow'>
           <img className={css(style.itemImg)} src={this.props.venue.img_principal} />
           <div className={css(style.venueName)}>{this.props.venue.nombre}</div>
           <BorderGradient height='6px'/>
@@ -49,10 +49,18 @@ const style =  StyleSheet.create({
     '@media (max-width: 480px)': {
         flexBasis: '100%',
         width:'100%'
+    },
+    ':nth-child(odd)': {
+        marginRight: '1rem'
+    },
+    ':nth-child(even)': {
+        marginLeft: '1rem'
     }
   },
   itemImg: {
     width: '100%',
+    maxHeight: '21rem',
+    objectFit: 'cover',
   },
   venueName:{
     background: '#161616',

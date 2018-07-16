@@ -10,7 +10,7 @@ export default class EventsPage extends Component {
   render() {
     return (
       <div>
-        <EventsSlider />
+        <EventsSlider history={this.props.history}/>
         <EventsGrid history={this.props.history}/>
       </div>
     );

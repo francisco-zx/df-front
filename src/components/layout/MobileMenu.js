@@ -33,20 +33,24 @@ export default class MobileMenu extends Component{
                   Venues
               </NavLink>
             </li>
-            <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.6s'}}>
-              <NavLink
-                to='/timeline'
-                className={css(style.mobileNavItemLink)}
-                onClick={this.props.closeMenu}>
-                  Timeline
-              </NavLink>
-            </li>
+            {
+              /*
+              <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.6s'}}>
+                <NavLink
+                  to='/timeline'
+                  className={css(style.mobileNavItemLink)}
+                  onClick={this.props.closeMenu}>
+                    Timeline
+                </NavLink>
+              </li>
+              */
+            }
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.7s'}}>
               <NavLink
-                to='/blog'
+                to='/news'
                 className={css(style.mobileNavItemLink)}
                 onClick={this.props.closeMenu}>
-                Blog
+                News
               </NavLink>
             </li>
             <li className={css(style.mobileNavItem) + ' animated fadeIn'} style={{animationDelay: '0.8s'}}>

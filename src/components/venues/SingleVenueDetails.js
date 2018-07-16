@@ -3,8 +3,6 @@ import { StyleSheet, css } from 'aphrodite';
 
 import BorderGradient from '../layout/BorderGradient'
 
-import EventVenuePic from '../../assets/events/single_event_venue.jpg';
-
 export default class SingleVenueDetail extends React.Component{
   render(){
     return(
@@ -15,11 +13,16 @@ export default class SingleVenueDetail extends React.Component{
               <img src={this.props.selectedVenue.img_plano} width='100%'/>
             </div>
         }
-        <BorderGradient />
-        <div className={css(style.eventLocation)}>
-          <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>CAPACIDAD</h3>
-          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.capacidad} Espectadores</p>
-        </div>
+        {
+          this.props.selectedVenue.capacidad &&
+            <div>
+              <BorderGradient />
+              <div className={css(style.eventLocation)}>
+                <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>CAPACIDAD</h3>
+                <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.capacidad} Espectadores</p>
+              </div>
+            </div>
+        }
       </article>
     )
   }

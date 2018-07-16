@@ -19,6 +19,7 @@ const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
     zIndex: 3,
+    width: '100%',
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }

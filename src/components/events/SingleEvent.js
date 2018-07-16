@@ -11,9 +11,8 @@ class SingleEventPage extends Component {
 
   componentWillMount(){
     const slug = this.props.match.params.slug
-    !this.props.selectedEvent ?
+
       this.props.fetchSelectedEvent(slug)
-    : console.log(this.props.selectedBlog)
   }
 
   componentDidMount(){

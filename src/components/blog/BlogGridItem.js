@@ -21,7 +21,7 @@ class BlogGridItem extends Component{
   }
   select = (item) => {
     this.props.selectBlog(item);
-    this.props.history.push(`/blog/${item.slug}`)
+    this.props.history.push(`/news/${item.slug}`)
   }
   render(){
     return(

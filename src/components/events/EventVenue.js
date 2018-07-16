@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 import BorderGradient from '../layout/BorderGradient'
-import EventVenuePic from '../../assets/events/single_event_venue.jpg';
 import Calendar from '../../assets/events/calendar.svg';
 import mapMarker from '../../assets/events/map-marker.svg';
 
@@ -14,7 +13,7 @@ export default class EventVenue extends React.Component{
           <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>
             <img src={Calendar} className={css(style.venueIcon)} height='18rem'/>
             <span>
-            {this.props.selectedEvent.fecha_formateda}
+            {this.props.selectedEvent.fecha_formateada}
             </span>
           </h3>
           <h3 className={css(style.eventDetailTitle) + ' animated fadeIn'}>

@@ -16,7 +16,6 @@ export default class AboutPage extends Component {
         <AboutHeader />
           <BorderGradient />
         <AboutText />
-        <AboutGradient />
         <AboutGroup />
       </section>
     );
