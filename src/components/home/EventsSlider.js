@@ -90,6 +90,14 @@ class HomeEventsSlider extends Component {
               {arrowRightIcon}
             </span>
         }
+        {
+            <span
+              onClick={this.rightButton}
+              className={css(style.arrowRightMobile) + ' animated fadeIn'}
+              >
+              {arrowRightIcon}
+            </span>
+        }
 
       </div>
     );
@@ -132,9 +140,6 @@ const style = StyleSheet.create({
     background: '-moz-linear-gradient(left, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
     background: 'linear-gradient(to right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
-    "@media(max-width: 480px)": {
-      display: 'none'
-    }
   },
   arrowRight: {
     height: '100%',
@@ -150,7 +155,22 @@ const style = StyleSheet.create({
     background: '-moz-linear-gradient(right, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
     background: '-webkit-linear-gradient(right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
     background: 'linear-gradient(to left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
-    "@media(max-width: 480px)": {
+  },
+  arrowRightMobile: {
+    height: '100%',
+    display: 'flex',
+    zIndex: 999,
+    alignItems: 'center',
+    position: 'absolute',
+    alignItems: 'center',
+    right: 0,
+    top: '50%',
+    animationDelay: '0.6s',
+    transform: 'translateY(-50%)',
+    background: '-moz-linear-gradient(right, rgba(256,256,256,1) 20%, rgba(256,256,256,0.4) 100%)',
+    background: '-webkit-linear-gradient(right, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
+    background: 'linear-gradient(to left, rgba(256,256,256,1) 20%,rgba(256,256,256,0.4) 100%)',
+    "@media(min-width:480px)": {
       display: 'none'
     }
   }

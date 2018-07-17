@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
+import Map from '../layout/Map';
 import BorderGradient from '../layout/BorderGradient'
 
 export default class SingleVenueDetail extends React.Component{
@@ -14,13 +15,36 @@ export default class SingleVenueDetail extends React.Component{
             </div>
         }
         {
-          this.props.selectedVenue.capacidad &&
+          this.props.selectedVenue.coordX &&
+          <div>
+            <Map
+              x={this.props.selectedVenue.coordX}
+              y={this.props.selectedVenue.coordY}
+            />
+            <BorderGradient />
+          </div>
+        }
+        {
+
             <div>
-              <BorderGradient />
               <div className={css(style.eventLocation)}>
-                <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>CAPACIDAD</h3>
-                <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.capacidad} Espectadores</p>
+              { this.props.selectedVenue.ubicacion ?
+                  <div>
+                    <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>Ubicación</h3>
+                    <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.ubicacion}, {this.props.selectedVenue.localidad}</p>
+                  </div>
+                : ''
+              }
+              {
+                this.props.selectedVenue.capacidad ?
+                  <div>
+                    <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>CAPACIDAD</h3>
+                    <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.capacidad} Espectadores</p>
+                  </div>
+                : ''
+              }
               </div>
+
             </div>
         }
       </article>

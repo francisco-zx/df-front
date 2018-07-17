@@ -26,6 +26,7 @@ import { fetchBlog } from '../Actions/Blog_Action';
 import { fetchEvents } from '../Actions/Events_Action';
 import { fetchVenues } from '../Actions/Venues_Action';
 import { fetchTopBar } from '../Actions/TopBar_Action';
+import { fetchAbout } from '../Actions/About_Action';
 
 class AppRouter extends Component {
 
@@ -38,6 +39,7 @@ class AppRouter extends Component {
     this.props.fetchEvents()
     this.props.fetchVenues()
     this.props.fetchTopBar()
+    this.props.fetchAbout()
   }
 
 
@@ -69,6 +71,7 @@ class AppRouter extends Component {
   }
 }
 const mapStateToProps = state =>({
+  about: state.about,
   blog: state.blog,
   events: state.events,
   venues: state.venues,
@@ -81,6 +84,7 @@ const mapDispatchToProps = dispatch => ({
   fetchBlog: () => dispatch(fetchBlog()),
   fetchEvents: () => dispatch(fetchEvents()),
   fetchVenues: () => dispatch(fetchVenues()),
-  fetchTopBar: () => dispatch(fetchTopBar())
+  fetchTopBar: () => dispatch(fetchTopBar()),
+  fetchAbout: () => dispatch(fetchAbout())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(AppRouter);

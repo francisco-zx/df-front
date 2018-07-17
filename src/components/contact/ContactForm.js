@@ -100,6 +100,8 @@ const style = StyleSheet.create({
     }
   },
   contactFormForm: {
+    maxWidth: '100%',
+    boxSizing: 'border-box',
     display: 'flex',
     flex:1,
     flexDirection: 'column',

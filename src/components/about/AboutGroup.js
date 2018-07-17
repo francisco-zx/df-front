@@ -7,13 +7,13 @@ export default class AboutText extends Component {
   render() {
     return (
       <article style={style.aboutGroup}>
+        <BorderGradient />
         <div className='container' style={style.content}>
           <h4 style={style.subTitle}>Conocé más</h4>
-          <a href='http://www.dfgroup.com' target='_blank'>
-            <img src={LogoGroup} width='300px'/>
+          <a href='http://www.dfgroup.com' target='_blank' >
+            <img src={LogoGroup} width='300px'className='logo-group'/>
           </a>
         </div>
-        <BorderGradient />
       </article>
     );
   }
@@ -36,5 +36,10 @@ const style = {
     fontSize: '0.8rem',
     marginBottom: '2rem',
     fontWeight: 'bold'
+  },
+  logo: {
+    "@media(max-width:480px)": {
+      width: '200px'
+    }
   }
 }

@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
-export default class AboutText extends Component {
+class AboutText extends Component {
   render() {
     return (
       <article className={css(style.aboutText)}>
         <div className={css(style.content) + ' container'}>
           <h2 className={css(style.title) + ' animated fadeIn'}>DF Entertainment</h2>
           <h4 className={css(style.subTitle) + ' animated fadeIn'}>Un compromiso con la diversión.</h4>
-          <p className={css(style.text) + ' animated fadeIn'}>
-            La productora de los shows más importantes del país y de Lollapalooza Argentina se describe como una empresa que está atenta a las nuevas tendencias y costumbres de la industria del entretenimiento. Con un equipo de gente joven e inquieta, DF Entertainment se encuentra en pleno crecimiento y el día a día se basa en encontrar la manera de hacer las cosas de una forma diferente y creativa. Todo comienza desde la elección de los artistas que visitan nuestro país todos los años.
-          </p>
+          {
+            this.props.about ?
+              <p className={css(style.text) + ' animated fadeIn'}>
+                { this.props.about.texto }
+              </p>
+            : ''
+          }
         </div>
       </article>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  about: state.about
+})
+
+export default connect(mapStateToProps, null)(AboutText);
+
 const style = StyleSheet.create({
   aboutText: {
     display: 'flex',

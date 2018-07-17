@@ -80,7 +80,13 @@ const style = StyleSheet.create({
     flexDirection: 'column',
     "@media(max-width: 1024px)": {
       flex: 1,
-      margin: '0 auto',
+      margin: '0',
+      marginTop: '3rem'
+    },
+    "@media(max-width: 480px)": {
+      flex: 1,
+      margin: '0',
+      width: '100%',
       marginTop: '3rem'
     }
   },

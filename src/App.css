@@ -190,6 +190,9 @@ button{
 div, img, article{
 	vertical-align: top;
 }
+.link{
+  color: white !important;
+}
 .hover-shadow{
 	transition: all 0.5s ease;
 }
@@ -215,6 +218,9 @@ div, img, article{
 @media(max-width: 480px){
   .my-masonry-grid_column{
     padding-left: 0;
+  }
+  .logo-group{
+    width: 200px !important;
   }
 }
 

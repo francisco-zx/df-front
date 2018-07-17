@@ -8,6 +8,8 @@ const initialState = {
 }
 export default (state = initialState, action) => {
   switch (action.type) {
+    case "INITIALIZE_ABOUT":
+      return {...state, about: action.data};
     case "INITIALIZE_BLOG":
       return {...state, blog: action.data};
     case "SET_SELECTED_BLOG":

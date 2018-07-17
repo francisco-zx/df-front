@@ -13,7 +13,7 @@ class VenueGridItem extends Component{
   }
   render(){
     return(
-      <div className={css(style.venuesGridItem)} onClick={() => this.select(this.props.venue)}>
+      <div className={!this.props.small ? css(style.venuesGridItem) : css(style.venuesGridItemSmall)} onClick={() => this.select(this.props.venue)}>
         <div className='hover-shadow'>
           <img className={css(style.itemImg)} src={this.props.venue.img_principal} />
           <div className={css(style.venueName)}>{this.props.venue.nombre}</div>
@@ -37,11 +37,42 @@ const style =  StyleSheet.create({
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    width: '33%',
+    width: '50%',
+    maxWidth: '50%',
     marginBottom: '2rem',
-    flexBasis: '33%',
     overflow: 'hidden',
     transition: 'all 0.4s ease-in-out',
+    '@media (max-width: 1024px)': {
+      flexBasis: '50%',
+      width:'50%',
+      maxWidth: '50%',
+    },
+    ':nth-child(odd)': {
+      "@media(min-width: 480px)": {
+          marginRight: '1rem'
+      }
+    },
+    ':nth-child(even)': {
+      "@media(min-width: 480px)": {
+          marginLeft: '1rem'
+      }
+    },
+    '@media (max-width: 480px)': {
+        flexBasis: '100%',
+        width:'100%',
+        maxWidth: '100%',
+        marginRight: 0,
+        marginLeft: 0,
+    }
+  },
+  venuesGridItemSmall: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    marginBottom: '2rem',
+    overflow: 'hidden',
+    transition: 'all 0.4s ease-in-out',
+    padding: '1rem',
     '@media (max-width: 1024px)': {
       flexBasis: '50%',
       width:'50%'
@@ -50,11 +81,11 @@ const style =  StyleSheet.create({
         flexBasis: '100%',
         width:'100%'
     },
-    ':nth-child(odd)': {
-        marginRight: '1rem'
+    ":first-child": {
+      paddingLeft: 0
     },
-    ':nth-child(even)': {
-        marginLeft: '1rem'
+    ":last-child": {
+      paddingRight: 0
     }
   },
   itemImg: {

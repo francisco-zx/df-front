@@ -7,9 +7,7 @@ export default class AboutText extends Component {
     return (
       <article className={css(style.aboutGradient)}>
         <div className='container'>
-          <h1 className={css(style.title) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={100} speed={2000}/></span> Shows</h1>
-          <h1 className={css(style.title) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={200} speed={2000}/></span> Artistas</h1>
-          <h1 className={css(style.lastTitle) + ' animated fadeIn'}><span className={css(style.bold)}>+<CountTo to={200} speed={2000}/>K</span> Fans</h1>
+          <h1 className={css(style.title) + ' animated fadeIn'}>{this.props.text}</h1>
         </div>
       </article>
     );
@@ -32,7 +30,6 @@ const style = StyleSheet.create({
     color: 'white',
     fontSize: '5rem',
     fontWeight: 500,
-    marginBottom: '1rem',
     textTransform: 'uppercase',
     "@media(max-width: 1024px)": {
       fontSize: '3.5rem'

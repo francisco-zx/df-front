@@ -31,24 +31,27 @@ class HomeVenues extends Component {
         <SectionTitle text='Venues' link='/venues'/>
         <div className={css(style.venuesGrid)}>
         {
-          !this.state.isVenues &&
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
               if(venue.visible === 1){
                 return(
-                  <VenueGridItem venue={venue} history={this.props.history}/>
+                  <VenueGridItem venue={venue} history={this.props.history} small={false}/>
                 )
               }
 
             })
         }
+        </div>
+        <div className={css(style.venuesGrid)}>
         {
           this.state.isVenues &&
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
+              if(!venue.visible){
                 return(
-                  <VenueGridItem venue={venue} history={this.props.history}/>
+                  <VenueGridItem venue={venue} history={this.props.history} small={true}/>
                 )
+              }
             })
         }
         </div>
