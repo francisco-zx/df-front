@@ -4,7 +4,11 @@ const initialState = {
   events: [],
   venues: [],
   selectedVenue: {},
-  topBar: []
+  topBar: [],
+  search: {
+    events: [],
+    blog: []
+  }
 }
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -30,6 +34,14 @@ export default (state = initialState, action) => {
       return {...state, selectedVenue: action.item};
     case "INITIALIZE_TOP_BAR":
       return {...state, topBar: action.data};
+    case "SEARCH":
+      return {
+        ...state,
+        search: {
+          events: state.events.filter((event) => {return event.nombre.toLowerCase().includes(action.terms)}),
+          blog: state.blog.filter((blog) => {return blog.nombre.toLowerCase().includes(action.terms)})
+        }
+      };
     default:
       return {
         ...state

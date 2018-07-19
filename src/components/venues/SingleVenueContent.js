@@ -23,14 +23,14 @@ export default class SingleVenueContent extends Component {
                     </p>
                   </div>
               }
-              <h3 className={css(style.subTitle)}>UBICACION</h3>
+              <h3 className={css(style.subTitle)}>UBICACIÓN</h3>
               <p className={css(style.description)}>
                 {this.props.selectedVenue.ubicacion}
               </p>
               {
                 this.props.selectedVenue.comollegar &&
                 <div>
-                  <h3 className={css(style.subTitle)}>COMO LLEGAR</h3>
+                  <h3 className={css(style.subTitle)}>CÓMO LLEGAR</h3>
                   <p className={css(style.description)}>
                     Colectivo: 19  21 – 39 – 42 – 44 – 63 – 65 – 76 – 87 – 93 – 108 – 112 – 140 – 151 – 168 – 176 – 184
                     Tren: Línea Mitre Ramal Retiro-José León Suárez est. Colegiales (a 7 cuadras) / Línea Urquiza (Metrovías) est. Federico Lacroze (a 6 cuadras)

@@ -78,7 +78,8 @@ const mapStateToProps = state =>({
   topBar: state.topBar,
   selectedBlog: state.selectedBlog,
   selectedVenue: state.selectedVenue,
-  selectedEvent: state.selectedEvent
+  selectedEvent: state.selectedEvent,
+  search: state.search
 })
 const mapDispatchToProps = dispatch => ({
   fetchBlog: () => dispatch(fetchBlog()),

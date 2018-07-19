@@ -10,13 +10,13 @@ export default class HomeSliderInfo extends Component {
         <div className={css(style.sliderInfo) + " animated fadeIn"}>
           <aside className={css(style.sliderInfoTag) + " animated fadeIn"}>EVENTO</aside>
           <h1 className={css(style.sliderInfoTitle) + " animated fadeIn"}>{this.props.title}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.date}
+          <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.subtitulo}
           </h3>
           <h3 className={css(style.sliderInfoSubtitle) + " animated fadeIn"}>{this.props.location}
           </h3>
           <div className={css(style.buttonGroup) + " animated fadeIn"}>
             <Link to={`/event/${this.props.slug}`}>
-              <button className={css(style.button) + " animated fadeIn"}>VER MAS +</button>
+              <button className={css(style.button) + " animated fadeIn"}>VER MÁS +</button>
             </Link>
             <a href={`${this.props.link}`} target='_blank'>
               <button className={css(style.button) + " animated fadeIn"}>COMPRAR</button>

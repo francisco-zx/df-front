@@ -40,7 +40,7 @@ export default class Footer extends Component {
       <footer className={css(style.footer)}>
         <article className={css(style.footerTop)}>
           <Link to='/about' style={{display: 'flex', color: 'white'}}>
-            <div className={css(style.topLeft) + ' animated fadeIn'}>Mas de DF Entertainment</div>
+            <div className={css(style.topLeft) + ' animated fadeIn'}>Más de DF Entertainment</div>
             <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
           </Link>
         </article>
@@ -72,7 +72,7 @@ export default class Footer extends Component {
                 </a>
               </li>
               <li className={css(style.icon)}>
-                <a href='https://www.youtube.com/user/AllAccessMusicGroup' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.8s'}}>
+                <a href='https://www.youtube.com/channel/UCCSOZoHJbtwclnhQXKqxy1A' target='_blank' className={css(style.iconLink) + ' animated fadeIn'} style={{animationDelay: '0.8s'}}>
                   <i className='fa fa-youtube'></i>
                 </a>
               </li>

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import  { StyleSheet, css } from 'aphrodite';
+import { connect } from 'react-redux';
 
-export default class SearchPage extends Component{
+import EventsGrid from './EventsGridSearch';
+import BlogGrid from './BlogGridSearch';
+
+class SearchPage extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -9,13 +13,11 @@ export default class SearchPage extends Component{
       filteredBlog: {}
     }
   }
+
   componentWillMount(){
+    window.scrollTo(0,0);
   }
-  filterBlog = (search) => {
-    let searchTerms = document.location.href.split('/')[4];
-    let filteredBlog = this.props.blog.filter((blog) => {return blog.nombre.includes(searchTerms)})
-    this.setState({filteredBlog: filteredBlog})
-  }
+
   render(){
     return(
       <section>
@@ -24,22 +26,23 @@ export default class SearchPage extends Component{
           <h1 className={css(style.heroTitle)}>{`"${this.props.match.params.search}"`}</h1>
         </article>
         <article className={css(style.results) + ' container'}>
-          <h3 className={css(style.noResults)}>Blog</h3>
-          {
-            this.state.filteredBlog.length &&
-              this.state.filteredBlog.map((item, index) => {
-                return(
-                  <div>{item.nombre}</div>
-                )
-              })
-          }
+          <EventsGrid events={this.props.events} history={this.props.history}/>
         </article>
-
-
+        <article className={css(style.results) + ' container'}>
+          <BlogGrid blog={this.props.blog} history={this.props.history}/>
+        </article>
       </section>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  events: state.search.events,
+  blog: state.search.blog
+})
+
+export default connect(mapStateToProps, null)(SearchPage);
+
 const style = StyleSheet.create({
   hero: {
     height: '34vh',

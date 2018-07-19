@@ -59,11 +59,23 @@ export default class SingleEventSlider extends Component {
               </a>
             </div>
         }
-        <div className={css(style.shareEvent) + ' animated fadeIn'}>
-          Compartir:
-          <i className={css(style.shareIcon) + ' fa fa-facebook'} ></i>
-          <i className={css(style.shareIcon) + ' fa fa-twitter'}  ></i>
-        </div>
+        {
+          this.props.selectedEvent ?
+            <div className={css(style.shareEvent) + ' animated fadeIn'}>
+              Compartir:
+                <a title="send to Facebook"
+                  href={`http://www.facebook.com/sharer.php?u=${document.location.href}&t=${this.props.selectedEvent.nombre},&nbsp${this.props.selectedEvent.fecha_formateada}`}
+                  target="_blank"
+                  className='clickable'
+                >
+                  <i className={css(style.shareIcon) + ' fa fa-facebook'} ></i>
+                </a>
+                <a href={`https://twitter.com/intent/tweet?text=${this.props.selectedEvent.nombre}, ${this.props.selectedEvent.fecha_formateada}&url=${document.location.href}&hashtags=dfentertainment,allaccess,${this.props.selectedEvent.nombre}`} target='_blank'>
+                  <i className={css(style.shareIcon) + ' fa fa-twitter'}  ></i>
+                </a>
+            </div>
+            : ''
+          }
         <div className={css(style.goBack)}>
           <Link to='/events'>
             <button className={css(style.backButton) + ' animated fadeIn'}><i className='fa fa-angle-left'></i> VOLVER</button>
@@ -156,6 +168,7 @@ const style = StyleSheet.create({
     }
   },
   shareIcon: {
+    color: 'white',
     padding: '0 0.5rem',
     fontSize:'1.3rem'
   },

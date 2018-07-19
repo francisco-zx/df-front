@@ -64,7 +64,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
   },
   mobile: {
-    '@media(min-width: 480px)': {
+    '@media(min-width: 1024px)': {
       display: 'none'
     }
   },
@@ -98,7 +98,7 @@ const style = StyleSheet.create({
     padding: '1rem'
   },
   hide: {
-    "@media(max-width: 480px)": {
+    "@media(max-width: 1024px)": {
       display: 'none'
     }
   }

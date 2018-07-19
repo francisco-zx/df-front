@@ -1,68 +1,56 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Masonry from 'react-masonry-css';
 import { StyleSheet, css } from 'aphrodite';
-import base64 from 'base-64';
+import { Link } from 'react-router-dom';
 
-import BlogGridItem from './BlogGridItem';
-import SectionTitle from '../layout/SectionTitle';
+import { selectBlog } from '../../Actions/Blog_Action';
+
 import BorderGradient from '../layout/BorderGradient';
 
-class BlogGrid extends Component {
-
+class BlogGridItem extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      isLoading: true
+    }
   }
-
-  componentDidMount(){
-    console.log(this.props.blog)
+  loaded = () => {
+    this.setState({
+      isLoading: !this.state.isLoading
+    })
   }
-
-  render() {
-    const settings = {
-      default: 3,
-      1024: 2,
-      480: 1
-    };
-    return (
-      <article className='container'>
-        <SectionTitle text='News' />
-        <Masonry
-          breakpointCols={settings}
-          className={css(style.masonryGrid) + ' hover-parent'}
-          columnClassName="my-masonry-grid_column">
-            {
-              this.props.blog.length ?
-                this.props.blog.map((item, index) => {
-                  const img = new Image();
-                  img.url = item.img_principal;
-                  console.log(img.naturalHeight)
-
-                  return(
-                    <BlogGridItem
-                      title={item.nombre}
-                      imgPrincipal={item.img_principal}
-                      slug={item.slug}
-                      key={item.id}
-                      item={item}
-                      history={this.props.history}
-                    />
-                  )
-                })
-              : <h1>Cargando</h1>
-            }
-        </Masonry>
-      </article>
-    );
+  select = (item) => {
+    this.props.selectBlog(item);
+    this.props.history.push(`/news/${item.slug}`)
+  }
+  render(){
+    return(
+      <div to={`/blog/baf-week`} className='animated fadeIn' onClick={() => {this.select(this.props.item)}}>
+        <div className={css(style.blogItem) + ' hover-shadow'}>
+          <div className={css(style.blogItemPreview)}>
+            <div className={css(style.lazyLoad)} style={!this.state.isLoading ? {display:'none'} : {display: 'flex'}}></div>
+            <img src={this.props.imgPrincipal} className={css(style.blogItemImg) + ' animated fadeIn'} onLoad={() => this.loaded()} style={this.state.isLoading ? {display:'none'} : {display: 'flex'}}/>
+            <aside className={css(style.typeTag) + ' animated fadeIn'}>Novedades</aside>
+            <h3 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h3>
+            <div className={css(style.overlay)}></div>
+          </div>
+          <div className={css(style.blogButton)}>
+                Leer más
+                </div>
+          <BorderGradient />
+        </div>
+      </div>
+    )
   }
 }
+
 const mapStateToProps = state =>({
  blog: state.blog
 })
 const mapDispatchToProps = dispatch => ({
+  selectBlog: (item) => dispatch(selectBlog(item))
 });
-export default connect(mapStateToProps, mapDispatchToProps)(BlogGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(BlogGridItem);
 
 const style = StyleSheet.create({
   masonryGrid: {
@@ -90,6 +78,15 @@ const style = StyleSheet.create({
       maxHeight: '12rem'
     }
   },
+  lazyLoad: {
+    background: '#d6249f',
+    width: '100%',
+    height: '300px',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
+    "@media(max-width: 480px)": {
+      height: '12rem'
+    }
+  },
   overlay: {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.6+100 */
     background: '-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)',
@@ -101,7 +98,11 @@ const style = StyleSheet.create({
     top: 0,
     width: '100%',
     height: '100%',
-    verticalAlign: 'top'
+    verticalAlign: 'top',
+    "@media(max-width: 480px)": {
+      objectFit: 'cover',
+      maxHeight: '12rem'
+    }
   },
   title: {
     position: 'absolute',
@@ -144,6 +145,10 @@ const style = StyleSheet.create({
     },
     "@media(max-width: 480px)": {
       fontSize: '2rem',
+      padding: '10px',
+    },
+    "@media(max-width: 380px)": {
+      fontSize: '1.5rem',
       padding: '10px',
     }
   },

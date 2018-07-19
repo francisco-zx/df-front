@@ -50,7 +50,7 @@ class EventsSlider extends Component {
                   return(
                       <div >
                         <div onClick={item => this.select(event)}>
-                          <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
+                          <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`, backgroundPosition: 'center center'}}>
                             <EventsSliderInfo
                               title={event.nombre}
                               date={event.fecha_formateada}
@@ -68,7 +68,7 @@ class EventsSlider extends Component {
                           <div className={css(style.sliderOverlay)}></div>
                         </div>
                       </div>
-                  )                  
+                  )
                 }
 
               })

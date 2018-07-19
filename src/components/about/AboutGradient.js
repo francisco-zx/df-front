@@ -7,7 +7,11 @@ export default class AboutText extends Component {
     return (
       <article className={css(style.aboutGradient)}>
         <div className='container'>
-          <h1 className={css(style.title) + ' animated fadeIn'}>{this.props.text}</h1>
+          <p
+            className={css(style.title) + ' animated fadeIn'}
+            dangerouslySetInnerHTML={{ __html: this.props.text}}
+          >
+          </p>
         </div>
       </article>
     );

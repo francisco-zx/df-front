@@ -81,24 +81,18 @@ class HomeEventsSlider extends Component {
               })
           }
         </div>
-        {
-          this.props.events.length > 6 &&
-            <span
-              onClick={this.rightButton}
-              className={css(style.arrowRight) + ' animated fadeIn'}
-              >
-              {arrowRightIcon}
-            </span>
-        }
-        {
-            <span
-              onClick={this.rightButton}
-              className={css(style.arrowRightMobile) + ' animated fadeIn'}
-              >
-              {arrowRightIcon}
-            </span>
-        }
-
+          <span
+            onClick={this.rightButton}
+            className={css(style.arrowRight) + ' animated fadeIn'}
+            >
+            {arrowRightIcon}
+          </span>
+          <span
+            onClick={this.rightButton}
+            className={css(style.arrowRightMobile) + ' animated fadeIn'}
+            >
+            {arrowRightIcon}
+          </span>
       </div>
     );
   }

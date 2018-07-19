@@ -42,7 +42,7 @@ class HomeSlider extends Component {
               if(event.destacado === 1){
                 return(
                   <div >
-                    <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`}}>
+                    <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`, backgroundPosition: 'center center'}}>
                       <HomeSliderInfo
                         title={event.nombre}
                         date={event.fecha_formateada}

@@ -44,7 +44,7 @@ class VenueSlider extends Component {
                   return(
                     <div>
                       <Link to={`/venue/${venue.slug}`}>
-                      <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`}}>
+                      <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`, backgroundPosition: 'center center'}}>
                         <VenuesSliderInfo
                           name={venue.nombre}
                           location={venue.localidad}

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
+
+import { searchAction, log } from '../../Actions/Search_Action';
 
 import SearchIcon from '../../assets/home/search.svg';
 
-export default class SearchInput extends Component {
+class SearchInput extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -19,7 +22,9 @@ export default class SearchInput extends Component {
       this.state.search.length ?
         this.props.search(this.state.search)
       : this.props.goBack()
+      this.props.searchAction(this.state.search)
     })
+
   }
 
   render() {
@@ -31,6 +36,11 @@ export default class SearchInput extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => ({
+  searchAction: terms => dispatch(searchAction(terms))
+})
+
+export default connect(null, mapDispatchToProps)(SearchInput)
 
 const style = StyleSheet.create({
   searchInput: {

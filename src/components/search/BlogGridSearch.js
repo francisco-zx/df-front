@@ -9,7 +9,7 @@ import BlogGridItem from './BlogGridItem';
 import SectionTitle from '../layout/SectionTitle';
 import BorderGradient from '../layout/BorderGradient';
 
-class BlogGrid extends Component {
+export default class BlogGrid extends Component {
 
   constructor(props){
     super(props);
@@ -50,19 +50,13 @@ class BlogGrid extends Component {
                     />
                   )
                 })
-              : <h1>Cargando</h1>
+              : "No hay resultados de busqueda"
             }
         </Masonry>
       </article>
     );
   }
 }
-const mapStateToProps = state =>({
- blog: state.blog
-})
-const mapDispatchToProps = dispatch => ({
-});
-export default connect(mapStateToProps, mapDispatchToProps)(BlogGrid);
 
 const style = StyleSheet.create({
   masonryGrid: {

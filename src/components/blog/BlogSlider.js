@@ -41,7 +41,7 @@ class BlogSlider extends Component {
               this.props.blog.map((blog, index) => {
                 return(
                   <div >
-                    <div className={css(style.sliderItem)} style={{background: `url(${blog.img_portada})`}}>
+                    <div className={css(style.sliderItem)} style={{background: `url(${blog.img_portada})`, backgroundPosition: 'center center'}}>
                       <BlogSliderInfo
                         title={blog.nombre}
                         subtitle={blog.subtitulo}

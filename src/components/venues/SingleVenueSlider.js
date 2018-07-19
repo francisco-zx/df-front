@@ -36,7 +36,7 @@ export default class SingleVenueSlider extends Component {
     return (
       <section className={css(style.section)}>
         <div >
-          <div className={css(style.sliderItem)} style={{backgroundImage: `url(${this.props.selectedVenue.img_portada})` }}>
+          <div className={css(style.sliderItem)} style={{backgroundImage: `url(${this.props.selectedVenue.img_portada})`, backgroundPosition: 'center center' }}>
             <SingleVenueSliderInfo selectedVenue={this.props.selectedVenue}/>
           </div>
           <div className={css(style.sliderOverlay)}></div>

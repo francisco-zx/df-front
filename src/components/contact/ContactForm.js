@@ -28,7 +28,7 @@ export default class ContactPage extends Component {
       })
     }).then((response) => {
       if(response.ok){
-        toast.update(this.toastId, { render: `👋 ${this.state.name.split(' ')[0]}, tu consulta fue recibida.`,hideProgressBar: false, type: toast.TYPE.SUCCESS, autoClose: 5000, className: 'animated rotateY ' });
+        toast.update(this.toastId, { render: `👋 ${this.state.name.split(' ')[0]}, tu mensaje fue recibido.`,hideProgressBar: false, type: toast.TYPE.SUCCESS, autoClose: 5000, className: 'animated rotateY ' });
       }else{
         toast.update(this.toastId, { render: 'Hubo en error al enviar el correo.',hideProgressBar: false, type: toast.TYPE.ERROR, autoClose: 5000, className: 'rotateY animated' });
       }

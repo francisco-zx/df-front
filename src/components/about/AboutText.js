@@ -11,8 +11,10 @@ class AboutText extends Component {
           <h4 className={css(style.subTitle) + ' animated fadeIn'}>Un compromiso con la diversión.</h4>
           {
             this.props.about ?
-              <p className={css(style.text) + ' animated fadeIn'}>
-                { this.props.about.texto }
+              <p
+                className={css(style.text) + ' animated fadeIn'}
+                dangerouslySetInnerHTML={{ __html: this.props.about.texto}}
+              >
               </p>
             : ''
           }
