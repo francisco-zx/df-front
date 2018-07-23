@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import BorderGradient  from './BorderGradient';
 import { arrowRightIcon } from "../../assets/IconsSvg";
 import NewsletterIcon from '../../assets/newsletter.svg';
 import OK from '../../assets/ok.svg';
 
-export default class Footer extends Component {
+class Footer extends Component {
   constructor(props){
     super(props);
     this.state = {
       email: '',
-      suscribed: false
+      suscribed: false,
+      about: false
     }
   }
   handleChange = (e) => {
@@ -38,12 +39,16 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className={css(style.footer)}>
-        <article className={css(style.footerTop)}>
-          <Link to='/about' style={{display: 'flex', color: 'white'}}>
-            <div className={css(style.topLeft) + ' animated fadeIn'}>Más de DF Entertainment</div>
-            <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
-          </Link>
-        </article>
+        {
+          this.props.location.pathname != '/about' ?
+            <article className={css(style.footerTop)}>
+              <Link to='/about' style={{display: 'flex', color: 'white'}}>
+                <div className={css(style.topLeft) + ' animated fadeIn'}>Más de DF Entertainment</div>
+                <div className={css(style.topRight) + ' animated fadeIn'}><i className='fa fa-caret-right'></i></div>
+              </Link>
+            </article>
+          : ''
+        }
         <BorderGradient />
         <article className={css(style.footerBottom)}>
           <div className={css(style.bottomLeft) + ' animated fadeIn'}>
@@ -86,6 +91,8 @@ export default class Footer extends Component {
     );
   }
 }
+
+export default withRouter(Footer)
 
 const style = StyleSheet.create({
   footer: {

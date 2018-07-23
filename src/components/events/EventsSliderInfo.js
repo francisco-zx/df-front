@@ -12,7 +12,7 @@ export default class EventsSliderInfo extends Component {
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.title}</h1>
           <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
-            {this.props.subtitulo}
+            {this.props.date}
           </h3>
           <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
             {this.props.location}

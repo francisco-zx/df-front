@@ -20,8 +20,8 @@ class EventsGrid extends Component {
           {
             this.props.events.map((event, index) => {
               return(
-                  <div className={event.img_principal_formato != 'horizontal' ? css(style.venuesGridItem, style.hide) + ' animated fadeIn' : css(style.venuesGridItemFull, style.hide) + ' animated fadeIn' } onClick={slug => this.goToEvent(event.slug)}>
-                    <div style={{padding: '0.5rem'}}>
+                  <div className={event.img_principal_formato != 'horizontal' ? css(style.venuesGridItem, style.hide) + ' animated fadeIn clickable hover-shadow' : css(style.venuesGridItemFull, style.hide) + ' animated fadeIn clickable ' } onClick={slug => this.goToEvent(event.slug)}>
+                    <div style={{padding: '0.5rem'}} >
                       <img className={css(style.itemImg)} src={event.img_principal} />
                       <div className={css(style.venueName)}>{event.nombre}</div>
                       <BorderGradient height='6px'/>

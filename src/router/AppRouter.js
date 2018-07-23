@@ -32,6 +32,9 @@ class AppRouter extends Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      url: null
+    }
   }
 
   componentWillMount(){
@@ -40,6 +43,16 @@ class AppRouter extends Component {
     this.props.fetchVenues()
     this.props.fetchTopBar()
     this.props.fetchAbout()
+  }
+
+  componentDidMount(){
+    const path = document.location.href.split('/')[3];
+    console.log(path);
+    this.setState({
+      url: path
+    }, () => {
+      console.log(this.state.url)
+    })
   }
 
 
@@ -63,7 +76,7 @@ class AppRouter extends Component {
               <Route path="/contact" component={ContactPage} />
               <Route path="/search/:search" component={SearchPage}/>
             </Switch>
-          <Footer />
+            <Footer/>
           <ToastContainer />
         </div>
       </BrowserRouter>

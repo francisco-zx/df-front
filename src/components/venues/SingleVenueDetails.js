@@ -15,24 +15,30 @@ export default class SingleVenueDetail extends React.Component{
             </div>
         }
         {
-          this.props.selectedVenue.coordX &&
-          <div>
-            <Map
-              x={this.props.selectedVenue.coordX}
-              y={this.props.selectedVenue.coordY}
-            />
-            <BorderGradient />
-          </div>
+            this.props.selectedVenue.mapa_activo &&
+              <div>
+              {
+                this.props.selectedVenue.img_mapa ?
+                  <img src={this.props.selectedVenue.img_mapa} width='100%' height='auto'/>
+                : <div>
+                    <Map
+                      x={this.props.selectedVenue.coordX}
+                      y={this.props.selectedVenue.coordY}
+                    />
+                    <BorderGradient />
+                  </div>
+              }
+              </div>
         }
         {
 
             <div>
               <div className={css(style.eventLocation)}>
               { this.props.selectedVenue.ubicacion ?
-                  <div>
+                  <a href={this.props.selectedVenue.mapa_link} target='_blank'>
                     <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>Ubicación</h3>
                     <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedVenue.ubicacion}, {this.props.selectedVenue.localidad}</p>
-                  </div>
+                  </a>
                 : ''
               }
               {

@@ -8,7 +8,7 @@ export default class VenueSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.name}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.location}
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.subtitulo}
           </h3>
         </div>
     );

@@ -44,15 +44,26 @@ export default class EventVenue extends React.Component{
 
           }
           {
-            this.props.selectedEvent.venue.coordX &&
-              <Map
-                x={this.props.selectedEvent.venue.coordX}
-                y={this.props.selectedEvent.venue.coordY}
-              />
+            this.props.selectedEvent.venue.mapa_activo ?
+              <div>
+              {
+                this.props.selectedEvent.venue.img_mapa ?
+                  <img src={this.props.selectedVenue.img_mapa} width='100%' height='auto'/>
+                : <div>
+                    <Map
+                      x={this.props.selectedEvent.venue.coordX}
+                      y={this.props.selectedEvent.venue.coordY}
+                    />
+                    <BorderGradient />
+                  </div>
+              }
+              </div>
+              :''
           }
-
-          <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>UBICACIóN</h3>
-          <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedEvent.venue.ubicacion}, {this.props.selectedEvent.venue.localidad}</p>
+          <a href={this.props.selectedEvent.venue.mapa_link}>
+            <h3 className={css(style.eventLocationTitle) + ' animated fadeIn'}>UBICACIóN</h3>
+            <p className={css(style.eventLocationAdress) + ' animated fadeIn'}>{this.props.selectedEvent.venue.ubicacion}, {this.props.selectedEvent.venue.localidad}</p>
+          </a>
         </div>
       </article>
     )

@@ -12,7 +12,7 @@ export default class SingleEventInfo extends Component {
             this.props.selectedBlog.texto &&
             <p
               className={css(style.description)}
-              dangerouslySetInnerHTML={{ __html: this.props.selectedBlog.texto}}
+              dangerouslySetInnerHTML={{ __html: base64.decode(this.props.selectedBlog.texto)}}
             >
             </p>
           }

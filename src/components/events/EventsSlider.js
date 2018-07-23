@@ -49,7 +49,7 @@ class EventsSlider extends Component {
                 if(event.destacado === 1){
                   return(
                       <div >
-                        <div onClick={item => this.select(event)}>
+                        <div onClick={item => this.select(event)} className='clickable hoverShadow'>
                           <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`, backgroundPosition: 'center center'}}>
                             <EventsSliderInfo
                               title={event.nombre}
