@@ -24,9 +24,11 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     background: `url(${HeroBg})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center center',
     backgroundAttachment: 'fixed',
     "@media(max-width: 1024px)": {
-      height: '62vh'
+      height: '62vh',
+      backgroundAttachment: 'scroll',
     },
     "@media(max-width: 767px)": {
       height: '45vh'

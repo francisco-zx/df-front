@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 a{
-  pointer: cursor;
+  pointer: cursor !important;
 }
 * {
   min-height: 0;
@@ -56,7 +56,7 @@ table {
 }
 a{
 	text-decoration: none;
-	cursor: pointer;
+	cursor: pointer !important;
 }
 button{
 	cursor: pointer
@@ -121,8 +121,7 @@ button{
 		display: none !important;
 	}
 }
-.slick-active{
-	position: absolute;
+.slick-dots .slick-active{
 	border: 2px solid white;
 	transition: all 0.4s ease;
 	border-radius: 50%;
@@ -239,4 +238,22 @@ div, img, article{
   width: 100% !important;
   max-width: 100% !important;
   padding: 1rem !important;
+}
+
+#top-bar .navSlider .slick-slide.slick-active.slick-current{
+  display: block;
+  margin-right: 100px;
+}
+#navSlider .slick-list{
+  padding: 3rem 6rem;
+}
+
+#navSlider .slick-slide{
+  filter: grayscale();
+  transition: all 1s ease;
+  opacity: 0.7;
+}
+#navSlider .slick-slide.slick-current.slick-active{
+  filter: none !important;
+  opacity: 1 !important;
 }

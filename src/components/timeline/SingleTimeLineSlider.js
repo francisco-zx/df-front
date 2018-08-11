@@ -45,27 +45,26 @@ export default class SingleTimelineSlider extends Component {
     return (
       <section className={css(style.section)}>
         <Slider {...settings} ref='mainSlider' className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <SingleTimeLineSliderInfo name='Monsters of Rock'/>
+          {
+            this.props.selectedTimeline ?
+              <div >
+                <Link to='#'>
+                  <div className={css(style.sliderItem)} style={{background: `url(${this.props.selectedTimeline.img_portada})`, backgroundPosition: 'center center'}}>
+                    <SingleTimeLineSliderInfo
+                      name={this.props.selectedTimeline.nombre}
+                      date={this.props.selectedTimeline.fecha_formateada}
+                      venue={this.props.selectedTimeline.venue.nombre}
+                    />
+                  </div>
+                  <div className={css(style.sliderOverlay)}></div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <SingleTimeLineSliderInfo name='Monsters of Rock'/>
+            : <div >
+                  <div className={css(style.sliderItem)}>
+                  </div>
+                  <div className={css(style.sliderOverlay)}></div>
               </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <SingleTimeLineSliderInfo name='Monsters of Rock'/>
-              </div>
-            </Link>
-          </div>
+          }
         </Slider>
         <div className={css(style.goBack)}>
           <Link to='/timeline'>
@@ -81,6 +80,7 @@ export default class SingleTimelineSlider extends Component {
 const style = StyleSheet.create({
   section: {
     position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
   },
   sliderItem: {
     height: '72vh',

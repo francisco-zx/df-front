@@ -27,6 +27,7 @@ import { fetchEvents } from '../Actions/Events_Action';
 import { fetchVenues } from '../Actions/Venues_Action';
 import { fetchTopBar } from '../Actions/TopBar_Action';
 import { fetchAbout } from '../Actions/About_Action';
+import { fetchTimeline } from '../Actions/Timeline_Action';
 
 class AppRouter extends Component {
 
@@ -43,6 +44,7 @@ class AppRouter extends Component {
     this.props.fetchVenues()
     this.props.fetchTopBar()
     this.props.fetchAbout()
+    this.props.fetchTimeline()
   }
 
   componentDidMount(){
@@ -68,8 +70,8 @@ class AppRouter extends Component {
                 <Route path="/event/:slug" component={SingleEvent} />
               <Route path="/venues" exact component={VenuesPage} />
                 <Route path="/venue/:slug" component={SingleVenue} />
-              //<Route path="/timeline" exact component={TimelinePage} />
-                //<Route path="/timeline/monsters-of-rock" component={SingleTimelinePage} />
+              <Route path="/timeline" exact component={TimelinePage} />
+                <Route path="/timeline/:slug" component={SingleTimelinePage} />
               <Route path="/news" exact component={BlogPage}/>
                 <Route path="/news/:slug" component={SingleBlog} />
               <Route path="/about" component={AboutPage} />
@@ -92,13 +94,16 @@ const mapStateToProps = state =>({
   selectedBlog: state.selectedBlog,
   selectedVenue: state.selectedVenue,
   selectedEvent: state.selectedEvent,
-  search: state.search
+  search: state.search,
+  timeline: state.timeline,
+  selectedTimeline: state.selectedTimeline
 })
 const mapDispatchToProps = dispatch => ({
   fetchBlog: () => dispatch(fetchBlog()),
   fetchEvents: () => dispatch(fetchEvents()),
   fetchVenues: () => dispatch(fetchVenues()),
   fetchTopBar: () => dispatch(fetchTopBar()),
-  fetchAbout: () => dispatch(fetchAbout())
+  fetchAbout: () => dispatch(fetchAbout()),
+  fetchTimeline: () => dispatch(fetchTimeline())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(AppRouter);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite'
+import { StyleSheet, css } from 'aphrodite';
 import TimelinePicker from '../../assets/timeline/timeline_picker.svg';
 import pickerArtist from '../../assets/timeline/timeline_picker.svg';
 import TimeLineSliderInfo from './TimeLineSliderInfo';
@@ -32,6 +32,7 @@ export default class TimelineSlider extends Component {
       slidesToScroll: 1,
       asNavFor: this.refs.navSlider,
       fade: true,
+      infinite: false,
       dotsClass: "slick-dots",
       autoplaySpeed: 5000,
       customPaging: (i) => {
@@ -48,6 +49,7 @@ export default class TimelineSlider extends Component {
       asNavFor: this.refs.mainSlider,
       dots: false,
       rtl: false,
+      infinite: false,
       focusOnSelect: true,
       responsive: [
         {
@@ -63,77 +65,34 @@ export default class TimelineSlider extends Component {
     return (
       <section className={css(style.section)}>
         <Slider {...settings} ref='mainSlider' className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='coldplay'/>
-              </div>
-              <div className={css(style.sliderOverlay)}></div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Dua Lipa'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Ariana Grande'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='BAF Week'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='5SOS'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Bon Jovi'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Julian Casablancas'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='John Mayer'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Monsters of Rock'/>
-              </div>
-            </Link>
-          </div>
-          <div >
-            <Link to='#'>
-              <div className={css(style.sliderItem)}>
-                <TimeLineSliderInfo name='Bowie by Mick Rock'/>
-              </div>
-            </Link>
-          </div>
+          {
+            this.props.timeline.length ?
+              this.props.timeline.map((timeline) => (
+                <div >
+                  <Link to={`/timeline/${timeline.slug}`}>
+                    <div className={css(style.sliderItem)} style={{background: `url(${timeline.img_portada})`, backgroundPosition: 'center center'}}>
+                      <TimeLineSliderInfo
+                        name={timeline.nombre}
+                        date={timeline.fecha_formateada}
+                        venue={timeline.venue.nombre}
+                        slug={timeline.slug}
+                      />
+                    </div>
+                    {
+
+                      !!timeline.mostrar_overlay &&
+                        <div className={css(style.sliderOverlay)}></div>
+                    }
+                  </Link>
+                </div>
+              ))
+            : <div >
+                <div className={css(style.sliderItem)}>
+                </div>
+
+                <div className={css(style.sliderOverlay)}></div>
+            </div>
+          }
         </Slider>
         <div className={css(style.goBack)}>
           <Link to='#'>
@@ -150,111 +109,24 @@ export default class TimelineSlider extends Component {
           <button className={css(style.backButton)}>2015</button>
         </div>
         <BorderGradient />
-        <article className={css(style.navSlider) + ' container'} style={{position: 'relative',overflow: 'hidden'}}>
-        <div>
-        </div>
-          <Slider {...settingsNav} asNavFor={this.refs.mainSlider}  ref='navSlider' id='navSlider' prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Coldplay</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Dua Lipa</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Ariana Grande</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>BAF Week</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>5SOS</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Bon Jovi</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Julian Casablancas</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>John Mayer</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Monsters of Rock</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtistFilter)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Bowie by Mick Rock</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
-            <div>
-              <div className={css(style.navSliderItem) + ' clickable'}>
-                <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
-                <img src={pickerArtist} className={css(style.pickerArtist)} width='84%'/>
-                <h3 className={css(style.timelineTitle)}>Bowie by Mick Rock</h3>
-                <h4 className={css(style.timelineSubTitle)}>Estadio Unico de La Plata</h4>
-                <h4 className={css(style.timelineSubTitle)}>14 y 15 de Nov</h4>
-              </div>
-            </div>
+        <article className={css(style.navSlider)} style={{position: 'relative',overflow: 'hidden'}} id='navSlider'>
+          <Slider {...settingsNav} asNavFor={this.refs.mainSlider}  ref='navSlider' prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
+            {
+              this.props.timeline.length ?
+              this.props.timeline.map((timeline) =>(
+                <div>
+                  <div className={css(style.navSliderItem) + ' clickable'}>
+                    <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
+                    <img src={timeline.img_artista} className={css(style.pickerArtist)} width='84%'/>
+                    <h3 className={css(style.timelineTitle)}>{timeline.nombre}</h3>
+                    <h4 className={css(style.timelineSubTitle)}>{timeline.venue.nombre}</h4>
+                    <h4 className={css(style.timelineSubTitle)}>{timeline.fecha_formateada}</h4>
+                  </div>
+                </div>
+              ))
+              : ''
+            }
           </Slider>
-          <Overlay />
         </article>
       </section>
     );
@@ -264,11 +136,13 @@ export default class TimelineSlider extends Component {
 const style = StyleSheet.create({
   section: {
     position: 'relative',
+    background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)',
   },
   sliderItem: {
     height: '72vh',
+    zIndex: 999,
+    position: 'relative',
     backgroundSize: 'cover',
-    display: 'flex',
     alignItems: 'center',
     "@media(max-width: 1024px)": {
       height: '62vh'
@@ -297,6 +171,7 @@ const style = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
+    display: 'none',
     margin: '2rem 6rem',
     color: 'white',
     "@media(max-width:480px)": {
@@ -320,6 +195,9 @@ const style = StyleSheet.create({
     background: '#161616',
     marginBottom: '2rem',
     color: 'white',
+    "@media(max-width:480px)": {
+      padding: '1rem 0'
+    }
   },
   navSliderItem: {
     margin: '0 20px ',
@@ -334,7 +212,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
     position: 'relative',
     width: '7rem',
-    filter: 'greyscale()',
+    filter: 'greyscale()'
   },
   pickerImg: {
 
@@ -358,9 +236,9 @@ const style = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    background: '-moz-linear-gradient(left, rgba(22,22,22,1) 0%, rgba(22,22,22,0) 10%, rgba(22,22,22,0) 90%, rgba(22,22,22,1) 100%)',
-    background: '-webkit-linear-gradient(left, rgba(22,22,22,1) 0%,rgba(22,22,22,0) 10%,rgba(22,22,22,0) 90%,rgba(22,22,22,1) 100%)',
-    background: 'linear-gradient(to right, rgba(22,22,22,1) 0%,rgba(22,22,22,0) 10%,rgba(22,22,22,0) 90%,rgba(22,22,22,1) 100%)',
+    background: '-moz-linear-gradient(left, rgba(22,22,22,0.4) 0%, rgba(22,22,22,0) 3%, rgba(22,22,22,0) 97%, rgba(22,22,22,1) 100%)',
+    background: '-webkit-linear-gradient(left, rgba(22,22,22,0.4) 0%,rgba(22,22,22,0) 3%,rgba(22,22,22,0) 97%,rgba(22,22,22,1) 100%)',
+    background: 'linear-gradient(to right, rgba(22,22,22,0.4) 0%,rgba(22,22,22,0) 3%,rgba(22,22,22,0) 97%,rgba(22,22,22,1) 100%)',
     filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#161616", endColorstr="#161616",GradientType=1 )',
   },
   timelineTitle: {
@@ -376,7 +254,7 @@ const style = StyleSheet.create({
     maxWidth: '100%',
     height: 'auto',
     padding: '1rem',
-    display: 'flex',
+    display: 'none',
     alignItems: 'center',
     justifyContent: 'center',
     background: 'rgb(255,183,73)',

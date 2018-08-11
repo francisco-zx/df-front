@@ -25,13 +25,13 @@ class BlogGridItem extends Component{
   }
   render(){
     return(
-      <div to={`/blog/baf-week`} className='animated fadeIn' onClick={() => {this.select(this.props.item)}}>
+      <div to={`/blog/baf-week`} className='animated fadeIn clickable' onClick={() => {this.select(this.props.item)}}>
         <div className={css(style.blogItem) + ' hover-shadow'}>
           <div className={css(style.blogItemPreview)}>
             <div className={css(style.lazyLoad)} style={!this.state.isLoading ? {display:'none'} : {display: 'flex'}}></div>
             <img src={this.props.imgPrincipal} className={css(style.blogItemImg) + ' animated fadeIn'} onLoad={() => this.loaded()} style={this.state.isLoading ? {display:'none'} : {display: 'flex'}}/>
             <aside className={css(style.typeTag) + ' animated fadeIn'}>Novedades</aside>
-            <h3 className={css(style.title) + ' animated fadeIn'}>{this.props.title}</h3>
+            <h3 className={css(style.title) + ' animated fadeIn'}>{`${this.props.title.slice(0, 90)} ${this.props.title.length > 90 ? '...' : ''}`}</h3>
             <div className={css(style.overlay)}></div>
           </div>
           <div className={css(style.blogButton)}>
@@ -113,7 +113,7 @@ const style = StyleSheet.create({
     zIndex:2,
     fontWeight: '500',
     color: 'white',
-    maxWidth: '60%',
+    maxWidth: '80%',
     transition: 'all 0.4s ease',
     "@media(max-width: 1360px)": {
       fontSize: '2rem',

@@ -14,14 +14,14 @@ export default class HomePage extends Component {
             <img src={EventBanner} className={css(style.linkImg)}/>
             <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Eventos</h3>
             <Link to='/events'>
-              <button href='/events' className={css(style.linkButton) + ' animated fadeIn'}>VER MAS</button>
+              <button href='/events' className={css(style.linkButton) + ' animated fadeIn'}>VER MÁS</button>
             </Link>
           </div>
           <div className={css(style.link, style.linkRight) + ' animated fadeIn'}>
             <img src={TimelineBanner} className={css(style.linkImg)}/>
             <h3 className={css(style.linkTitle) + ' animated fadeIn'}>Timeline</h3>
             <Link to='/timeline'>
-              <button disabled href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>PROXIMAMENTE</button>
+              <button href='/timeline' className={css(style.linkButton) + ' animated fadeIn'}>VER MÁS</button>
             </Link>
           </div>
         </div>

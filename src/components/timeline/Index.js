@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import TimelineSlider from './TimeLineSlider';
 
-export default class TimeLinePage extends Component {
+class TimeLinePage extends Component {
 
   constructor(props){
     super(props);
@@ -13,9 +13,13 @@ export default class TimeLinePage extends Component {
   render() {
     return (
       <div>
-        <TimelineSlider />
-
+        <TimelineSlider timeline={this.props.timeline}/>
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  timeline: state.timeline
+})
+
+export default connect(mapStateToProps, null)(TimeLinePage);

@@ -11,12 +11,17 @@ export default class EventsSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.title}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
-            {this.props.date}
-          </h3>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
-            {this.props.location}
-          </h3>
+          {
+            !!this.props.show &&
+              <div>
+                <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
+                  {this.props.date}
+                </h3>
+                <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>
+                  {this.props.location}
+                </h3>
+              </div>
+          }
           <div className={css(style.buttonGroup)}>
             <Link to={`/event/${this.props.slug}`}>
               <button className={css(style.button) + ' animated fadeIn'}>VER MÁS +</button>

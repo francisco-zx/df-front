@@ -10,7 +10,7 @@ export default class SingleTimeLineSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.name}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>19 de Marzo, Estadio Instituto
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.date}
           </h3>
           <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Córdoba, Argentina
           </h3>
@@ -23,6 +23,7 @@ const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
     zIndex: 3,
+    width: '100%',
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }

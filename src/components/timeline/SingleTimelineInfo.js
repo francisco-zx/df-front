@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import base64 from 'base-64';
 
 export default class AboutText extends Component {
   render() {
     return (
-      <article className={css(style.aboutText)}>
-        <div className={css(style.content) + ' container'}>
-          <h2 className={css(style.title)}>Monsters of Rock</h2>
-          <h4 className={css(style.subTitle)}>24 de Nov. / Tecnopolis</h4>
-          <p className={css(style.text)}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget tortor ultrices, mollis enim a, elementum quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ut lacus ut odio porta luctus. Praesent ut ante vel sapien fringilla consequat non non justo. Aliquam ac velit in nisl laoreet feugiat vitae et est. Quisque ut elit a mi luctus faucibus eget ut quam. Maecenas sed lacus dolor. Phasellus sollicitudin sem ut turpis volutpat euismod. Morbi sollicitudin felis in mauris pellentesque finibus. In bibendum felis bibendum iaculis accumsan. Orci varius natoque penatibus et magnis dis parturient montes.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget tortor ultrices, mollis enim a, elementum quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ut lacus ut odio porta luctus. Praesent ut ante vel sapien fringilla consequat non non justo. Aliquam ac velit in nisl laoreet feugiat vitae et est. Quisque ut elit a mi luctus faucibus eget ut quam. Maecenas sed lacus dolor. Phasellus sollicitudin sem ut turpis volutpat euismod. Morbi sollicitudin felis in mauris pellentesque finibus. In bibendum felis bibendum iaculis accumsan. Orci varius natoque penatibus et magnis dis parturient montes.
-          </p>
-          <div className={css(style.viewMore)}>
-            <h4 className={css(style.viewMoreText)}>VER MAS IMAGENES</h4>
-            <i className='fa fa-angle-down fa-5x'></i>
-          </div>
-        </div>
-      </article>
+        <article className={css(style.aboutText)}>
+          {
+            this.props.selectedTimeline ?
+              <div className={css(style.content) + ' container'}>
+                <h2 className={css(style.title)}>{this.props.selectedTimeline.nombre}</h2>
+                <h4 className={css(style.subTitle)}>{this.props.selectedTimeline.fecha_formateada} / {this.props.selectedTimeline.venue.nombre}</h4>
+                <p
+                  className={css(style.text)}
+                  dangerouslySetInnerHTML={{ __html: base64.decode(this.props.selectedTimeline.texto)}}
+                >
+                </p>
+                {
+                  this.props.selectedTimeline.img_galeria_1 &&
+                    <a href='#gallery' className={css(style.link)}>
+                      <div className={css(style.viewMore)}>
+                        <h4 className={css(style.viewMoreText)}>VER MÁS IMAGENES</h4>
+                        <i className='fa fa-angle-down fa-5x'></i>
+                      </div>
+                    </a>
+                }
+              </div>
+              : 'Cargando...'
+            }
+          </article>
     );
   }
 }
@@ -43,6 +54,9 @@ const style = StyleSheet.create({
       fontSize: '2.3rem',
     }
   },
+  link: {
+    color: 'rgb(22, 22, 22)'
+  },
   subTitle: {
     fontWeight: 500,
     fontSize: '1.6rem',
@@ -54,6 +68,7 @@ const style = StyleSheet.create({
     padding: '1rem',
     fontSize: '1.1rem',
     lineHeight: 1.4,
+    fontFamily: 'Edmonsans',
     "@media(max-width: 480px)": {
       margin: 0,
       maxWidth: 'none',

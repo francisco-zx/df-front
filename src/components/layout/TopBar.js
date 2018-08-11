@@ -23,7 +23,7 @@ class TopBar extends Component {
     };
 
     return (
-      <section className={css(style.topBar)}>
+      <section className={css(style.topBar)} id='top-bar'>
       <div className='sliderHolder'>
       <Slider {...settings} className={css(style.slider)}>
         <div><b className={css(style.sliderItem, style.bold)}>Proximos Eventos: </b></div>

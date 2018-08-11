@@ -4,6 +4,7 @@ const initialState = {
   events: [],
   venues: [],
   selectedVenue: {},
+  timeline: [],
   topBar: [],
   search: {
     events: [],
@@ -32,6 +33,10 @@ export default (state = initialState, action) => {
       return {...state, selectedVenue: action.item};
     case "FETCH_SELECTED_VENUE":
       return {...state, selectedVenue: action.item};
+    case "INITIALIZE_TIMELINE":
+      return {...state, timeline: action.data};
+    case "FETCH_SELECTED_TIMELINE":
+      return {...state, selectedTimeline: action.data};
     case "INITIALIZE_TOP_BAR":
       return {...state, topBar: action.data};
     case "SEARCH":

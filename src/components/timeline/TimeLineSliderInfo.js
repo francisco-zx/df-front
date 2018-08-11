@@ -10,11 +10,16 @@ export default class TimeLineSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle)}>{this.props.name}</h1>
-          <h3 className={css(style.sliderInfoSubtitle)}>19 de Marzo, Estadio Instituto
-          </h3>
-          <h3 className={css(style.sliderInfoSubtitle)}>Córdoba, Argentina
-          </h3>
-          <Link to='/timeline/monsters-of-rock'>
+          {
+            !!this.props.show &&
+              <div>
+                <h3 className={css(style.sliderInfoSubtitle)}>{this.props.date}
+                </h3>
+                <h3 className={css(style.sliderInfoSubtitle)}>{this.props.venue}
+                </h3>
+              </div>              
+          }
+          <Link to={`/timeline/${this.props.slug}`}>
             <div className={css(style.buttonGroup)}>
               <button className={css(style.button)}>VER MAS +</button>
             </div>
@@ -28,6 +33,7 @@ const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
     zIndex: 3,
+    width: '100%',
     "@media(max-width: 1024px)": {
       padding: '3rem'
     }

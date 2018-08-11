@@ -57,15 +57,30 @@ class EventsSlider extends Component {
                               location={event.venue.nombre}
                               link={event.link}
                               slug={event.slug}
+                              show={event.mostrar_texto}
                             />
                             {
                               event.video != null &&
-                                <video autoPlay loop muted className={css(style.video)}>
-                                  <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
+                                /*
+                                <video controls="false" autoPlay loop muted className={css(style.video)}>
+                                    <source src={`www.youtube.com/watch?v=${event.video.split('/')[3]}`} type="video/mp4" />
                                 </video>
+                                */
+                                <iframe type="text/html"
+                                    width="100%"
+                                    height="800px"
+                                    className={css(style.video)}
+                                    src={`http://www.youtube.com/embed/${event.video.split('/')[3]}?iv_load_policy=3&autoplay=1&rel=0&controls=0&mute=1`}
+                                    frameborder="0"
+                                    allow='autoplay'>
+                                </iframe>
                             }
                           </div>
-                          <div className={css(style.sliderOverlay)}></div>
+                          {
+
+                            !!event.mostrar_overlay &&
+                              <div className={css(style.sliderOverlay)}></div>
+                          }
                         </div>
                       </div>
                   )
@@ -128,5 +143,16 @@ const style = StyleSheet.create({
     left: 0,
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 1
+  },
+  video: {
+    position: 'absolute',
+    width: '100vw',
+    "@media(max-width: 1080px)": {
+      height: '100%',
+      width: 'auto'
+    },
+    "@media(max-width: 480px)": {
+      display: 'none'
+    }
   }
 })

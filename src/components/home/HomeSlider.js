@@ -52,9 +52,14 @@ class HomeSlider extends Component {
                       />
                       {
                         event.video != null &&
-                          <video autoPlay loop muted className={css(style.video)}>
-                            <source src='http://zetaequis.com/wp-content/uploads/2018/05/df-bg.mp4'/>
-                          </video>
+                          <iframe type="text/html"
+                              width="100%"
+                              height="800px"
+                              className={css(style.video)}
+                              src={`http://www.youtube.com/embed/${event.video.split('/')[3]}?iv_load_policy=3&autoplay=1&rel=0&controls=0&mute=1&loop=1`}
+                              frameborder="0"
+                              allow='autoplay'>
+                          </iframe>
                       }
                     </div>
                     <div className={css(style.sliderOverlay)}></div>
@@ -119,10 +124,12 @@ const style = StyleSheet.create({
   video: {
     position: 'absolute',
     width: '100vw',
-    height: 'auto',
     "@media(max-width: 1080px)": {
       height: '100%',
       width: 'auto'
+    },
+    "@media(max-width: 480px)": {
+      display: 'none'
     }
   }
 })

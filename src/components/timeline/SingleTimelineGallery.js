@@ -5,27 +5,33 @@ import BorderGradient from  '../layout/BorderGradient';
 export default class SingleTimelineGallery extends Component {
   render() {
     return (
-      {
-        /*
-        <section>
-          <h3 className={css(style.title)}>GALERIA</h3>
-          <BorderGradient />
-          <div>
-            <div className={css(style.galleryGrid)}>
-              <img className={css(style.img1, style.img)} src={Gallery1} height='auto'/>
+        <section id='gallery'>
+        {
+          this.props.selectedTimeline && this.props.selectedTimeline.img_galeria_1 &&
+            <div>
+              <h3 className={css(style.title)}>GALERÍA</h3>
+              <BorderGradient />
+              {
+                this.props.selectedTimeline ?
+                  <div>
+                    <div>
+                      <div className={css(style.galleryGrid)}>
+                        <img className={css(style.img1, style.img)} src={this.props.selectedTimeline.img_galeria_1} height='auto'/>
+                      </div>
+                      <div className={css(style.galleryGrid)}>
+                        <img className={css(style.img2, style.img)} src={this.props.selectedTimeline.img_galeria_2} height='auto'/>
+                        <img className={css(style.img2, style.img)} src={this.props.selectedTimeline.img_galeria_3} height='auto'/>
+                      </div>
+                    </div>
+                    <div className={css(style.galleryGrid)}>
+                      <img className={css(style.img1, style.img)} src={this.props.selectedTimeline.img_galeria_4} height='auto'/>
+                    </div>
+                  </div>
+                : 'Cargando...'
+              }
             </div>
-            <div className={css(style.galleryGrid)}>
-              <img className={css(style.img2, style.img)} src={Gallery2} height='auto'/>
-              <img className={css(style.img2, style.img)} src={Gallery3} height='auto'/>
-            </div>
-          </div>
-          <div className={css(style.galleryGrid)}>
-            <img className={css(style.img1, style.img)} src={Gallery4} height='auto'/>
-          </div>
+        }
         </section>
-        */
-      }
-
     );
   }
 }

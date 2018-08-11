@@ -110,7 +110,8 @@ const style = StyleSheet.create({
       fontSize: '1.8rem'
     },
     "@media(max-width: 480px)": {
-      fontSize: '1.4rem'
+      fontSize: '1.4rem',
+        display: 'none'
     }
   },
   description: {
