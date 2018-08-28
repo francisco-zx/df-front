@@ -69,7 +69,8 @@ class HomeEventsSlider extends Component {
           {
               this.props.events.map((event, index) => {
                 return(
-                  <EventsSliderItem
+                  <EventsSliderItem 
+                    key={index}
                     title={event.nombre}
                     location={event.venue.nombre}
                     date={event.fecha_formateada}

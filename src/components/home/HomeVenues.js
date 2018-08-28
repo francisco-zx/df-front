@@ -35,7 +35,7 @@ class HomeVenues extends Component {
             this.props.venues.map((venue, index) => {
               if(venue.visible === 1){
                 return(
-                  <VenueGridItem venue={venue} history={this.props.history} small={false}/>
+                  <VenueGridItem key={index} venue={venue} history={this.props.history} small={false}/>
                 )
               }
 
@@ -49,7 +49,7 @@ class HomeVenues extends Component {
             this.props.venues.map((venue, index) => {
               if(!venue.visible){
                 return(
-                  <VenueGridItem venue={venue} history={this.props.history} small={true}/>
+                  <VenueGridItem key={index} venue={venue} history={this.props.history} small={true}/>
                 )
               }
             })

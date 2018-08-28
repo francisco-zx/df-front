@@ -31,7 +31,7 @@ class TopBar extends Component {
           this.props.topBar.length ?
             this.props.topBar.map((item, index) => {
               return(
-                <div><p className={css(style.sliderItem)}>{item} /</p></div>
+                <div key={index}><p className={css(style.sliderItem)}>{item} /</p></div>
               )
             })
           : <div>Cargando...</div>

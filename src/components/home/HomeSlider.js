@@ -41,15 +41,9 @@ class HomeSlider extends Component {
             this.props.events.map((event, index) => {
               if(event.destacado === 1){
                 return(
-                  <div >
+                  <div key={index}>
                     <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`, backgroundPosition: 'center center'}}>
-                      <HomeSliderInfo
-                        title={event.nombre}
-                        date={event.fecha_formateada}
-                        location={event.venue.nombre}
-                        link={event.link}
-                        slug={event.slug}
-                      />
+                     
                       {
                         event.video != null &&
                           <iframe type="text/html"
@@ -57,7 +51,7 @@ class HomeSlider extends Component {
                               height="800px"
                               className={css(style.video)}
                               src={`http://www.youtube.com/embed/${event.video.split('/')[3]}?iv_load_policy=3&autoplay=1&rel=0&controls=0&mute=1&loop=1`}
-                              frameborder="0"
+                              frameBorder="0"
                               allow='autoplay'>
                           </iframe>
                       }
