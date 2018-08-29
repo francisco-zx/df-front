@@ -49,11 +49,11 @@ class AppRouter extends Component {
 
   componentDidMount(){
     const path = document.location.href.split('/')[3];
-    console.log(path);
+    //console.log(path);
     this.setState({
       url: path
     }, () => {
-      console.log(this.state.url)
+      //console.log(this.state.url)
     })
   }
 

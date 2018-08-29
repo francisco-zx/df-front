@@ -16,7 +16,7 @@ export default class BlogGrid extends Component {
   }
 
   componentDidMount(){
-    console.log(this.props.blog)
+    
   }
 
   render() {

@@ -67,8 +67,8 @@ export default class TimelineSlider extends Component {
         <Slider {...settings} ref='mainSlider' className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
           {
             this.props.timeline.length ?
-              this.props.timeline.map((timeline) => (
-                <div >
+              this.props.timeline.map((timeline, index) => (
+                <div key={index}>
                   <Link to={`/timeline/${timeline.slug}`}>
                     <div className={css(style.sliderItem)} style={{background: `url(${timeline.img_portada})`, backgroundPosition: 'center center'}}>
                       <TimeLineSliderInfo
@@ -113,8 +113,8 @@ export default class TimelineSlider extends Component {
           <Slider {...settingsNav} asNavFor={this.refs.mainSlider}  ref='navSlider' prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
             {
               this.props.timeline.length ?
-              this.props.timeline.map((timeline) =>(
-                <div>
+              this.props.timeline.map((timeline, index) =>(
+                <div key={index} >
                   <div className={css(style.navSliderItem) + ' clickable'}>
                     <img src={TimelinePicker} className={css(style.pickerImg)} width='100%'/>
                     <img src={timeline.img_artista} className={css(style.pickerArtist)} width='84%'/>

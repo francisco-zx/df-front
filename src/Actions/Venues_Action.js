@@ -24,7 +24,6 @@ export const fetchVenues = () => {
     fetch('http://dfapi.dfentertainment.com/api/public/api/venues/all')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       dispatch(initializeVenues(data))
     })
   };
@@ -32,7 +31,6 @@ export const fetchVenues = () => {
 
 export const selectVenue = (item) => {
   return dispatch =>{
-    console.log(item)
     dispatch(setSelectedVenue(item))
   }
 }

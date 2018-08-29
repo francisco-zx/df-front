@@ -19,7 +19,6 @@ class Footer extends Component {
   }
   handleChange = (e) => {
     this.setState({email: e.target.value})
-    console.log(this.state.email)
   }
   suscribe = (email) => {
     if(!this.state.suscribed){

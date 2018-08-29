@@ -111,7 +111,7 @@ const style = StyleSheet.create({
     },
     "@media(max-width: 480px)": {
       fontSize: '1.4rem',
-        display: 'none'
+        display: 'flex'
     }
   },
   description: {

@@ -22,6 +22,12 @@ class EventsSlider extends Component {
   }
 
   render() {
+    if (this.props.showSlider != 'true'){
+      return(
+        <React.Fragment></React.Fragment>
+      )
+    } 
+
     const settings = {
       dots: true,
       infinite: true,
@@ -48,7 +54,7 @@ class EventsSlider extends Component {
               this.props.events.map((event, index) => {
                 if(event.destacado === 1){
                   return(
-                      <div >
+                      <div key={index}>
                         <div onClick={item => this.select(event)} className='clickable hoverShadow'>
                           <div className={css(style.sliderItem)} style={{backgroundImage: `url(${event.img_portada})`, backgroundPosition: 'center center'}}>
                             <EventsSliderInfo
@@ -71,7 +77,7 @@ class EventsSlider extends Component {
                                     height="800px"
                                     className={css(style.video)}
                                     src={`http://www.youtube.com/embed/${event.video.split('/')[3]}?iv_load_policy=3&autoplay=1&rel=0&controls=0&mute=1`}
-                                    frameborder="0"
+                                    frameBorder="0"
                                     allow='autoplay'>
                                 </iframe>
                             }
@@ -101,6 +107,7 @@ class EventsSlider extends Component {
 }
 
 const mapStateToProps = state => ({
+  showSlider: state.showEventsSlider,
   events: state.events
 })
 

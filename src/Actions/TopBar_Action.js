@@ -10,7 +10,6 @@ export const fetchTopBar = () => {
     fetch('http://dfapi.dfentertainment.com/api/public/api/eventos/header')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       dispatch(initializeTopBar(data))
     })
   };

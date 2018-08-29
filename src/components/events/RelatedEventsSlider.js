@@ -22,7 +22,6 @@ export default class RelatedEventsSlider extends Component {
   };
   rightButton = e => {
     const slider = document.getElementById('slider');
-    console.log(slider)
     let transition = 0;
     const interval = setInterval(() => {
       slider.scrollLeft += 10;

@@ -22,7 +22,7 @@ export default class RelatedEventsSlider extends Component {
   };
   rightButton = e => {
     const slider = document.getElementById('slider');
-    console.log(slider)
+    
     let transition = 0;
     const interval = setInterval(() => {
       slider.scrollLeft += 10;
@@ -49,6 +49,7 @@ export default class RelatedEventsSlider extends Component {
               this.props.selectedVenue.eventos.map((event, index) => {
                 return(
                   <SingleVenueEventsSliderItem
+                    key={index}
                     title={event.nombre}
                     location={event.venue}
                     date='16, 17 y 18 de Marzo'

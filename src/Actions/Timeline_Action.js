@@ -10,7 +10,6 @@ export const fetchTimeline = () => {
     fetch('http://dfapi.dfentertainment.com/api/public/api/timeline/all')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       dispatch(initializeTimeline(data))
     })
   };

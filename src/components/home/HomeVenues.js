@@ -18,7 +18,6 @@ class HomeVenues extends Component {
 
   componentDidMount(){
     const path = document.location.href.split('/')[3];
-    console.log(path)
     if(path === 'venues'){
       this.setState({
         isVenues: true
@@ -33,7 +32,8 @@ class HomeVenues extends Component {
         {
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
-              if(venue.visible === 1){
+              //if(venue.visible === 1){
+              if(venue.fila == 1 ){
                 return(
                   <VenueGridItem key={index} venue={venue} history={this.props.history} small={false}/>
                 )
@@ -47,7 +47,8 @@ class HomeVenues extends Component {
           this.state.isVenues &&
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
-              if(!venue.visible){
+              //if(!venue.visible){
+                if(venue.fila == 2 ){
                 return(
                   <VenueGridItem key={index} venue={venue} history={this.props.history} small={true}/>
                 )
@@ -55,12 +56,29 @@ class HomeVenues extends Component {
             })
         }
         </div>
+
+        <div className={css(style.venuesGrid)}>
+        {
+          this.state.isVenues &&
+          this.props.venues.length &&
+            this.props.venues.map((venue, index) => {
+              //if(!venue.visible){
+                if(venue.fila == 3 ){
+                return(
+                  <VenueGridItem key={index} venue={venue} history={this.props.history} small={true}/>
+                )
+              }
+            })
+        }
+        </div>
+
       </div>
     );
   }
 }
 
 const mapStateToProps = state =>({
+    store:state, //todo DEBUG
   venues: state.venues,
   events: state.events,
   blog: state.blog

@@ -7,7 +7,7 @@ export default class MapMarker extends Component {
   render(){
     return(
       <div style={{transform: 'translateY(-100%)'}}>
-        <img  src={MapMarkerSVG} className={css(style.mapMarker) + ' animated bounceIn'} height='60px'/>
+        <img  src={MapMarkerSVG} className={css(style.mapMarker) + ' animated bounceIn'} height='60px' alt='' />
       </div>
     )
   }

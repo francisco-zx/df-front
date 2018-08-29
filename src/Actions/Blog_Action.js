@@ -31,7 +31,6 @@ export const fetchBlog = () => {
 
 export const selectBlog = (item) => {
   return dispatch =>{
-    console.log(item)
     dispatch(setSelectedBlog(item))
   }
 }

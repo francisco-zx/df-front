@@ -15,6 +15,12 @@ import {
 class VenueSlider extends Component {
 
   render() {
+    if (this.props.showSlider != 'true'){
+      return(
+        <React.Fragment></React.Fragment>
+      )
+    }
+    
     const settings = {
       dots: true,
       infinite: true,
@@ -33,7 +39,6 @@ class VenueSlider extends Component {
         );
       }
     };
-
     return (
       <section className={css(style.section)}>
         <Slider {...settings} className={css(style.slider)} prevArrow={arrowLeftIconWhite} nextArrow={arrowRightIconWhite}>
@@ -42,7 +47,7 @@ class VenueSlider extends Component {
               this.props.venues.map((venue, index) => {
                 if(venue.visible === 1){
                   return(
-                    <div>
+                    <div key={index}>
                       <Link to={`/venue/${venue.slug}`}>
                       <div className={css(style.sliderItem)} style={{background: `url(${venue.img_portada})`, backgroundPosition: 'center center'}}>
                         <VenuesSliderInfo
@@ -70,6 +75,7 @@ class VenueSlider extends Component {
 }
 
 const mapStateToProps = state => ({
+  showSlider: state.showVenuesSlider,
   venues: state.venues
 })
 

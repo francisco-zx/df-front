@@ -11,7 +11,10 @@ class VenueGridItem extends Component{
     this.props.selectVenue(venue);
     this.props.history.push(`/venue/${venue.slug}`)
   }
+  selectSize = () => {  } //Todo Implement CSS Selector based on venue.tamano  (s,m,l)
   render(){
+  let {venue} = this.props
+  //console.log('+---------venue', venue);  
     return(
       <div className={!this.props.small ? css(style.venuesGridItem) : css(style.venuesGridItemSmall)} onClick={() => this.select(this.props.venue)}>
         <div className='hover-shadow'>

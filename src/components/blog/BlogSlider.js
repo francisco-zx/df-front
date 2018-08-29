@@ -14,6 +14,12 @@ import {
 class BlogSlider extends Component {
 
   render() {
+    if (this.props.showSlider != 'true'){
+      return(
+        <React.Fragment></React.Fragment>
+      )
+    } 
+
     const settings = {
       dots: true,
       infinite: true,
@@ -40,7 +46,7 @@ class BlogSlider extends Component {
             this.props.blog.length ?
               this.props.blog.map((blog, index) => {
                 return(
-                  <div >
+                  <div key={index}>
                     <div className={css(style.sliderItem)} style={{background: `url(${blog.img_portada})`, backgroundPosition: 'center center'}}>
                       <BlogSliderInfo
                         title={blog.nombre}
@@ -66,6 +72,7 @@ class BlogSlider extends Component {
 }
 
 const mapStateToProps = state => ({
+  showSlider : state.showBlogsSlider,
   blog: state.blog
 })
 

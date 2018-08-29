@@ -30,7 +30,6 @@ class HomeEventsSlider extends Component {
   };
   rightButton = e => {
     const slider = document.getElementById('slider');
-    console.log(slider)
     let transition = 0;
     const interval = setInterval(() => {
       slider.scrollLeft += 10;
@@ -43,8 +42,8 @@ class HomeEventsSlider extends Component {
 
   isScrolled = () => {
     const slider = document.getElementById('slider');
-    console.log(slider.scrollWidth - slider.clientLeft)
-    console.log(slider.width)
+    //console.log(slider.scrollWidth - slider.clientLeft)
+    //console.log(slider.width)
     if(slider.scrollLeft != 0){
       this.setState({showLeftArrow: true})
     }else{

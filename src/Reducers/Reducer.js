@@ -9,26 +9,30 @@ const initialState = {
   search: {
     events: [],
     blog: []
-  }
+  },
+  showEventsSlider: false,
+  showVenuesSlider: false,
+  showBlogsSlider: false
 }
 export default (state = initialState, action) => {
   switch (action.type) {
     case "INITIALIZE_ABOUT":
       return {...state, about: action.data};
     case "INITIALIZE_BLOG":
-      return {...state, blog: action.data};
+      return {...state, blog: action.data.items, showBlogsSlider: action.data.mostrarSlider };
+      //return {...state, blog: action.data};
     case "SET_SELECTED_BLOG":
       return {...state, selectedBlog: action.item};
     case "FETCH_SELECTED_BLOG":
       return {...state, selectedBlog: action.item};
     case "INITIALIZE_EVENTS":
-      return {...state, events: action.data};
+      return {...state, events: action.data.items, showEventsSlider: action.data.mostrarSlider };
     case "SET_SELECTED_EVENT":
       return {...state, selectedBlog: action.data};
     case "FETCH_SELECTED_EVENT":
       return {...state, selectedEvent: action.data};
     case "INITIALIZE_VENUES":
-      return {...state, venues: action.data};
+      return {...state, venues: action.data.items, showVenuesSlider: action.data.mostrarSlider};
     case "SET_SELECTED_VENUE":
       return {...state, selectedVenue: action.item};
     case "FETCH_SELECTED_VENUE":

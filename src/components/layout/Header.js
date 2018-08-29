@@ -23,13 +23,11 @@ export default class Header extends Component {
     : this.setState({fixed: false})
   }
   toggleMobileMenu = () => {
-    console.log('clickiti')
     this.setState({
       showMobileMenu: !this.state.showMobileMenu
     })
   }
   toggleMobileSearch = () => {
-    console.log('clickiti')
     this.setState({
       showMobileSearch: !this.state.showMobileSearch
     })

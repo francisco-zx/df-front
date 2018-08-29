@@ -9,7 +9,6 @@ class BlogPage extends Component {
     super(props)
   }
   componentDidMount(){
-    console.log(this.props.blog)
   }
   render() {
     return (

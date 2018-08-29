@@ -18,7 +18,7 @@ class VenuesGrid extends Component {
           this.props.venues.length &&
             this.props.venues.map((venue, index) => {
               return(
-                <div style={style.venuesGridItem}>
+                <div style={style.venuesGridItem} key={index}>
                   <div style={{padding: '0.5rem'}} className='hover-shadow'>
                     <img style={style.itemImg} src={venue.img_principal} />
                     <div style={style.venueName}>{venue.nombre}</div>

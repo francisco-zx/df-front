@@ -35,7 +35,7 @@ export default class EventsGrid extends Component {
               {
                 this.props.events.map((event, index) => {
                   return(
-                    <div className={css(style.mobile)}>
+                    <div className={css(style.mobile)} key={index}>
                       <div className={css(style.venuesGridItemFull) + ' animated fadeIn'} onClick={slug => this.goToEvent(event.slug)}>
                         <div style={{padding: '0.5rem'}}>
                           <img className={css(style.itemImg)} src={event.img_portada} />

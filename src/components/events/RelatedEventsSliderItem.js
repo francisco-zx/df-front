@@ -7,7 +7,7 @@ export default class EventsSliderItem extends Component {
     return (
       <div style={style.eventSliderItem}>
         <div style={{padding: '0.5rem'}}>
-          <img style={style.itemImg} />
+          <img style={style.itemImg} alt=''/>
           <div style={style.eventTitle}>Phil Collins</div>
           <BorderGradient height='6px'/>
         </div>

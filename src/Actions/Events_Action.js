@@ -14,7 +14,6 @@ export const setSelectedEvent = (data = {}) => {
 
 export const selectEvent = (data) => {
   return dispatch =>{
-    console.log(data)
     dispatch(setSelectedEvent(data))
   }
 }
@@ -25,7 +24,6 @@ export const fetchEvents = () => {
     fetch('http://dfapi.dfentertainment.com/api/public/api/eventos/all')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       dispatch(initializeEvents(data))
     })
   };
