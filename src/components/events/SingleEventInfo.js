@@ -134,7 +134,7 @@ const style = StyleSheet.create({
     fontWeight: 500,
     fontSize: '0.9rem',
     lineHeight: '12pt',
-    paddingRight: '2rem',
+    paddingRight: '0rem',//Update 2rem
     animationDelay: '0.6s'
 
   },
