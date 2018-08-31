@@ -11,8 +11,10 @@ export default class SingleEventInfo extends Component {
   renderer = ({ days, hours, minutes, seconds, completed }) => {
     return <span>{days} días {hours}:{minutes}:{seconds}</span>;
   }
-
+//On react-countdown-now use date format "mm/dd/yyyy hh:mm:ss" for safari compatibility
   render() {
+    //'3/29/2019 12:00:00'
+    
     return (
 
       <div className='container'>
@@ -43,8 +45,14 @@ export default class SingleEventInfo extends Component {
               <article className={css(style.mobileShareEvent)}>
                 <div className={css(style.mobileShaasdaseEvent) + ' animated fadeIn'}>
                   Compartir:
-                  <i className={css(style.icon) + ' fa fa-facebook'}></i>
-                  <i className={css(style.icon) + ' fa fa-twitter'}></i>
+                  <a title="send to Facebook" target="_blank" className='clickable'
+                    href={`http://www.facebook.com/sharer.php?u=${document.location.href}&t=${this.props.selectedEvent.nombre},&nbsp${this.props.selectedEvent.fecha_formateada}`} >
+                    <i className={css(style.icon) + ' fa fa-facebook'}> </i>
+                  </a>
+                  <a target='_blank' title="send to Twitter" 
+                    href={`https://twitter.com/intent/tweet?text=${this.props.selectedEvent.nombre}, ${this.props.selectedEvent.fecha_formateada}&url=${document.location.href}&hashtags=dfentertainment,allaccess,${this.props.selectedEvent.nombre}`} >
+                    <i className={css(style.icon) + ' fa fa-twitter'}  ></i>
+                  </a>
                 </div>
               </article>
             </div>

@@ -3,7 +3,7 @@ import { StyleSheet, css } from 'aphrodite';
 import { connect } from 'react-redux'
 
 import Slider from 'react-slick';
-import AliceCarousel from 'react-alice-carousel';
+//import AliceCarousel from 'react-alice-carousel';
 import BorderGradient from './BorderGradient';
 import "./topbar.css";
 

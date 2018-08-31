@@ -16,7 +16,6 @@ export default class EventVenue extends React.Component{
       console.log(this.props.selectedEvent.coordX)
   }
 
-
   render(){
     return(
       <article className={css(style.eventVenue) + ' animated fadeIn'}>

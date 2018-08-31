@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import SingleEventSlider from './SingleEventSlider';
 import SingleEventInfo from './SingleEventInfo';
-import RelatedEventsSlider from './RelatedEventsSlider';
+//import RelatedEventsSlider from './RelatedEventsSlider';
 
 import { fetchSelectedEvent } from '../../Actions/Events_Action';
 

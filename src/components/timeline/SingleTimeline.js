@@ -5,7 +5,7 @@ import SingleTimeLineSlider from './SingleTimeLineSlider';
 import SingleTimelineInfo from './SingleTimelineInfo';
 import SingleTimelineGallery from './SingleTimelineGallery';
 import BorderGradient from '../layout/BorderGradient';
-import Overlay from '../layout/Overlay';
+//import Overlay from '../layout/Overlay';
 
 import { fetchSelectedTimeline } from '../../Actions/Timeline_Action';
 

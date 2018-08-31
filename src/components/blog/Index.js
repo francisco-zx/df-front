@@ -5,9 +5,6 @@ import BlogSlider from './BlogSlider';
 import BlogGrid from './BlogGrid';
 
 class BlogPage extends Component {
-  constructor(props){
-    super(props)
-  }
   componentDidMount(){
   }
   render() {

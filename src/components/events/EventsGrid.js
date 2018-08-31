@@ -19,8 +19,21 @@ class EventsGrid extends Component {
         <div className={css(style.venuesGrid)}>
           {
             this.props.events.map((event, index) => {
+            
+              let selectImgClass = (event) => {
+                switch (event.img_principal_tamano){
+                  case 'l':
+                    return css(style.venuesGridItemFull, style.hide) + ' animated fadeIn clickable '
+                  case 'm':
+                    return css(style.venuesGridItemMedium, style.hide) + ' animated fadeIn clickable hover-shadow'
+                  default: //small
+                    return css(style.venuesGridItem, style.hide) + ' animated fadeIn clickable hover-shadow'
+                  break;
+                }                
+              }
               return(
-                  <div key={index} className={event.img_principal_formato != 'horizontal' ? css(style.venuesGridItem, style.hide) + ' animated fadeIn clickable hover-shadow' : css(style.venuesGridItemFull, style.hide) + ' animated fadeIn clickable ' } onClick={slug => this.goToEvent(event.slug)}>
+                  <div key={index} className={ selectImgClass(event)  } 
+                        onClick={slug => this.goToEvent(event.slug)}>
                     <div style={{padding: '0.5rem'}} >
                       <img className={css(style.itemImg)} src={event.img_principal} />
                       <div className={css(style.venueName)}>{event.nombre}</div>
@@ -76,6 +89,16 @@ const style = StyleSheet.create({
     maxWidth: '33%',
     marginBottom: '2rem',
     flexBasis: '33%',
+    overflow: 'hidden'
+  },
+  venuesGridItemMedium: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    width: '50%',
+    maxWidth: '50%',
+    marginBottom: '2rem',
+    flexBasis: '50%',
     overflow: 'hidden'
   },
   venuesGridItemFull: {
