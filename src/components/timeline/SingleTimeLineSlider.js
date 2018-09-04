@@ -68,7 +68,7 @@ export default class SingleTimelineSlider extends Component {
         </Slider>
         <div className={css(style.goBack)}>
           <Link to='/timeline'>
-            <button className={css(style.backButton)}><i class='fa fa-angle-left'></i> VOLVER</button>
+            <button className={css(style.backButton)}><i className='fa fa-angle-left'></i> VOLVER</button>
           </Link>
         </div>
         <BorderGradient />

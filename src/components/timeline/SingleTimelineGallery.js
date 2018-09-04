@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import BorderGradient from  '../layout/BorderGradient';
 
+
 export default class SingleTimelineGallery extends Component {
   render() {
+    //console.log('this.props.selectedTimeline ', this.props.selectedTimeline);
     return (
         <section id='gallery'>
         {
-          this.props.selectedTimeline && this.props.selectedTimeline.img_galeria_1 &&
+          this.props.selectedTimeline && 
             <div>
               <h3 className={css(style.title)}>GALERÍA</h3>
               <BorderGradient />

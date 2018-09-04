@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { StyleSheet, css } from 'aphrodite';
-
 import { Link } from 'react-router-dom';
 
 
 export default class TimeLineSliderInfo extends Component {
+  componentDidMount() {
+    
+  }
   render() {
     return (
         <div className={css(style.sliderInfo)}>
@@ -19,16 +21,16 @@ export default class TimeLineSliderInfo extends Component {
                 </h3>
               </div>              
           }
-          <Link to={`/timeline/${this.props.slug}`}>
+         
             <div className={css(style.buttonGroup)}>
               <button className={css(style.button)}>VER MAS +</button>
             </div>
-          </Link>
+            
         </div>
     );
   }
 }
-
+/* <Link to={`/timeline/${this.props.slug}`}> </Link> */ 
 const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',

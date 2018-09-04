@@ -8,7 +8,8 @@ export default class SingleVenueSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle)}>{this.props.selectedVenue.nombre}</h1>
-          <h3 className={css(style.sliderInfoSubtitle)}>{this.props.selectedVenue.ubicacion}
+          <h3 className={css(style.sliderInfoSubtitle)}>
+            { this.props.selectedVenue.slider_direccion_visible == 1 ? this.props.selectedVenue.ubicacion : ""}
           </h3>
         </div>
     );

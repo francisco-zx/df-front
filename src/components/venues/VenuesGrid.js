@@ -7,7 +7,7 @@ import BorderGradient from '../layout/BorderGradient';
 
 class VenuesGrid extends Component {
   componentDidMount(){
-    console.log(this.props.venues)
+    //console.log(this.props.venues)
   }
   render() {
     return (

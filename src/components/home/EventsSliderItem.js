@@ -11,7 +11,7 @@ export default class EventsSliderItem extends Component {
         <p className={css(style.location) + ' animated fadeIn'}>{this.props.location}</p>
         <div className={css(style.buttonGroup)}>
           <Link to={`/event/${this.props.slug}`}>
-            <button className={css(style.button) + ' animated fadeIn'}> VER MAS +</button>
+            <button className={css(style.button) + ' animated fadeIn'}> VER MAS ++</button>
           </Link>
           <a href={this.props.link} target='_blank'>
             <button className={css(style.button) + ' animated fadeIn'}>COMPRAR</button>

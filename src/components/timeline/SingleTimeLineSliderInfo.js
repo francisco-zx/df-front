@@ -10,9 +10,9 @@ export default class SingleTimeLineSliderInfo extends Component {
     return (
         <div className={css(style.sliderInfo)}>
           <h1 className={css(style.sliderInfoTitle) + ' animated fadeIn'}>{this.props.name}</h1>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.date}
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.date}  
           </h3>
-          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>Córdoba, Argentina
+          <h3 className={css(style.sliderInfoSubtitle) + ' animated fadeIn'}>{this.props.venue}
           </h3>
         </div>
     );
