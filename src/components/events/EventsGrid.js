@@ -19,7 +19,7 @@ class EventsGrid extends Component {
         <div className={css(style.venuesGrid)}>
           {
             this.props.events.map((event, index) => {
-            
+
               let selectImgClass = (event) => {
                 switch (event.img_principal_tamano){
                   case 'l':
@@ -29,11 +29,11 @@ class EventsGrid extends Component {
                   default: //small
                     return css(style.venuesGridItem, style.hide) + ' animated fadeIn clickable hover-shadow'
                   break;
-                }                
+                }
               }
               return(
-                  <div key={index} className={ selectImgClass(event)  } 
-                        onClick={slug => this.goToEvent(event.slug)}>
+                  <div key={index} className={ selectImgClass(event)  }
+                    onClick={slug => this.goToEvent(event.slug)}>
                     <div style={{padding: '0.5rem'}} >
                       <img className={css(style.itemImg)} src={event.img_principal} />
                       <div className={css(style.venueName)}>{event.nombre}</div>

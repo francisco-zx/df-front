@@ -14,7 +14,18 @@ class VenueGridItem extends Component{
   selectSize = () => {  } //Todo Implement CSS Selector based on venue.tamano  (s,m,l)
   render(){
   let {venue} = this.props
-  //console.log('+---------venue', venue);  
+  //console.log('+---------venue', venue);
+  if (this.props.venue.tamano == 'l') {
+    return(
+      <div className={!this.props.small ? css(style.venuesGridItem) : css(style.venuesGridItemSmall)}>
+        <div className='hover-shadow'>
+          <img className={css(style.itemImg)} src={this.props.venue.img_principal} />
+          <div className={css(style.venueName)}>{this.props.venue.nombre}</div>
+          <BorderGradient height='6px'/>
+        </div>
+      </div>
+    )
+  } else {
     return(
       <div className={!this.props.small ? css(style.venuesGridItem) : css(style.venuesGridItemSmall)} onClick={() => this.select(this.props.venue)}>
         <div className='hover-shadow'>
@@ -24,6 +35,8 @@ class VenueGridItem extends Component{
         </div>
       </div>
     )
+  }
+
   }
 }
 
