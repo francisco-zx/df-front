@@ -8,7 +8,8 @@ const initialState = {
   topBar: [],
   search: {
     events: [],
-    blog: []
+    blog: [],
+    timeLine: []
   },
   showEventsSlider: false,
   showVenuesSlider: false,
@@ -47,8 +48,9 @@ export default (state = initialState, action) => {
       return {
         ...state,
         search: {
-          events: state.events.filter((event) => {return event.nombre.toLowerCase().includes(action.terms)}),
-          blog: state.blog.filter((blog) => {return blog.nombre.toLowerCase().includes(action.terms)})
+          events: state.events.filter((event) => {return event.nombre.toLowerCase().includes(action.terms) }),
+          blog: state.blog.filter((blog) => {return blog.nombre.toLowerCase().includes(action.terms)}),          
+          timeLine: state.timeline.filter((timeLine) => {return timeLine.nombre.toLowerCase().includes(action.terms)})
         }
       };
     default:

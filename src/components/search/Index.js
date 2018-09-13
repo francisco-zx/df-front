@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import EventsGrid from './EventsGridSearch';
 import BlogGrid from './BlogGridSearch';
+import TimeLineGrid from './TimeLineGridSearch'
+
 
 class SearchPage extends Component{
   constructor(props){
@@ -17,7 +19,6 @@ class SearchPage extends Component{
   componentWillMount(){
     window.scrollTo(0,0);
   }
-
   render(){
     return(
       <section>
@@ -25,25 +26,66 @@ class SearchPage extends Component{
           <aside className={css(style.heroAside)}>Resultados de la búsqueda:</aside>
           <h1 className={css(style.heroTitle)}>{`"${this.props.match.params.search}"`}</h1>
         </article>
-        <article className={css(style.results) + ' container'}>
-          <EventsGrid events={this.props.events} history={this.props.history}/>
-        </article>
-        <article className={css(style.results) + ' container'}>
-          <BlogGrid blog={this.props.blog} history={this.props.history}/>
-        </article>
+        <div className={css(style.grid)}>
+          <article className={css(style.gridItem)}>
+            <TimeLineGrid timeLine={this.props.timeLine} history={this.props.history}/>
+          </article>
+          <article className={css(style.gridItem)}>
+            <EventsGrid  events={this.props.events} history={this.props.history}/>
+          </article>
+        </div>
       </section>
     )
   }
 }
-
+/* Removed 12-Sep-2018
+  <article className={css(style.results) + ' container'}>
+    <BlogGrid blog={this.props.blog} history={this.props.history}/>
+  </article>
+*/
 const mapStateToProps = state => ({
   events: state.search.events,
-  blog: state.search.blog
+  blog: state.search.blog,
+  timeLine: state.search.timeLine
 })
 
 export default connect(mapStateToProps, null)(SearchPage);
 
+
+/*
+  venuesGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  venuesGridItem: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    width: '33%',
+    marginBottom: '2rem',
+    flexBasis: '33%',
+    overflow: 'hidden'
+  },
+*/
+
 const style = StyleSheet.create({
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  gridItem: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    width: '50%',
+    marginBottom: '2rem',
+    flexBasis: '50%',
+    overflow: 'hidden'
+  },
   hero: {
     height: '34vh',
     display: 'flex',
