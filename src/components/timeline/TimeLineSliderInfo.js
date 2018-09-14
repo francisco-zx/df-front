@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default class TimeLineSliderInfo extends Component {
   componentDidMount() {
-    
+
   }
   render() {
     return (
@@ -19,18 +19,18 @@ export default class TimeLineSliderInfo extends Component {
                 </h3>
                 <h3 className={css(style.sliderInfoSubtitle)}>{this.props.venue}
                 </h3>
-              </div>              
+              </div>
           }
-         
+
             <div className={css(style.buttonGroup)}>
               <button className={css(style.button)}>VER MAS +</button>
             </div>
-            
+
         </div>
     );
   }
 }
-/* <Link to={`/timeline/${this.props.slug}`}> </Link> */ 
+/* <Link to={`/timeline/${this.props.slug}`}> </Link> */
 const style = StyleSheet.create({
   sliderInfo: {
     padding: '10rem 6rem',
@@ -50,7 +50,8 @@ const style = StyleSheet.create({
       fontSize: '2.5rem'
     },
     "@media(max-width: 480px)": {
-      fontSize: '1.5rem'
+      fontSize: '1.5rem',
+      maxWidth: '10rem',
     }
   },
   sliderInfoTag: {

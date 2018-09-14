@@ -25,7 +25,7 @@ export default class EventsGrid extends Component {
                       <div key={event.slug} className={event.img_principal_formato != 'horizontal' ? css(style.venuesGridItem, style.hide) + ' animated fadeIn' : css(style.venuesGridItemFull, style.hide) + ' animated fadeIn' } onClick={slug => this.goToEvent(event.slug)}>
                         <div style={{padding: '0.5rem'}}>
                           <img className={css(style.itemImg)} src={event.img_principal} />
-                          <div className={css(style.venueName)}>{event.nombre}</div>
+                          <div className={event.img_principal_formato != 'horizontal' ? css(style.venueName, style.hide) + ' animated fadeIn' : css(style.venueNameFull, style.hide) + ' animated fadeIn' }>{event.nombre}</div>
                           <BorderGradient height='6px'/>
                         </div>
                       </div>
@@ -39,7 +39,7 @@ export default class EventsGrid extends Component {
                       <div className={css(style.venuesGridItemFull) + ' animated fadeIn'} onClick={slug => this.goToEvent(event.slug)}>
                         <div style={{padding: '0.5rem'}}>
                           <img className={css(style.itemImg)} src={event.img_portada} />
-                          <div className={css(style.venueName)}>{event.nombre}</div>
+                          <div className={event.img_principal_formato != 'horizontal' ? css(style.venueName, style.hide) + ' animated fadeIn' : css(style.venueNameFull, style.hide) + ' animated fadeIn' }>{event.nombre}</div>
                           <BorderGradient height='6px'/>
                         </div>
                       </div>
@@ -48,7 +48,7 @@ export default class EventsGrid extends Component {
                 })
               }
             </div>
-          : "No hay resultados de busqueda"
+          : "No hay resultados de búsqueda"
 
         }
 
@@ -96,7 +96,16 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: 'white',
-    padding: '1rem'
+    padding: '1rem',
+    minHeight: '70px',
+  },
+  venueNameFull:{
+    background: '#161616',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    color: 'white',
+    padding: '1rem',
   },
   hide: {
     "@media(max-width: 1024px)": {

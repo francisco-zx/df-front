@@ -15,7 +15,7 @@ export default class TimeLineGrid extends Component {
   render() {
     return (
       <div className='container'>
-        <SectionTitle text='Time Line'/>
+        <SectionTitle text='Timeline'/>
         {
           this.props.timeLine.length ?
             <div className={css(style.venuesGrid)}>
@@ -48,7 +48,7 @@ export default class TimeLineGrid extends Component {
                 })
               }
             </div>
-          : "No hay resultados de busqueda"
+          : "No hay resultados de búsqueda"
         }
       </div>
     );
@@ -94,7 +94,8 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: 'white',
-    padding: '1rem'
+    padding: '1rem',
+    minHeight: '70px',
   },
   hide: {
     "@media(max-width: 1024px)": {
