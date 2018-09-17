@@ -23,7 +23,7 @@ export default class TimeLineSliderInfo extends Component {
           }
 
             <div className={css(style.buttonGroup)}>
-              <button className={css(style.button)}>VER MAS +</button>
+              <button className={css(style.button)}>VER MÁS +</button>
             </div>
 
         </div>

@@ -9,7 +9,7 @@ import BorderGradient from '../layout/BorderGradient';
 export default class TimeLineGrid extends Component {
 
   goToEvent = slug => {
-    this.props.history.push(`/event/${slug}`)
+    this.props.history.push(`/timeline/${slug}`)
   }
 
   render() {
@@ -96,6 +96,9 @@ const style = StyleSheet.create({
     color: 'white',
     padding: '1rem',
     minHeight: '70px',
+    "@media(max-width: 1200px)": {
+      fontSize: '0.7rem'
+    }
   },
   hide: {
     "@media(max-width: 1024px)": {
