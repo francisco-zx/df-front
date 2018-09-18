@@ -51,25 +51,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, null)(SearchPage);
 
-
-/*
-  venuesGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  venuesGridItem: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    width: '33%',
-    marginBottom: '2rem',
-    flexBasis: '33%',
-    overflow: 'hidden'
-  },
-*/
-
 const style = StyleSheet.create({
   grid: {
     flexDirection: 'row',

@@ -23,6 +23,8 @@ export default class MobileMenu extends Component{
     )
   }
 }
+
+//mobileMenu: background: 'rgba(256,256,256,0.6)' = search overlay
 const style = StyleSheet.create({
   mobileMenu: {
     position: 'fixed',
@@ -30,9 +32,7 @@ const style = StyleSheet.create({
     left: 0,
     height: '100%',
     width: '100%',
-    zIndex: 666,
-    background: 'rgba(256,256,256,0.6)',
-
+    zIndex: 666    
   },
   mobileNav: {
     display: 'flex',
