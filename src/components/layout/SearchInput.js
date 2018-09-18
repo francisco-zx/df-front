@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
-
 import { searchAction, log } from '../../Actions/Search_Action';
-
 import SearchIcon from '../../assets/home/search.svg';
 
 class SearchInput extends Component {

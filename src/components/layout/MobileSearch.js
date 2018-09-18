@@ -3,36 +3,59 @@ import { NavLink } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
 import Logo from '../../logo.svg';
+import CloseBtn from '../../close.svg';
 import SearchInput from './SearchInput';
 import TopBar from './TopBar';
 
+
+// <article className={css(style.mobileMenu) + ' animated fadeIn'}>
+//  </article>
 export default class MobileMenu extends Component{
-  render(){
+  render(){  
     return(
-      <article className={css(style.mobileMenu) + ' animated fadeIn'}>
+        <article className={css(style.mobileMenu) + ' animated fadeIn'}>
           <TopBar topBar={this.props.topBar}/>
           <header className={css(style.header) + ' animated fadeIn'}>
             <div className={css(style.logoWrapper)} onClick={this.props.closeSearch}>
               <img src={Logo} width='100%'/>
             </div>
             <div className={css(style.search)}>
-              <SearchInput search={this.props.search} goBack={this.props.goBack}/>
+              <SearchInput className={css(style.searchInput)} search={this.props.search} goBack={this.props.goBack} closeSearch={this.props.closeSearch}/>
+              <img src={CloseBtn}   className={css(style.closeIcon) + ' animated fadeIn'} width='20rem' height='20rem'  onClick={this.props.closeSearch}  width='100%'/>
             </div>
           </header>
-      </article>
+        </article>
     )
   }
 }
 
 //mobileMenu: background: 'rgba(256,256,256,0.6)' = search overlay
 const style = StyleSheet.create({
+  searchInput: {
+    display: 'flex',
+    position: 'relative',
+    padding: '8px',
+    width: '13rem',
+    border: '1px solid #161616',
+    borderRadius: '20px',
+    justifyContent: 'flex-end'
+  },
+  searchIcon: {
+    position: 'absolute',
+    right: 0,
+    top: '50%',
+    transform: 'translateY(-50%)',
+    paddingRight: '8px',
+    animationDelay: '0.4s'
+  },
   mobileMenu: {
     position: 'fixed',
     top: 0,
     left: 0,
     height: '100%',
     width: '100%',
-    zIndex: 666    
+    zIndex: 666,
+    background: 'rgba(256,256,256,0.6)' 
   },
   mobileNav: {
     display: 'flex',
