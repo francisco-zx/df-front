@@ -6,6 +6,7 @@ import { StyleSheet, css } from 'aphrodite';
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
 import MobileSearch from './MobileSearch';
+import SearchInput from './SearchInput';
 
 export default class Header extends Component {
   constructor(props){
@@ -43,7 +44,9 @@ export default class Header extends Component {
   }
   render() {
     return (
+<div>
       <header className={(this.state.fixed ? css(style.headerFixed) : css(style.header))}>
+
         <div className={css(style.mobileMenuIcon)+ ' clickable'} onClick={() => {this.toggleMobileMenu()}}>
           <i className='fa fa-bars fa-2x'></i>
         </div>
@@ -51,8 +54,10 @@ export default class Header extends Component {
           <img src={Logo} className={css(style.logo) + ' animated fadeIn'} alt='Logo DF Entertainment'/>
         </Link>
         <Nav search={this.search} goBack={this.goBack}/>
-        <div className={css(style.mobileSearchIcon)} onClick={() => {this.toggleMobileSearch()}}>
-          <i className='fa fa-search fa-2x'></i>
+
+        <div className={(this.state.fixed ? css(style.mobileSearchFixed) : css(style.mobileSearch))}>
+          <br/>
+          <SearchInput search={this.search}/>
         </div>
         {
           this.state.showMobileMenu &&
@@ -63,13 +68,16 @@ export default class Header extends Component {
             <MobileSearch closeSearch={this.toggleMobileSearch} goBack={this.goBack} search={this.search} topBar={this.props.topBar}/>
         }
       </header>
+      
+</div>      
     );
   }
 }
-
 const style = StyleSheet.create({
   header: {
     display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     flex: 1,
     alignItems: 'center',
     padding: '2rem 6rem',
@@ -84,6 +92,7 @@ const style = StyleSheet.create({
   },
   headerFixed: {
     display: 'flex',
+    flexDirection: 'row',
     flex: 1,
     position: 'fixed',
     background: 'white',
@@ -96,6 +105,7 @@ const style = StyleSheet.create({
     boxSizing: 'border-box',
     transition: 'all 0.6s ease',
     boxShadow: '0px 3px 15px 0px rgba(0,0,0,0.2)',
+
     "@media(max-width: 996px)": {
       justifyContent: 'center',
     },
@@ -130,13 +140,22 @@ const style = StyleSheet.create({
       display: 'none'
     }
   },
-  mobileSearchIcon: {
-    display: 'flex',
-    flex: 1,
+  mobileSearchIcon: {    
+    flex: 1,    
     justifyContent: 'flex-end',
     "@media(min-width: 996px)": {
       display: 'none'
     }
+  },
+  mobileSearch: {
+    flex: '0 1 75%',
+    justifyContent: 'flex-end',
+    "@media(min-width: 996px)": {
+      display: 'none'
+    }
+  },
+  mobileSearchFixed:{
+    display: 'none'
   },
   mobileSearchIconIcon: {
     display: 'flex'

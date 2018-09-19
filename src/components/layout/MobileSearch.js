@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
 import Logo from '../../logo.svg';
-import CloseBtn from '../../close.svg';
 import SearchInput from './SearchInput';
 import TopBar from './TopBar';
 
@@ -21,7 +20,6 @@ export default class MobileMenu extends Component{
             </div>
             <div className={css(style.search)}>
               <SearchInput className={css(style.searchInput)} search={this.props.search} goBack={this.props.goBack} closeSearch={this.props.closeSearch}/>
-              <img src={CloseBtn}   className={css(style.closeIcon) + ' animated fadeIn'} width='20rem' height='20rem'  onClick={this.props.closeSearch}  width='100%'/>
             </div>
           </header>
         </article>
@@ -38,7 +36,8 @@ const style = StyleSheet.create({
     width: '13rem',
     border: '1px solid #161616',
     borderRadius: '20px',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    background: 'rgba(256,256,256,0.6)'
   },
   searchIcon: {
     position: 'absolute',
