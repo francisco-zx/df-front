@@ -57,7 +57,7 @@ export default class Header extends Component {
 
         <div className={(this.state.fixed ? css(style.mobileSearchFixed) : css(style.mobileSearch))}>
           <br/>
-          <SearchInput search={this.search}/>
+          <SearchInput search={this.search} goBack={this.goBack}/>
         </div>
         {
           this.state.showMobileMenu &&
